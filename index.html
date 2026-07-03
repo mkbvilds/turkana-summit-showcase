@@ -54,7 +54,7 @@ h3 { font-size: 1.25rem; }
 h4 { font-size: 1.05rem; }
 p  { margin: 0 0 1em; color: var(--text-soft); }
 
-.container { width: min(1180px, 92%); margin: 0 auto; }
+.container { width: min(1300px, 94%); margin: 0 auto; }
 .center { text-align: center; }
 .mt-40 { margin-top: 40px; }
 
@@ -118,7 +118,7 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
 .site-header.scrolled { box-shadow: var(--shadow-sm); }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 0;
+  padding: 16px 0; /* Slightly increased padding for the taller header */
   gap: 24px;
 }
 .logo-wrap {
@@ -127,17 +127,21 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
   gap: 16px;
 }
 .logo { display: flex; align-items: center; }
-.logo img { height: 52px; width: auto; transition: transform 0.2s ease; }
+.logo img { 
+  height: 75px; /* Increased from 52px */
+  width: auto; 
+  transition: transform 0.2s ease; 
+}
 .logo img:hover { transform: scale(1.05); }
 .logo-divider {
   width: 1px;
-  height: 32px;
+  height: 45px; /* Increased to match taller logos */
   background: var(--border);
 }
 .partner-carousel {
   position: relative;
-  width: 120px;
-  height: 40px;
+  width: 150px; /* Increased from 120px */
+  height: 50px; /* Increased from 40px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,14 +149,14 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
 }
 .partner-carousel .partner-logo {
   position: absolute;
-  max-height: 32px;
+  max-height: 42px; /* Increased from 32px */
   max-width: 100%;
   height: auto;
   width: auto;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, filter 0.2s ease;
   pointer-events: none;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
 }
 .partner-carousel .partner-logo.active {
   opacity: 0.75;
@@ -163,7 +167,11 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
   filter: none;
 }
 
-.main-nav { display: flex; gap: 26px; }
+.main-nav { 
+  display: flex; 
+  gap: 22px; /* Slightly adjusted gap */
+  white-space: nowrap; /* Forces nav to stay on one line */
+}
 .main-nav a {
   font-family: var(--font-head);
   font-weight: 500;
@@ -171,6 +179,7 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
   color: var(--navy-900);
   position: relative;
   padding: 6px 0;
+  white-space: nowrap; /* Forces text to stay on one line */
 }
 .main-nav a::after {
   content: ''; position: absolute; left: 0; bottom: 0;
@@ -179,7 +188,12 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
 }
 .main-nav a:hover::after { width: 100%; }
 
-.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  white-space: nowrap; /* Forces button text to stay on one line */
+}
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -377,7 +391,7 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
 /* Partners */
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   align-items: center;
 }
@@ -433,7 +447,7 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
 /* Why attend cards */
 .cards-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 24px;
 }
 .card {
@@ -833,7 +847,40 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
 
 
 
-
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) { /* Increased from 900px */
+  .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .main-nav {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    display: none;
+  }
+  .main-nav.open { display: flex; }
+  .menu-toggle { display: flex; }
+  .logo-divider, .partner-carousel { display: none; }
+  .carousel-arrow { display: none; }
+  .slide-caption { padding-top: 100px; padding-bottom: 220px; }
+  
+  /* Partner grid — 3 columns on tablet */
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .partner {
+    min-height: 90px;
+    padding: 12px 14px;
+  }
+  .partner img {
+    max-height: 38px;
+  }
+}
 
 /* ---------- PARTICIPANT & MINE TOUR CARDS ---------- */
 .pricing-grid-participant {
