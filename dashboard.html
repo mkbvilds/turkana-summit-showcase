@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Event Dashboard — Turkana Gold Summit & Minerals Expo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --navy-900: #0b1f3a;
+  --navy-800: #102a4c;
+  --navy-700: #163560;
+  --orange: #f26522;
+  --orange-600: #d9541a;
+  --white: #ffffff;
+  --off-white: #f7f8fb;
+  --muted: #eef1f6;
+  --text: #1c2536;
+  --text-soft: #4b5568;
+  --border: #e2e6ee;
+  --radius: 12px;
+  --shadow-sm: 0 4px 12px rgba(11, 31, 58, 0.06);
+  --shadow-md: 0 12px 30px rgba(11, 31, 58, 0.10);
+  --shadow-lg: 0 24px 50px rgba(11, 31, 58, 0.14);
+  --font-head: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --success: #1d7a41;
+  --success-bg: #e9f7ee;
+  --warning: #b7791f;
+  --warning-bg: #fefcbf;
+  --danger: #a83226;
+  --danger-bg: #fdecea;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--off-white);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 0 0 0.5em; }
+
+.container { width: min(1200px, 94%); margin: 0 auto; }
+
+/* ---------- HEADER / NAV ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--navy-900);
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow-sm);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 0;
+}
+.brand {
+  font-family: var(--font-head);
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.15rem;
+}
+.brand span { color: var(--orange); }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logout-btn {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .85rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.logout-btn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+/* ---------- HERO BANNER ---------- */
+.hero-banner {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
+  color: #fff;
+  padding: 36px 0;
+}
+.hero-banner-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.badge-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.badge {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+.badge.admin-badge {
+  background: #3182ce;
+}
+.hero-banner h1 { color: #fff; font-size: 1.8rem; margin: 0; }
+.hero-banner p { color: rgba(255, 255, 255, 0.8); margin: 6px 0 0; font-size: 0.95rem; }
+
+/* ---------- TABS NAVIGATION ---------- */
+.tabs-nav-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.tabs-inner {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+}
+.tab-link {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--text-soft);
+  padding: 16px 0;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.tab-link:hover {
+  color: var(--navy-900);
+}
+.tab-link.active {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
+}
+
+/* ---------- MAIN BODY / CARDS ---------- */
+.tracker-navbar {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+}
+.tracker-tab {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--bg-soft);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.tracker-tab:hover {
+  background: var(--border);
+  color: var(--navy-900);
+}
+.tracker-tab.active {
+  background: var(--navy-900);
+  color: #fff;
+}
+
+.dash-body { padding: 40px 0 80px; }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Overview layout */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+@media (max-width: 900px) {
+  .overview-grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Status Widget */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.status-pill.confirmed { background: var(--success-bg); color: var(--success); }
+.status-pill.pending { background: var(--warning-bg); color: var(--warning); }
+.status-pill.cancelled { background: var(--danger-bg); color: var(--danger); }
+
+/* Details grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.detail-item span {
+  display: block;
+  font-size: 0.78rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.detail-item strong {
+  font-size: 0.98rem;
+  color: var(--navy-900);
+}
+
+/* Ticket Display */
+.ticket-wrapper {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.ticket-wrapper::before, .ticket-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: var(--off-white);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ticket-wrapper::before { left: -12px; }
+.ticket-wrapper::after { right: -12px; }
+
+.ticket-header {
+  border-bottom: 1px dashed rgba(255,255,255,0.2);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.ticket-header h4 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ticket-header span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+}
+.ticket-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 0.8rem;
+  margin-bottom: 18px;
+}
+.ticket-details span {
+  display: block;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2px;
+}
+.ticket-details strong {
+  font-size: 0.88rem;
+}
+.barcode-area {
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.barcode-visual {
+  height: 48px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 2px,
+    #fff 2px,
+    #fff 6px,
+    #000 6px,
+    #000 7px,
+    #fff 7px,
+    #fff 9px
+  );
+}
+.barcode-text {
+  font-size: 0.65rem;
+  color: var(--text-soft);
+  margin-top: 4px;
+  letter-spacing: 0.2em;
+}
+
+/* Button general */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .88rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s ease;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--orange); color: #fff; }
+.btn-primary:hover { background: var(--orange-600); transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.btn-outline { background: transparent; color: var(--navy-900); border-color: var(--navy-900); }
+.btn-outline:hover { background: var(--navy-900); color: #fff; }
+.btn-sm { padding: 6px 14px; font-size: 0.78rem; }
+.btn-block { display: flex; width: 100%; }
+
+/* ---------- ADD-ONS & PAYMENTS ---------- */
+.addon-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.addon-row:last-child { border-bottom: 0; }
+.addon-info h4 { margin: 0 0 4px; font-size: 0.95rem; }
+.addon-info p { margin: 0; font-size: 0.85rem; color: var(--text-soft); }
+.addon-price {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--navy-900);
+  font-size: 0.95rem;
+  margin-right: 20px;
+}
+.addon-control {
+  display: flex;
+  align-items: center;
+}
+.addon-control input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--orange);
+  cursor: pointer;
+}
+.addon-control input[type="number"] {
+  width: 70px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+}
+
+.payment-summary {
+  background: var(--off-white);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 24px;
+}
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+.summary-line.total {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* ---------- BOOTH BOOKING GRID ---------- */
+.booth-hall-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hall-directions {
+  display: flex;
+  justify-content: space-between;
+  background: var(--muted);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+}
+.legend {
+  display: flex;
+  gap: 16px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-color { width: 16px; height: 16px; border-radius: 4px; border: 1px solid var(--border); }
+.legend-color.available { background: #e6fffa; border-color: #319795; }
+.legend-color.selected { background: #fffaf0; border-color: var(--orange); }
+.legend-color.occupied { background: #edf2f7; border-color: #cbd5e0; }
+
+.booth-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+@media (max-width: 600px) {
+  .booth-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.booth-cell {
+  background: #e6fffa;
+  border: 2px solid #319795;
+  border-radius: 8px;
+  padding: 16px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.booth-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.booth-cell h5 {
+  margin: 0 0 2px;
+  font-family: var(--font-head);
+  font-size: 0.98rem;
+  color: #234e52;
+}
+.booth-cell span {
+  font-size: 0.68rem;
+  color: #2c7a7b;
+  display: block;
+}
+.booth-cell.premium {
+  border-style: double;
+  border-width: 4px;
+}
+.booth-cell.selected {
+  background: #fffaf0;
+  border-color: var(--orange);
+}
+.booth-cell.selected h5 { color: var(--orange-600); }
+.booth-cell.selected span { color: var(--orange); }
+
+.booth-cell.occupied {
+  background: #edf2f7;
+  border-color: #cbd5e0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.booth-cell.occupied h5 { color: #4a5568; }
+.booth-cell.occupied span { color: #718096; }
+.booth-cell.occupied:hover { transform: none; box-shadow: none; }
+
+.tooltip-org {
+  display: none;
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-900);
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+}
+.booth-cell.occupied:hover .tooltip-org {
+  display: block;
+}
+
+/* ---------- ADMIN DASHBOARD ---------- */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.stat-card span {
+  display: block;
+  font-size: 0.75rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.stat-card strong {
+  font-size: 1.6rem;
+  font-family: var(--font-head);
+  color: var(--navy-900);
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.search-input {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 280px;
+  outline: none;
+}
+.search-input:focus { border-color: var(--orange); }
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+table.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.88rem;
+  text-align: left;
+}
+table.admin-table th, table.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+table.admin-table th {
+  background: var(--muted);
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--navy-900);
+}
+table.admin-table tr:last-child td { border-bottom: 0; }
+table.admin-table tr:hover td { background: var(--off-white); }
+
+select.status-select {
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.82rem;
+  outline: none;
+}
+select.status-select:focus { border-color: var(--orange); }
+
+/* ---------- CHECKOUT / RECEIPT MODALS ---------- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 31, 58, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.active { display: flex; }
+.modal-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  animation: modalSlideUp 0.3s ease;
+}
+@keyframes modalSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  background: var(--navy-900);
+  color: #fff;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 { color: #fff; margin: 0; font-size: 1.15rem; }
+.close-modal {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.8;
+}
+.close-modal:hover { opacity: 1; }
+
+.modal-body { padding: 24px; }
+
+/* Payment Methods tabs */
+.pay-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.pay-method-btn {
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+.pay-method-btn.active {
+  border-color: var(--orange);
+  background: #fffaf0;
+  color: var(--orange-600);
+}
+.pay-form-section { display: none; }
+.pay-form-section.active { display: block; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.form-group label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--navy-900);
+}
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.9rem;
+}
+.form-group input:focus { border-color: var(--orange); }
+
+.pay-instructions {
+  background: var(--muted);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  margin-bottom: 16px;
+}
+
+/* Printable invoice styles */
+@media print {
+  body * { visibility: hidden; }
+  #printableInvoice, #printableInvoice * { visibility: visible; }
+  #printableInvoice {
+    position: absolute;
+    left: 0; top: 0; width: 100%;
+    padding: 40px;
+  }
+}
+.invoice-container {
+  font-size: 0.88rem;
+  color: #333;
+}
+.invoice-header-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--navy-900);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.invoice-title { font-size: 1.4rem; font-weight: 800; color: var(--navy-900); }
+.invoice-meta { text-align: right; }
+.invoice-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.invoice-details-table th, .invoice-details-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.invoice-details-table th { background: var(--off-white); }
+.invoice-total-row {
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-top: 20px;
+}
+
+/* Loading & Error States */
+.loading {
+  text-align: center;
+  padding: 100px 20px;
+  color: var(--text-soft);
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+}
+.error-state {
+  text-align: center;
+  padding: 100px 20px;
+  color: var(--danger);
+  background: var(--danger-bg);
+  border: 1px solid #f5c6c1;
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 600px;
+  font-family: var(--font-head);
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Turkana Gold Summit <span>2026</span></a>
+    <div class="header-actions">
+      <button class="logout-btn" onclick="logout()">Log Out</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ LOADING STATE ============ -->
+<div id="loadingState" class="loading">Loading dashboard profile…</div>
+
+<!-- ============ ERROR STATE ============ -->
+<div id="errorState" class="error-state" style="display:none;"></div>
+
+<!-- ============ MAIN CONTENT ============ -->
+<div id="dashboardContent" style="display:none;">
+  <section class="hero-banner">
+    <div class="container hero-banner-inner">
+      <div>
+        <div class="badge-row">
+          <span class="badge" id="typeBadge">Delegate</span>
+          <span class="badge admin-badge" id="adminBadge" style="display:none;">Admin</span>
+        </div>
+        <h1 id="welcomeMsg">Welcome back</h1>
+        <p>Manage your registrations, explore add-on passes, and visual hall bookings.</p>
+      </div>
+      <div>
+        <button id="quickPayBtn" class="btn btn-primary" style="display:none;">Pay Pending Fees</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABS NAVIGATION ============ -->
+  <div class="tabs-nav-bar">
+    <div class="container tabs-inner">
+      <div class="tab-link active" data-tab="overview">Overview</div>
+      <div class="tab-link" data-tab="addons">Add-ons &amp; Packages</div>
+      <div class="tab-link" id="boothTab" style="display:none;" data-tab="booths">Exhibitor Booth Selector</div>
+      <div class="tab-link" id="adminTab" style="display:none;" data-tab="admin">⚙ Admin Panel</div>
+    </div>
+  </div>
+
+  <div class="container dash-body">
+    <!-- ============ TAB: OVERVIEW ============ -->
+    <div id="overviewTab" class="tab-content active">
+      <div class="overview-grid">
+        <div>
+          <!-- Profile Card -->
+          <div class="card">
+            <div class="card-title">
+              <span>Your Profile Details</span>
+              <span id="profileStatusPill" class="status-pill pending">Pending</span>
+            </div>
+            <div class="details-grid">
+              <div class="detail-item"><span>Full Name</span><strong id="profName">—</strong></div>
+              <div class="detail-item"><span>Email Address</span><strong id="profEmail">—</strong></div>
+              <div class="detail-item"><span>Phone Number</span><strong id="profPhone">—</strong></div>
+              <div class="detail-item"><span>Organization</span><strong id="profOrg">—</strong></div>
+              <div class="detail-item"><span>Country</span><strong id="profCountry">—</strong></div>
+              <div class="detail-item"><span>Representatives</span><strong id="profReps">1</strong></div>
+            </div>
+          </div>
+
+          <!-- Package Details Card -->
+          <div class="card">
+            <div class="card-title">Event Package &amp; Add-ons</div>
+            <div class="details-grid">
+              <div class="detail-item"><span>Base Package</span><strong id="pkgBase">—</strong></div>
+              <div class="detail-item"><span>Gala Dinner Pass</span><strong id="pkgGala">No</strong></div>
+              <div class="detail-item"><span>Mine Tour Slot</span><strong id="pkgTour">No</strong></div>
+              <div class="detail-item"><span>Additional Passes</span><strong id="pkgExtra">0</strong></div>
+              <div class="detail-item" id="pkgBoothItem" style="display:none;"><span>Exhibitor Booth</span><strong id="pkgBooth">Unassigned</strong></div>
+            </div>
+            <div style="margin-top: 24px; display: flex; gap: 12px;">
+              <button class="btn btn-primary btn-sm" id="viewInvoiceBtn">View Invoice / Receipt</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Digital Pass Ticket Widget -->
+          <div class="ticket-wrapper">
+            <div class="ticket-header">
+              <h4>Turkana Gold Summit 2026</h4>
+              <span>Delegate Expo Pass</span>
+            </div>
+            <div class="ticket-details">
+              <div>
+                <span>Delegate</span>
+                <strong id="ticketName">—</strong>
+              </div>
+              <div>
+                <span>Category</span>
+                <strong id="ticketType">—</strong>
+              </div>
+              <div>
+                <span>Company</span>
+                <strong id="ticketOrg">—</strong>
+              </div>
+              <div>
+                <span>Status</span>
+                <strong id="ticketStatus">—</strong>
+              </div>
+            </div>
+            <div class="barcode-area">
+              <div class="barcode-visual"></div>
+              <div class="barcode-text" id="ticketId">TGS-PENDING</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TAB: ADD-ONS & PACKAGES ============ -->
+    <div id="addonsTab" class="tab-content">
+      <div class="card">
+        <div class="card-title">Manage Extra Packages &amp; Add-ons</div>
+        <p style="color: var(--text-soft); font-size: 0.9rem; margin-top: -10px; margin-bottom: 24px;">Configure add-ons for the Turkana Gold Summit &amp; Expo. If you already paid, modifying your selection will calculate any pending differences.</p>
+        
+        <form id="addonsForm">
+          <div class="addon-row">
+            <div class="addon-info">
+              <h4>Gala Dinner Ticket</h4>
+              <p>Entry to the premium Gold Summit networking Gala dinner event.</p>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <span class="addon-price">KES 2,500</span>
+              <div class="addon-control">
+                <input type="checkbox" id="addonGala" />
+              </div>
+            </div>
+          </div>
+
+          <div class="addon-row">
+            <div class="addon-info">
+              <h4>Field Mine Tour Slot</h4>
+              <p>Guided physical study tour of selected Artisanal and Small-Scale Gold Mining (ASGM) sites in Turkana.</p>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <span class="addon-price">KES 5,000</span>
+              <div class="addon-control">
+                <input type="checkbox" id="addonTour" />
+              </div>
+            </div>
+          </div>
+
+          <div class="addon-row">
+            <div class="addon-info">
+              <h4>Extra Representative Passes</h4>
+              <p>Purchase additional attendee entry credentials for members of your delegation.</p>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <span class="addon-price">KES 1,500 each</span>
+              <div class="addon-control">
+                <input type="number" id="addonExtraReps" min="0" value="0" />
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-summary">
+            <div class="summary-line">
+              <span>Base Registration package:</span>
+              <strong id="sumBasePrice">KES 0</strong>
+            </div>
+            <div class="summary-line">
+              <span>Gala Dinner add-ons:</span>
+              <strong id="sumGalaPrice">KES 0</strong>
+            </div>
+            <div class="summary-line">
+              <span>Mine Tour add-ons:</span>
+              <strong id="sumTourPrice">KES 0</strong>
+            </div>
+            <div class="summary-line">
+              <span>Extra representatives:</span>
+              <strong id="sumExtraPrice">KES 0</strong>
+            </div>
+            <div class="summary-line total">
+              <span>Total Calculated Fees:</span>
+              <strong id="sumTotalPrice">KES 0</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+            <button type="submit" class="btn btn-primary" id="saveAddonsBtn">Update Details &amp; Pay</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============ TAB: BOOTH SELECTOR ============ -->
+    <div id="boothsTab" class="tab-content">
+      <div class="card">
+        <div class="card-title">
+          <span>Exhibitor Booth Reservation Hall</span>
+          <span id="boothReservedBadge" class="status-pill confirmed" style="display:none;">Booth Reserved</span>
+        </div>
+        <p style="color: var(--text-soft); font-size: 0.9rem; margin-top: -10px; margin-bottom: 24px;">Exhibitors can reserve their booth slot on the interactive exhibition hall floor layout. Selected booths will update in real time.</p>
+        
+        <div class="legend">
+          <div class="legend-item"><div class="legend-color available"></div><span>Available</span></div>
+          <div class="legend-item"><div class="legend-color selected"></div><span>Selected by You</span></div>
+          <div class="legend-item"><div class="legend-color occupied"></div><span>Occupied</span></div>
+        </div>
+
+        <div class="booth-hall-wrap">
+          <div class="hall-directions">
+            <span>← Entrance Gate</span>
+            <span>EXHIBITION CENTER MAIN HALL</span>
+            <span>Catering Section →</span>
+          </div>
+
+          <div class="booth-grid" id="boothSelectorGrid">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <div style="margin-top: 28px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <p id="boothSelectionText" style="margin: 0; font-weight: 600; color: var(--navy-900);">No booth selected.</p>
+            </div>
+            <button class="btn btn-primary" id="confirmBoothBtn" disabled>Confirm Booth Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TAB: ADMIN PANEL ============ -->
+    <div id="adminTabContent" class="tab-content">
+      <div class="admin-stats">
+        <div class="stat-card">
+          <span>Total Registered</span>
+          <strong id="statTotal">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Confirmed (Paid)</span>
+          <strong id="statConfirmed">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Sponsors Booked</span>
+          <strong id="statSponsors">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Total Projected Revenue</span>
+          <strong id="statRevenue">KES 0</strong>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title" id="adminTableTitle" style="margin-bottom: 16px;">Registered Attendees</div>
+        
+        <div class="tracker-navbar">
+          <div class="tracker-tab admin-filter active" data-filter="attendee">Attendees (Registered)</div>
+          <div class="tracker-tab admin-filter" data-filter="implementor">Implementors & Partners</div>
+          <div class="tracker-tab admin-filter" data-filter="stakeholder">Stakeholders</div>
+          <div class="tracker-tab admin-filter" data-filter="sponsor">Sponsors</div>
+          <div class="tracker-tab admin-filter" data-filter="speaker">Speakers & Moderators</div>
+          <div class="tracker-tab admin-filter" data-filter="exhibitor">Exhibitors</div>
+          <div class="tracker-tab admin-filter" data-filter="vendor">Vendors</div>
+          <div class="tracker-tab admin-filter" data-filter="volunteer">Volunteers</div>
+          <div class="tracker-tab admin-filter" data-filter="call_list">Call List</div>
+          <div class="tracker-tab admin-filter" data-filter="all">All Records</div>
+        </div>
+        <div class="table-controls">
+          <input type="text" class="search-input" id="adminSearchInput" placeholder="Search by name, email, org..." />
+          <div>
+            <button class="btn btn-outline btn-sm" id="newRecordBtn" style="margin-right: 8px;">New Record</button>
+            <button class="btn btn-outline btn-sm" id="exportCsvBtn">Export CSV</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="admin-table">
+            <thead id="adminTableHead">
+              <!-- Dynamically populated -->
+            </thead>
+            <tbody id="adminTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: ADMIN CRM EDIT ============ -->
+<div class="modal-overlay" id="adminCrmModal">
+  <div class="modal-card" style="max-width: 600px;">
+    <div class="modal-header">
+      <h3>Edit Registration / CRM Record</h3>
+      <button class="close-modal" id="closeAdminCrmModal">&times;</button>
+    </div>
+    <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
+      <form id="adminCrmForm" class="reg-form" style="box-shadow: none; padding: 0;">
+        <input type="hidden" id="crmId" />
+        
+        <h4 style="margin-top: 0; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 8px;">1. Personal & Organization Info</h4>
+        <div class="form-grid" style="margin-bottom: 24px;">
+          <div class="field"><label>Full Name</label><input type="text" id="crmFullName" required /></div>
+          <div class="field"><label>Email</label><input type="email" id="crmEmail" required /></div>
+          <div class="field"><label>Phone</label><input type="text" id="crmPhone" /></div>
+          <div class="field"><label>Country</label><input type="text" id="crmCountry" /></div>
+          <div class="field"><label>Organization</label><input type="text" id="crmOrganization" /></div>
+          <div class="field"><label>Job Title</label><input type="text" id="crmJobTitle" /></div>
+        </div>
+
+        <h4 style="margin-top: 0; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 8px;">2. Event Roles & Industry</h4>
+        <div class="form-grid" style="margin-bottom: 24px;">
+          <div class="field">
+            <label>Participant Type</label>
+            <select id="crmParticipantType">
+              <option value="attendee">Attendee</option>
+              <option value="implementor">Implementor</option>
+              <option value="stakeholder">Stakeholder</option>
+              <option value="sponsor">Sponsor</option>
+              <option value="speaker">Speaker & Moderator</option>
+              <option value="exhibitor">Exhibitor</option>
+              <option value="vendor">Vendor</option>
+              <option value="volunteer">Volunteer</option>
+            </select>
+          </div>
+          <div class="field"><label>Industry Affiliate</label><input type="text" id="crmIndustryAffiliate" /></div>
+          <div class="field" style="grid-column: span 2;"><label>Contact Person</label><input type="text" id="crmContactPerson" /></div>
+        </div>
+
+        <h4 style="margin-top: 0; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 8px;">3. Status & Tracking</h4>
+        <div class="form-grid">
+          <div class="field"><label>Registration Status</label>
+            <select id="crmStatus">
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div class="field"><label>Invitation Status</label><input type="text" id="crmInvitationStatus" placeholder="e.g. Invited, Accepted" /></div>
+          <div class="field"><label>Invitation Sent By</label><input type="text" id="crmInvitationSentBy" /></div>
+          <div class="field"><label>Attendance Status</label><input type="text" id="crmAttendanceStatus" /></div>
+          <div class="field" style="grid-column: span 2;"><label>Supplies Provided</label><input type="text" id="crmSuppliesProvided" /></div>
+        </div>
+        <div style="margin-top: 15px; text-align: right;">
+          <button type="button" class="btn btn-outline" id="cancelCrmBtn" style="padding: 8px 16px; margin-right: 10px;">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="width: auto; padding: 8px 16px;">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: SIMULATED PAYMENT ============ -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Complete Event Checkout</h3>
+      <button class="close-modal" id="closePaymentModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="pay-methods">
+        <div class="pay-method-btn active" data-method="mpesa">M-Pesa Push</div>
+        <div class="pay-method-btn" data-method="card">Credit Card</div>
+      </div>
+
+      <!-- M-Pesa push form -->
+      <div class="pay-form-section active" id="payMpesaSection">
+        <div class="pay-instructions">
+          A payment prompt will be pushed automatically to your Safaricom mobile phone line. Check your handset for PIN entry.
+        </div>
+        <div class="form-group">
+          <label for="mpesaPhone">M-Pesa Phone Number</label>
+          <input type="tel" id="mpesaPhone" placeholder="e.g. 0712345678" />
+        </div>
+      </div>
+
+      <!-- Card form -->
+      <div class="pay-form-section" id="payCardSection">
+        <div class="pay-instructions">
+          You will be redirected securely to Paystack to complete your card payment. Please choose your preferred currency.
+        </div>
+        <div class="form-group">
+          <label for="cardCurrency">Payment Currency</label>
+          <select id="cardCurrency" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px;">
+            <option value="KES">Kenya Shillings (KES)</option>
+            <option value="USD">US Dollars (USD)</option>
+            <option value="EUR">Euros (EUR)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 18px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <span style="font-size:0.78rem; color: var(--text-soft); display: block;">Checkout Amount</span>
+          <strong id="checkoutTotalText" style="font-size: 1.1rem; color: var(--navy-900);">KES 0</strong>
+        </div>
+        <button class="btn btn-primary" id="confirmCheckoutBtn">Complete Payment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: RECEIPT INVOICE VIEW ============ -->
+<div class="modal-overlay" id="invoiceModal">
+  <div class="modal-card" style="max-width: 650px;">
+    <div class="modal-header">
+      <h3>Registration Invoice &amp; Receipt</h3>
+      <button class="close-modal" id="closeInvoiceModal">&times;</button>
+    </div>
+    <div class="modal-body" id="printableInvoice">
+      <div class="invoice-container">
+        <div class="invoice-header-row">
+          <div>
+            <div class="invoice-title">Turkana Gold Summit 2026</div>
+            <span style="font-size:0.8rem; color:var(--text-soft);">artisanalglobalsummit.com</span>
+          </div>
+          <div class="invoice-meta">
+            <strong>INVOICE / RECEIPT</strong><br/>
+            <span>Invoice No: TGS-2026-<span id="invNo">1042</span></span><br/>
+            <span>Date: <span id="invDate">July 3, 2026</span></span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+          <div>
+            <strong style="color:var(--navy-900);">Summit Venue:</strong>
+            <p style="margin: 4px 0 0; font-size: 0.82rem; color: var(--text-soft);">
+              The Cradle Hotel, Lodwar<br/>
+              Turkana County, Kenya<br/>
+              Dates: Sept 15 - 17, 2026
+            </p>
+          </div>
+          <div>
+            <strong style="color:var(--navy-900);">Billed To:</strong>
+            <p style="margin: 4px 0 0; font-size: 0.82rem; color: var(--text-soft);" id="invBilledTo">
+              —<br/>
+              Organization: —<br/>
+              Country: Kenya
+            </p>
+          </div>
+        </div>
+
+        <table class="invoice-details-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Qty</th>
+              <th style="text-align: right;">Unit Price</th>
+              <th style="text-align: right;">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="invoiceDetailsBody">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+
+        <div class="invoice-total-row">
+          Total Fee Paid: <span id="invTotalFee">KES 0</span>
+        </div>
+
+        <div style="margin-top: 36px; border-top: 1px dashed var(--border); padding-top: 16px; text-align: center; font-size: 0.78rem; color: var(--text-soft);">
+          Thank you for registering. Payments are processed in full. Print this receipt for event badge pickup at the registration desk.
+        </div>
+      </div>
+      <div style="margin-top: 24px; display: flex; justify-content: flex-end; gap: 12px;" class="no-print">
+        <button class="btn btn-outline btn-sm" onclick="window.print()">Print Document</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth-config.js"></script>
+<script>
+  let currentUserProfile = null;
+  let allRegistrationsCache = [];
+  let currentAdminTabFilter = 'attendee';
+  let currentlySelectedBooth = null;
+  let currentSession = null;
+
+  (async function initDashboard() {
+    currentSession = await requireAuth();
+    if (!currentSession) return; 
+
+    // Tab Navigation switching
+    const tabLinks = document.querySelectorAll(".tab-link");
+    tabLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const tabTarget = link.dataset.tab;
+        tabLinks.forEach(t => t.classList.toggle("active", t === link));
+        
+        document.querySelectorAll(".tab-content").forEach(content => {
+          content.classList.toggle("active", content.id === `${tabTarget}Tab` || (tabTarget === 'admin' && content.id === 'adminTabContent') || (tabTarget === 'booths' && content.id === 'boothsTab'));
+        });
+      });
+    });
+
+    await refreshUserProfile();
+  })();
+
+  async function refreshUserProfile() {
+    const loadingEl = document.getElementById("loadingState");
+    const contentEl = document.getElementById("dashboardContent");
+    const errorEl = document.getElementById("errorState");
+
+    try {
+      const { data: profile, error } = await supabaseClient
+        .from("registrations")
+        .select("*")
+        .eq("user_id", currentSession.user.id)
+        .single();
+
+      if (error) throw error;
+      currentUserProfile = profile;
+
+      // Populate Overview Panel fields
+      document.getElementById("welcomeMsg").textContent = `Welcome, ${profile.full_name.split(" ")[0]}`;
+      document.getElementById("profName").textContent = profile.full_name;
+      document.getElementById("profEmail").textContent = profile.email;
+      document.getElementById("profPhone").textContent = profile.phone || "—";
+      document.getElementById("profOrg").textContent = profile.organization || "—";
+      document.getElementById("profCountry").textContent = profile.country || "—";
+      document.getElementById("profReps").textContent = profile.representatives || "1";
+
+      const badgeType = profile.participant_type.charAt(0).toUpperCase() + profile.participant_type.slice(1);
+      document.getElementById("typeBadge").textContent = badgeType;
+      document.getElementById("ticketType").textContent = badgeType;
+      document.getElementById("ticketName").textContent = profile.full_name;
+      document.getElementById("ticketOrg").textContent = profile.organization || "—";
+
+      document.getElementById("pkgBase").textContent = profile.package || "Standard Registration";
+      document.getElementById("pkgGala").textContent = profile.gala_dinner ? "Yes (Included)" : "No";
+      document.getElementById("pkgTour").textContent = profile.addon_mine_tour ? "Yes (Reserved)" : "No";
+      document.getElementById("pkgExtra").textContent = profile.additional_passes || "0";
+
+      // Setup status badges
+      const statusClean = profile.status.charAt(0).toUpperCase() + profile.status.slice(1);
+      const statusPill = document.getElementById("profileStatusPill");
+      statusPill.textContent = statusClean;
+      statusPill.className = `status-pill ${profile.status}`;
+      document.getElementById("ticketStatus").textContent = statusClean;
+      document.getElementById("ticketId").textContent = `TGS-2026-${profile.id.substring(0, 5).toUpperCase()}`;
+
+      // Conditionally show/hide Quick Pay button
+      const quickPayBtn = document.getElementById("quickPayBtn");
+      if (profile.status === 'pending') {
+        quickPayBtn.style.display = "block";
+      } else {
+        quickPayBtn.style.display = "none";
+      }
+
+      // If exhibitor, reveal booth tab and initialize it
+      const boothTab = document.getElementById("boothTab");
+      const pkgBoothItem = document.getElementById("pkgBoothItem");
+      if (profile.participant_type === 'exhibitor') {
+        boothTab.style.display = "block";
+        pkgBoothItem.style.display = "block";
+        document.getElementById("pkgBooth").textContent = profile.booth_number || "Unassigned";
+        if (profile.booth_number) {
+          document.getElementById("boothReservedBadge").style.display = "inline-flex";
+          document.getElementById("boothReservedBadge").textContent = `Reserved: Booth ${profile.booth_number}`;
+        }
+        await loadAndPopulateBooths();
+      }
+
+      // If admin, reveal admin dashboard tab
+      const adminTab = document.getElementById("adminTab");
+      if (profile.is_admin) {
+        adminTab.style.display = "block";
+        document.getElementById("adminBadge").style.display = "inline-block";
+        await loadAdminDashboard();
+      }
+
+      // Setup form fields on the Add-ons page to match current database status
+      document.getElementById("addonGala").checked = profile.gala_dinner;
+      document.getElementById("addonTour").checked = profile.addon_mine_tour;
+      document.getElementById("addonExtraReps").value = profile.additional_passes || 0;
+      recalculateAddonPrices();
+
+      loadingEl.style.display = "none";
+      contentEl.style.display = "block";
+    } catch (err) {
+      loadingEl.style.display = "none";
+      errorEl.style.display = "block";
+      errorEl.textContent = "Failed to synchronize profile. Please authenticate again.";
+      console.error(err);
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Payments & Add-ons logic
+     -------------------------------------------------------------------------- */
+  const priceMapping = {
+    // Attendees passes
+    "Standard Participant Pass — Ksh 1,500": 1500,
+    "Cooperative Mining Package — Ksh 5,000 (up to 4 pax)": 5000,
+    // Sponsors
+    "Gold Sponsor — USD 40,000": 40000 * 130, // KES equivalent approx 130
+    "Silver Sponsor — USD 25,000": 25000 * 130,
+    "Copper Sponsor — USD 10,000": 10000 * 130,
+    "Bronze Sponsor — USD 5,000": 5000 * 130,
+    // Exhibitors
+    "Tier 1 Exhibitor — KES 50,000": 50000,
+    "Standard Exhibitor — KES 30,000": 30000,
+    "International Exhibitor — USD 750": 750 * 130
+  };
+
+  function getBasePrice(pkgName) {
+    if (!pkgName) return 1500; // default standard
+    return priceMapping[pkgName] || 1500;
+  }
+
+  function recalculateAddonPrices() {
+    const baseVal = getBasePrice(currentUserProfile.package);
+    const hasGala = document.getElementById("addonGala").checked;
+    const hasTour = document.getElementById("addonTour").checked;
+    const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+
+    const galaCost = hasGala ? 2500 : 0;
+    const tourCost = hasTour ? 5000 : 0;
+    const repsCost = extraReps * 1500;
+    const totalCost = baseVal + galaCost + tourCost + repsCost;
+
+    document.getElementById("sumBasePrice").textContent = `KES ${baseVal.toLocaleString()}`;
+    document.getElementById("sumGalaPrice").textContent = `KES ${galaCost.toLocaleString()}`;
+    document.getElementById("sumTourPrice").textContent = `KES ${tourCost.toLocaleString()}`;
+    document.getElementById("sumExtraPrice").textContent = `KES ${repsCost.toLocaleString()}`;
+    document.getElementById("sumTotalPrice").textContent = `KES ${totalCost.toLocaleString()}`;
+    document.getElementById("checkoutTotalText").textContent = `KES ${totalCost.toLocaleString()}`;
+  }
+
+  // Bind change events
+  document.getElementById("addonGala").addEventListener("change", recalculateAddonPrices);
+  document.getElementById("addonTour").addEventListener("change", recalculateAddonPrices);
+  document.getElementById("addonExtraReps").addEventListener("input", recalculateAddonPrices);
+
+  // Forms submit click opens checkout modal
+  document.getElementById("addonsForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    openCheckoutModal();
+  });
+  
+  document.getElementById("quickPayBtn").addEventListener("click", () => {
+    openCheckoutModal();
+  });
+
+  const paymentModal = document.getElementById("paymentModal");
+  function openCheckoutModal() {
+    paymentModal.classList.add("active");
+  }
+
+  document.getElementById("closePaymentModal").addEventListener("click", () => {
+    paymentModal.classList.remove("active");
+  });
+
+  // Payment Methods toggle
+  const payMethodBtns = document.querySelectorAll(".pay-method-btn");
+  payMethodBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      payMethodBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      
+      const method = btn.dataset.method;
+      document.getElementById("payMpesaSection").classList.toggle("active", method === "mpesa");
+      document.getElementById("payCardSection").classList.toggle("active", method === "card");
+    });
+  });
+
+  // Checkout Submission
+  document.getElementById("confirmCheckoutBtn").addEventListener("click", async () => {
+    const btn = document.getElementById("confirmCheckoutBtn");
+    btn.disabled = true;
+    btn.textContent = "Processing Transaction…";
+
+    try {
+      const activeMethod = document.querySelector(".pay-method-btn.active").dataset.method;
+      const hasGala = document.getElementById("addonGala").checked;
+      const hasTour = document.getElementById("addonTour").checked;
+      const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+      
+      const payload = {
+        addons: { gala: hasGala, tour: hasTour, extraReps: extraReps }
+      };
+
+      if (activeMethod === "mpesa") {
+        const phone = document.getElementById("mpesaPhone").value;
+        if (!phone) throw new Error("Please enter your M-Pesa phone number.");
+        payload.phone = phone;
+
+        const { data, error } = await supabaseClient.functions.invoke('mpesa-pay', {
+          body: payload
+        });
+
+        if (error) throw new Error(error.message || "Failed to trigger M-Pesa STK push.");
+        if (data && data.error) throw new Error(data.error);
+
+        alert("STK Push sent! Please check your Safaricom phone and enter your PIN. After paying, your dashboard will update shortly.");
+        paymentModal.classList.remove("active");
+        
+      } else if (activeMethod === "card") {
+        const currency = document.getElementById("cardCurrency").value;
+        payload.overrideCurrency = currency;
+
+        const { data, error } = await supabaseClient.functions.invoke('paystack-pay', {
+          body: payload
+        });
+
+        if (error) throw new Error(error.message || "Failed to initialize card payment.");
+        if (data && data.error) throw new Error(data.error);
+
+        if (data && data.authorization_url) {
+          window.location.href = data.authorization_url;
+        } else {
+          throw new Error("Missing authorization URL from payment gateway.");
+        }
+      }
+    } catch (err) {
+      alert(`Payment error: ${err.message}`);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Complete Payment";
+    }
+  });
+
+
+  /* --------------------------------------------------------------------------
+     Exhibitor Booth Reservation Hall Selector
+     -------------------------------------------------------------------------- */
+  async function loadAndPopulateBooths() {
+    const gridEl = document.getElementById("boothSelectorGrid");
+    gridEl.innerHTML = ""; // Clear current
+
+    try {
+      // Query occupied booths by other organizations
+      const { data: bookings, error } = await supabaseClient
+        .from("registrations")
+        .select("id, booth_number, organization")
+        .not("booth_number", "is", null);
+
+      if (error) throw error;
+
+      // Group occupancies
+      const occupiedMap = {};
+      bookings.forEach(b => {
+        occupiedMap[b.booth_number] = b.organization || "Co-exhibitor";
+      });
+
+      // Generate 25 booths layout: Premium (A1-A10), Standard (B1-B15)
+      const premiumBooths = Array.from({length: 10}, (_, i) => `A${i+1}`);
+      const standardBooths = Array.from({length: 15}, (_, i) => `B${i+1}`);
+      const allBooths = [...premiumBooths, ...standardBooths];
+
+      allBooths.forEach(booth => {
+        const cell = document.createElement("div");
+        cell.className = "booth-cell";
+        
+        const isPremium = booth.startsWith("A");
+        if (isPremium) cell.classList.add("premium");
+
+        const label = document.createElement("h5");
+        label.textContent = booth;
+        cell.appendChild(label);
+
+        const sub = document.createElement("span");
+        sub.textContent = isPremium ? "Premium" : "Standard";
+        cell.appendChild(sub);
+
+        const isOccupied = occupiedMap[booth] !== undefined;
+        const belongsToMe = currentUserProfile.booth_number === booth;
+
+        if (belongsToMe) {
+          cell.classList.add("selected");
+          currentlySelectedBooth = booth;
+          document.getElementById("boothSelectionText").textContent = `Selected Booth: ${booth} (Your Reservation)`;
+          document.getElementById("confirmBoothBtn").disabled = false;
+        } else if (isOccupied) {
+          cell.classList.add("occupied");
+          const tooltip = document.createElement("div");
+          tooltip.className = "tooltip-org";
+          tooltip.textContent = occupiedMap[booth];
+          cell.appendChild(tooltip);
+        } else {
+          // Available slot
+          cell.addEventListener("click", () => {
+            document.querySelectorAll(".booth-cell").forEach(c => {
+              if (!c.classList.contains("occupied")) c.classList.remove("selected");
+            });
+            cell.classList.add("selected");
+            currentlySelectedBooth = booth;
+            document.getElementById("boothSelectionText").textContent = `Selected Booth: ${booth} (Unsaved)`;
+            document.getElementById("confirmBoothBtn").disabled = false;
+          });
+        }
+
+        gridEl.appendChild(cell);
+      });
+    } catch (err) {
+      console.error("Failed to load exhibition hall map:", err);
+    }
+  }
+
+  // Reservation save handler
+  document.getElementById("confirmBoothBtn").addEventListener("click", async () => {
+    if (!currentlySelectedBooth) return;
+
+    const btn = document.getElementById("confirmBoothBtn");
+    btn.disabled = true;
+    btn.textContent = "Reserving…";
+
+    try {
+      const { error } = await supabaseClient
+        .from("registrations")
+        .update({ booth_number: currentlySelectedBooth })
+        .eq("user_id", currentSession.user.id);
+
+      if (error) throw error;
+      alert(`Booth ${currentlySelectedBooth} successfully reserved!`);
+      await refreshUserProfile();
+    } catch (err) {
+      alert(`Reservation failed: ${err.message || "Something went wrong."}`);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Confirm Booth Booking";
+    }
+  });
+
+
+  /* --------------------------------------------------------------------------
+     Admin Panel & Directory logic
+     -------------------------------------------------------------------------- */
+  async function loadAdminDashboard() {
+    try {
+      const { data: list, error } = await supabaseClient
+        .from("registrations")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      allRegistrationsCache = list;
+
+      calculateAdminAnalytics(list);
+
+      function applyAdminFilters() {
+        const query = document.getElementById("adminSearchInput").value.toLowerCase().trim();
+        const filtered = allRegistrationsCache.filter(r => {
+          let matchesTab = false;
+          if (currentAdminTabFilter === 'all') {
+            matchesTab = true;
+          } else if (currentAdminTabFilter === 'call_list') {
+            matchesTab = r.participant_type === 'call_list';
+          } else {
+            matchesTab = r.participant_type === currentAdminTabFilter;
+          }
+
+          let matchesSearch = true;
+          if (query) {
+            matchesSearch = 
+              (r.full_name && r.full_name.toLowerCase().includes(query)) ||
+              (r.email && r.email.toLowerCase().includes(query)) ||
+              (r.organization && r.organization.toLowerCase().includes(query)) ||
+              (r.participant_type && r.participant_type.toLowerCase().includes(query));
+          }
+          
+          return matchesTab && matchesSearch;
+        });
+        populateAdminTable(filtered);
+      }
+
+      // Bind search filter
+      document.getElementById("adminSearchInput").addEventListener("input", applyAdminFilters);
+
+      // Bind tab filters
+      document.querySelectorAll(".admin-filter").forEach(tab => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll(".admin-filter").forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          currentAdminTabFilter = tab.dataset.filter;
+          
+          // Update title based on the tab
+          const titleEl = document.getElementById("adminTableTitle");
+          if (currentAdminTabFilter === 'attendee') {
+            titleEl.textContent = "Registered Attendees";
+          } else if (currentAdminTabFilter === 'all') {
+            titleEl.textContent = "All Records";
+          } else {
+            titleEl.textContent = "Progress Tracker: " + tab.textContent;
+          }
+
+          applyAdminFilters();
+        });
+      });
+
+      // Initial load
+      applyAdminFilters();
+    } catch (err) {
+      console.error("Failed to fetch admin dashboard directory:", err);
+    }
+  }
+
+  function calculateAdminAnalytics(list) {
+    const total = list.length;
+    const confirmedCount = list.filter(r => r.status === 'confirmed').length;
+    const sponsors = list.filter(r => r.participant_type === 'sponsor').length;
+
+    let revenue = 0;
+    list.forEach(r => {
+      if (r.status === 'confirmed') {
+        const base = getBasePrice(r.package);
+        const gala = r.gala_dinner ? 2500 : 0;
+        const tour = r.addon_mine_tour ? 5000 : 0;
+        const extra = (r.additional_passes || 0) * 1500;
+        revenue += (base + gala + tour + extra);
+      }
+    });
+
+    document.getElementById("statTotal").textContent = total;
+    document.getElementById("statConfirmed").textContent = confirmedCount;
+    document.getElementById("statSponsors").textContent = sponsors;
+    document.getElementById("statRevenue").textContent = `KES ${revenue.toLocaleString()}`;
+  }
+
+  function populateAdminTable(list) {
+    const thead = document.getElementById("adminTableHead");
+    const tbody = document.getElementById("adminTableBody");
+    thead.innerHTML = "";
+    tbody.innerHTML = "";
+
+    // Build header based on tab
+    let cols = [];
+    if (currentAdminTabFilter === 'attendee' || currentAdminTabFilter === 'all') {
+      cols = ["Attendee", "Type", "Package", "Country", "Dinner", "Booth", "Payment Status", "Actions"];
+    } else if (currentAdminTabFilter === 'stakeholder') {
+      cols = ["Organisation", "Name", "Title", "Email", "Phone", "Industry Affiliate", "Actions"];
+    } else if (currentAdminTabFilter === 'implementor' || currentAdminTabFilter === 'volunteer') {
+      cols = ["Name / Organization", "Actions"];
+    } else if (currentAdminTabFilter === 'call_list') {
+      cols = ["Name / Slot", "Actions"];
+    } else {
+      cols = ["Name", "Organization", "Title", "Email", "Phone", "Actions"];
+    }
+
+    const trHead = document.createElement("tr");
+    cols.forEach(col => {
+      const th = document.createElement("th");
+      th.textContent = col;
+      trHead.appendChild(th);
+    });
+    thead.appendChild(trHead);
+
+    if (list.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="${cols.length}" style="text-align:center; color: var(--text-soft);">No records found.</td></tr>`;
+      return;
+    }
+
+    list.forEach(row => {
+      const tr = document.createElement("tr");
+
+      // Actions td is common
+      const actionTd = document.createElement("td");
+      const editBtn = document.createElement("button");
+      editBtn.className = "btn btn-outline btn-sm";
+      editBtn.textContent = "Edit";
+      editBtn.onclick = () => openAdminCrmModal(row);
+      actionTd.appendChild(editBtn);
+
+      if (currentAdminTabFilter === 'attendee' || currentAdminTabFilter === 'all') {
+        const nameTd = document.createElement("td"); 
+        nameTd.innerHTML = `<strong>${row.full_name || '—'}</strong><br/><span style="font-size:0.75rem; color:var(--text-soft);">${row.email || '—'}</span>`;
+        const typeTd = document.createElement("td"); typeTd.textContent = row.participant_type.toUpperCase();
+        const pkgTd = document.createElement("td"); pkgTd.textContent = row.package ? row.package.split(" — ")[0] : "Standard";
+        const countryTd = document.createElement("td"); countryTd.textContent = row.country || "—";
+        const galaTd = document.createElement("td"); galaTd.textContent = row.gala_dinner ? "Yes" : "No";
+        const boothTd = document.createElement("td"); boothTd.textContent = row.booth_number || "—";
+        
+        const statusTd = document.createElement("td");
+        const select = document.createElement("select");
+        select.className = "status-select";
+        ['pending', 'confirmed', 'cancelled'].forEach(s => {
+          const opt = document.createElement("option"); opt.value = s; opt.textContent = s.toUpperCase();
+          if (row.status === s) opt.selected = true;
+          select.appendChild(opt);
+        });
+        select.addEventListener("change", async (e) => {
+          const nextStatus = e.target.value;
+          try {
+            const { error } = await supabaseClient.from("registrations").update({ status: nextStatus }).eq("id", row.id);
+            if (error) throw error;
+            alert(`Status for ${row.full_name || 'user'} updated to ${nextStatus.toUpperCase()}`);
+            await loadAdminDashboard();
+            if (row.user_id === currentSession.user.id) { await refreshUserProfile(); }
+          } catch (err) { alert(`Status update failed: ${err.message || "Write error"}`); }
+        });
+        statusTd.appendChild(select);
+
+        tr.append(nameTd, typeTd, pkgTd, countryTd, galaTd, boothTd, statusTd, actionTd);
+      } else if (currentAdminTabFilter === 'stakeholder') {
+        const orgTd = document.createElement("td"); orgTd.textContent = row.organization || "—";
+        const nameTd = document.createElement("td"); nameTd.textContent = row.full_name || "—";
+        const titleTd = document.createElement("td"); titleTd.textContent = row.job_title || "—";
+        const emailTd = document.createElement("td"); emailTd.textContent = row.email || "—";
+        const phoneTd = document.createElement("td"); phoneTd.textContent = row.phone || "—";
+        const indTd = document.createElement("td"); indTd.textContent = row.industry_affiliate || "—";
+        tr.append(orgTd, nameTd, titleTd, emailTd, phoneTd, indTd, actionTd);
+      } else if (currentAdminTabFilter === 'implementor' || currentAdminTabFilter === 'volunteer') {
+        const nameOrgTd = document.createElement("td"); nameOrgTd.textContent = row.full_name || row.organization || "—";
+        tr.append(nameOrgTd, actionTd);
+      } else if (currentAdminTabFilter === 'call_list') {
+        const nameTd = document.createElement("td"); nameTd.textContent = row.full_name || row.job_title || "—";
+        tr.append(nameTd, actionTd);
+      } else {
+        const nameTd = document.createElement("td"); nameTd.textContent = row.full_name || "—";
+        const orgTd = document.createElement("td"); orgTd.textContent = row.organization || "—";
+        const titleTd = document.createElement("td"); titleTd.textContent = row.job_title || "—";
+        const emailTd = document.createElement("td"); emailTd.textContent = row.email || "—";
+        const phoneTd = document.createElement("td"); phoneTd.textContent = row.phone || "—";
+        tr.append(nameTd, orgTd, titleTd, emailTd, phoneTd, actionTd);
+      }
+      
+      tbody.appendChild(tr);
+    });
+  }
+
+  // CRM Modal Logic
+  const adminCrmModal = document.getElementById("adminCrmModal");
+  const adminCrmForm = document.getElementById("adminCrmForm");
+  
+  function openAdminCrmModal(row = null) {
+    if (row) {
+      document.getElementById("crmId").value = row.id;
+      document.getElementById("crmFullName").value = row.full_name || "";
+      document.getElementById("crmEmail").value = row.email || "";
+      document.getElementById("crmPhone").value = row.phone || "";
+      document.getElementById("crmOrganization").value = row.organization || "";
+      document.getElementById("crmCountry").value = row.country || "";
+      document.getElementById("crmParticipantType").value = row.participant_type || "attendee";
+      document.getElementById("crmJobTitle").value = row.job_title || "";
+      document.getElementById("crmIndustryAffiliate").value = row.industry_affiliate || "";
+      document.getElementById("crmInvitationStatus").value = row.invitation_status || "";
+      document.getElementById("crmInvitationSentBy").value = row.invitation_sent_by || "";
+      document.getElementById("crmAttendanceStatus").value = row.attendance_status || "";
+      document.getElementById("crmSuppliesProvided").value = row.supplies_provided || "";
+      document.getElementById("crmContactPerson").value = row.contact_person || "";
+      document.getElementById("crmStatus").value = row.status || "pending";
+    } else {
+      adminCrmForm.reset();
+      document.getElementById("crmId").value = "";
+      document.getElementById("crmParticipantType").value = "attendee";
+      document.getElementById("crmStatus").value = "pending";
+    }
+    
+    adminCrmModal.classList.add("active");
+  }
+
+  document.getElementById("newRecordBtn").addEventListener("click", () => openAdminCrmModal(null));
+  document.getElementById("closeAdminCrmModal").addEventListener("click", () => adminCrmModal.classList.remove("active"));
+  document.getElementById("cancelCrmBtn").addEventListener("click", () => adminCrmModal.classList.remove("active"));
+
+  adminCrmForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const id = document.getElementById("crmId").value;
+    
+    const payload = {
+      full_name: document.getElementById("crmFullName").value,
+      email: document.getElementById("crmEmail").value,
+      phone: document.getElementById("crmPhone").value,
+      organization: document.getElementById("crmOrganization").value,
+      country: document.getElementById("crmCountry").value,
+      participant_type: document.getElementById("crmParticipantType").value,
+      job_title: document.getElementById("crmJobTitle").value,
+      industry_affiliate: document.getElementById("crmIndustryAffiliate").value,
+      invitation_status: document.getElementById("crmInvitationStatus").value,
+      invitation_sent_by: document.getElementById("crmInvitationSentBy").value,
+      attendance_status: document.getElementById("crmAttendanceStatus").value,
+      supplies_provided: document.getElementById("crmSuppliesProvided").value,
+      contact_person: document.getElementById("crmContactPerson").value,
+      status: document.getElementById("crmStatus").value,
+    };
+
+    try {
+      let result;
+      if (id) {
+        result = await supabaseClient.from("registrations").update(payload).eq("id", id);
+      } else {
+        result = await supabaseClient.from("registrations").insert([payload]);
+      }
+      
+      if (result.error) throw result.error;
+      alert("Record saved successfully.");
+      adminCrmModal.classList.remove("active");
+      await loadAdminDashboard();
+    } catch (err) {
+      alert(`Save failed: ${err.message}`);
+    }
+  });
+
+  // Export CSV Helper
+  document.getElementById("exportCsvBtn").addEventListener("click", () => {
+    if (allRegistrationsCache.length === 0) return;
+    
+    let csv = "Full Name,Job Title,Email,Phone,Organization,Country,Participant Type,Package,Gala Dinner,Mine Tour,Booth,Status,Industry Affiliate,Invitation Status,Invitation Sent By,Attendance Status,Supplies Provided,Contact Person,Created At\n";
+    allRegistrationsCache.forEach(r => {
+      csv += `"${r.full_name}","${r.job_title || ''}","${r.email}","${r.phone || ''}","${r.organization || ''}","${r.country || ''}","${r.participant_type}","${r.package || ''}","${r.gala_dinner ? 'YES' : 'NO'}","${r.addon_mine_tour ? 'YES' : 'NO'}","${r.booth_number || ''}","${r.status}","${r.industry_affiliate || ''}","${r.invitation_status || ''}","${r.invitation_sent_by || ''}","${r.attendance_status || ''}","${r.supplies_provided || ''}","${r.contact_person || ''}","${r.created_at}"\n`;
+    });
+
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.setAttribute("download", "Turkana_Gold_Summit_2026_Registrations.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
+
+  /* --------------------------------------------------------------------------
+     Receipt & Invoice View Modal populate
+     -------------------------------------------------------------------------- */
+  document.getElementById("viewInvoiceBtn").addEventListener("click", () => {
+    const profile = currentUserProfile;
+    document.getElementById("invNo").textContent = profile.id.substring(0, 4).toUpperCase();
+    
+    const now = new Date(profile.created_at);
+    document.getElementById("invDate").textContent = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById("invBilledTo").innerHTML = `
+      <strong>${profile.full_name}</strong><br/>
+      Organization: ${profile.organization || "—"}<br/>
+      Email: ${profile.email}<br/>
+      Country: ${profile.country || "—"}
+    `;
+
+    const detailsBody = document.getElementById("invoiceDetailsBody");
+    detailsBody.innerHTML = "";
+
+    const baseCost = getBasePrice(profile.package);
+    
+    // Add Base Package Line
+    let html = `
+      <tr>
+        <td>Base Registration Pass (${profile.package || 'Standard'})</td>
+        <td>1</td>
+        <td style="text-align: right;">KES ${baseCost.toLocaleString()}</td>
+        <td style="text-align: right;">KES ${baseCost.toLocaleString()}</td>
+      </tr>
+    `;
+
+    // Add Gala Dinner if checked
+    let galaCost = 0;
+    if (profile.gala_dinner) {
+      galaCost = 2500;
+      html += `
+        <tr>
+          <td>Gala Networking Dinner Pass Add-on</td>
+          <td>1</td>
+          <td style="text-align: right;">KES 2,500</td>
+          <td style="text-align: right;">KES 2,500</td>
+        </tr>
+      `;
+    }
+
+    // Add Mine Tour if checked
+    let tourCost = 0;
+    if (profile.addon_mine_tour) {
+      tourCost = 5000;
+      html += `
+        <tr>
+          <td>Artisanal Mining Field Study Tour Slot</td>
+          <td>1</td>
+          <td style="text-align: right;">KES 5,000</td>
+          <td style="text-align: right;">KES 5,000</td>
+        </tr>
+      `;
+    }
+
+    // Add Additional Representatives
+    let extraCost = 0;
+    if (profile.additional_passes > 0) {
+      extraCost = profile.additional_passes * 1500;
+      html += `
+        <tr>
+          <td>Extra Delegation Representative Entry passes</td>
+          <td>${profile.additional_passes}</td>
+          <td style="text-align: right;">KES 1,500</td>
+          <td style="text-align: right;">KES ${extraCost.toLocaleString()}</td>
+        </tr>
+      `;
+    }
+
+    detailsBody.innerHTML = html;
+    
+    const grandTotal = baseCost + galaCost + tourCost + extraCost;
+    document.getElementById("invTotalFee").textContent = `KES ${grandTotal.toLocaleString()}`;
+
+    // Open Modal
+    document.getElementById("invoiceModal").classList.add("active");
+  });
+
+  document.getElementById("closeInvoiceModal").addEventListener("click", () => {
+    document.getElementById("invoiceModal").classList.remove("active");
+  });
+</script>
+</body>
+</html>

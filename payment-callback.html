@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Confirming Payment — Turkana Gold Summit & Minerals Expo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root { --navy-900:#0b1f3a; --orange:#f26522; --off-white:#f7f8fb; --text-soft:#4b5568; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; background:var(--off-white); }
+  .box { text-align:center; padding: 40px; }
+  h1 { font-family:'Poppins',sans-serif; color:var(--navy-900); font-size:1.4rem; margin-bottom:10px; }
+  p { color: var(--text-soft); }
+  .spinner { width:36px; height:36px; border:4px solid #e2e6ee; border-top-color: var(--orange); border-radius:50%; margin:0 auto 20px; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="spinner"></div>
+    <h1 id="statusTitle">Confirming your payment…</h1>
+    <p id="statusMsg">Please don't close this page.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-config.js"></script>
+  <script>
+    (async function () {
+      const params = new URLSearchParams(window.location.search);
+      const reference = params.get("reference") || params.get("trxref");
+      const titleEl = document.getElementById("statusTitle");
+      const msgEl = document.getElementById("statusMsg");
+
+      const session = await requireAuth();
+      if (!session) return;
+
+      if (!reference) {
+        titleEl.textContent = "Missing payment reference";
+        msgEl.textContent = "Please return to your dashboard and try again.";
+        return;
+      }
+
+      try {
+        const { data, error } = await supabaseClient.functions.invoke("paystack-verify", {
+          body: { reference }
+        });
+        if (error) throw error;
+
+        if (data.status === "success") {
+          titleEl.textContent = "Payment confirmed!";
+          msgEl.textContent = "Redirecting you to your dashboard…";
+        } else {
+          titleEl.textContent = "Payment not confirmed";
+          msgEl.textContent = "If you completed the payment, this can take a minute. Redirecting to your dashboard…";
+        }
+      } catch (err) {
+        titleEl.textContent = "Couldn't confirm payment";
+        msgEl.textContent = "Redirecting to your dashboard — check your status there.";
+      } finally {
+        setTimeout(() => { window.location.href = "dashboard.html"; }, 2200);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -346,7 +346,7 @@ p  { margin: 0 0 1em; color: var(--text-soft); }
 
 /* About */
 .about-image img {
-  border-radius: var(--radius);
+  border-radius: 32px;
   box-shadow: var(--shadow-lg);
   aspect-ratio: 4/3;
   object-fit: cover;

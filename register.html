@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Register — Turkana Gold Summit & Minerals Expo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --navy-900: #0b1f3a; --navy-800: #102a4c; --navy-700: #163560;
+  --orange: #f26522; --orange-600: #d9541a;
+  --white: #ffffff; --off-white: #f7f8fb; --muted: #eef1f6;
+  --text: #1c2536; --text-soft: #4b5568; --border: #e2e6ee;
+  --radius: 10px;
+  --shadow-sm: 0 4px 12px rgba(11,31,58,.06);
+  --shadow-md: 0 12px 30px rgba(11,31,58,.10);
+  --shadow-lg: 0 24px 50px rgba(11,31,58,.14);
+  --font-head: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin:0; font-family: var(--font-body); color: var(--text); background: var(--off-white); line-height:1.6; }
+h1,h2,h3,h4 { font-family: var(--font-head); color: var(--navy-900); margin:0 0 .5em; font-weight:700; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(900px, 92%); margin: 0 auto; }
+
+/* ---------- HEADER ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow .2s ease;
+}
+.site-header.scrolled { box-shadow: var(--shadow-sm); }
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0;
+  gap: 24px;
+  width: min(1300px, 94%);
+  margin: 0 auto;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo { display: flex; align-items: center; }
+.logo img { 
+  height: 75px; 
+  width: auto; 
+  transition: transform 0.2s ease; 
+}
+.logo img:hover { transform: scale(1.05); }
+.logo-divider {
+  width: 1px;
+  height: 45px;
+  background: var(--border);
+}
+.partner-carousel {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.partner-carousel .partner-logo {
+  position: absolute;
+  max-height: 42px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, filter 0.2s ease;
+  pointer-events: none;
+  filter: grayscale(0%);
+}
+.partner-carousel .partner-logo.active {
+  opacity: 0.75;
+  pointer-events: auto;
+}
+.partner-carousel .partner-logo:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.main-nav { 
+  display: flex; 
+  gap: 22px;
+  white-space: nowrap;
+}
+.main-nav a {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: .92rem;
+  color: var(--navy-900);
+  position: relative;
+  padding: 6px 0;
+  white-space: nowrap;
+}
+.main-nav a::after {
+  content: ''; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 2px; background: var(--orange);
+  transition: width .25s;
+}
+.main-nav a:hover::after { width: 100%; }
+
+.nav-actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  white-space: nowrap;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.menu-toggle span {
+  width: 24px; height: 2px; background: var(--navy-900); border-radius: 2px;
+  transition: transform .2s, opacity .2s;
+}
+.btn-outline { background: transparent; color: var(--navy-900); border-color: var(--navy-900); }
+.btn-outline:hover { background: var(--navy-900); color: #fff; }
+.site-header .btn {
+  width: auto;
+  display: inline-flex;
+}
+
+.page-hero {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
+  color:#fff; padding: 56px 0 40px; text-align:center;
+}
+.page-hero h1 { color:#fff; font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+.page-hero p { color: rgba(255,255,255,.8); max-width:600px; margin: 0 auto; }
+
+.reg-wrap { padding: 48px 0 80px; }
+.type-tabs { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom: 36px; }
+.type-tab {
+  background:#fff; border:2px solid var(--border); border-radius: var(--radius);
+  padding: 20px 16px; text-align:center; cursor:pointer;
+  font-family: var(--font-head); font-weight:600; color: var(--navy-900);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.type-tab:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.type-tab.active { border-color: var(--orange); background: #fff7f2; color: var(--orange); box-shadow: var(--shadow-md); }
+.type-tab small { display:block; font-weight:400; color: var(--text-soft); font-size:.78rem; margin-top:4px; }
+.type-tab.active small { color: var(--orange-600); }
+
+form.reg-form { background:#fff; border:1px solid var(--border); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-sm); }
+.form-section-title { font-family: var(--font-head); font-weight:700; color: var(--navy-900); font-size:1rem; margin: 0 0 16px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.form-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; }
+.form-grid.single { grid-template-columns: 1fr; }
+.field { display:flex; flex-direction:column; gap:6px; }
+.field.full { grid-column: 1 / -1; }
+label { font-family: var(--font-head); font-weight:600; font-size:.85rem; color: var(--navy-900); }
+input, select, textarea {
+  font-family: var(--font-body); font-size: .95rem; padding: 11px 14px;
+  border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+  background: #fff; outline: none; transition: border-color .2s;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--orange); }
+
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.password-input-wrap input {
+  width: 100%;
+  padding-right: 46px;
+}
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+.password-toggle-btn:hover {
+  color: var(--orange);
+}
+.password-toggle-btn svg {
+  display: block;
+}
+.checkbox-row { display:flex; align-items:center; gap:10px; }
+.checkbox-row input { width:auto; }
+.checkbox-row label { font-weight:500; }
+
+.type-fields { display:none; }
+.type-fields.active { display:block; }
+
+.hint { font-size:.8rem; color: var(--text-soft); margin-top: -10px; margin-bottom: 20px; }
+
+.btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 28px; border-radius:999px; font-family: var(--font-head); font-weight:600; font-size:.95rem; border:2px solid transparent; cursor:pointer; transition: all .2s ease; }
+.btn-primary { background: var(--orange); color:#fff; width:100%; }
+.btn-primary:hover { background: var(--orange-600); }
+.btn-primary:disabled { opacity:.6; cursor:not-allowed; }
+
+.form-msg { display:none; padding: 12px 16px; border-radius:8px; font-size:.88rem; margin-bottom: 18px; }
+.form-msg-error { display:block; background:#fdecea; color:#a83226; border:1px solid #f5c6c1; }
+.form-msg-success { display:block; background:#e9f7ee; color:#1d7a41; border:1px solid #bfe7cc; }
+
+.login-note { text-align:center; margin-top:22px; color: var(--text-soft); font-size:.9rem; }
+.login-note a { color: var(--orange); font-weight:600; }
+
+@media (max-width: 1024px) {
+  .main-nav {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    display: none;
+  }
+  .main-nav.open { display: flex; }
+  .menu-toggle { display: flex; }
+  .logo-divider, .partner-carousel { display: none; }
+}
+@media (max-width: 720px) {
+  .type-tabs, .form-grid { grid-template-columns: 1fr; }
+  form.reg-form { padding: 26px 20px; }
+}
+@media (max-width: 600px) {
+  .nav-actions .btn { padding: 10px 18px; font-size: .85rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <div class="logo-wrap">
+      <a href="index.html" class="logo" aria-label="Turkana Gold Summit Home">
+        <img src="public/images/turkana_gold_summit&minerals_expo.png" alt="Turkana Gold Summit Logo" class="summit-logo-img" onerror="this.style.display='none'" />
+      </a>
+      <div class="logo-divider"></div>
+      <div class="partner-carousel" id="navPartnerCarousel" aria-label="Strategic Partners">
+        <img src="public/images/solidaridad.png" alt="Solidaridad" class="partner-logo active" />
+        <img src="public/images/kenya_oil_gas.png" alt="Kenya Oil and Gas Working Group" class="partner-logo" />
+        <img src="public/images/geomine.png" alt="Geomine Consulting Limited" class="partner-logo" />
+        <img src="public/images/mesk.png" alt="Mining Engineers Society of Kenya" class="partner-logo" />
+        <img src="public/images/kenya_chamber_mines.png" alt="Kenya Chamber of Mines" class="partner-logo" />
+        <img src="public/images/turkana_county_govt.png" alt="Turkana County Government" class="partner-logo" />
+        <img src="public/images/tcam.png" alt="Turkana County ASM Association" class="partner-logo" />
+        <img src="public/images/the_impact_facility.png" alt="The Impact Facility" class="partner-logo" />
+      </div>
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#why-attend">Why Attend</a>
+      <a href="index.html#objectives">Objectives</a>
+      <a href="index.html#pricing">Packages</a>
+      <a href="index.html#agenda">Agenda</a>
+      <a href="index.html#speakers">Speakers</a>
+      <a href="index.html#venue">Venue</a>
+      <a href="index.html#sponsors">Sponsors</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline">Log In</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Register for the Summit</h1>
+    <p>Create your account once — it doubles as your delegate profile and login for the event dashboard.</p>
+  </div>
+</section>
+
+<section class="reg-wrap">
+  <div class="container">
+
+    <div class="type-tabs" id="typeTabs">
+      <div class="type-tab" data-type="attendee">Attendee<small>Conference &amp; exhibition access</small></div>
+      <div class="type-tab" data-type="sponsor">Sponsor<small>Brand &amp; speaking packages</small></div>
+      <div class="type-tab" data-type="exhibitor">Exhibitor<small>Booth &amp; showcase space</small></div>
+    </div>
+
+    <form class="reg-form" id="regForm" novalidate>
+      <div id="formMsg" class="form-msg"></div>
+
+      <div class="form-section-title">Your details</div>
+      <div class="form-grid">
+        <div class="field"><label for="fullName">Full name *</label><input type="text" id="fullName" required /></div>
+        <div class="field"><label for="jobTitle">Job Title</label><input type="text" id="jobTitle" placeholder="e.g. Director, Engineer..." /></div>
+        <div class="field"><label for="email">Email address *</label><input type="email" id="email" required /></div>
+        <div class="field"><label for="phone">Phone number *</label><input type="tel" id="phone" required /></div>
+        <div class="field"><label for="organization">Organization / Company *</label><input type="text" id="organization" required /></div>
+        <div class="field">
+          <label for="country">Country *</label>
+          <select id="country" required>
+            <option value="" disabled>Select Country *</option>
+            <option value="Kenya" selected>Kenya</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Burundi">Burundi</option>
+            <option value="South Sudan">South Sudan</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Somalia">Somalia</option>
+            <option value="Djibouti">Djibouti</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Sudan">Sudan</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Egypt">Egypt</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Angola">Angola</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+            <option value="Ivory Coast">Ivory Coast</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Malawi">Malawi</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Botswana">Botswana</option>
+            <option value="Namibia">Namibia</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Italy">Italy</option>
+            <option value="Spain">Spain</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="China">China</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="South Korea">South Korea</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="representatives">Number of representatives</label><input type="number" id="representatives" min="1" value="1" /></div>
+      </div>
+
+      <!-- ATTENDEE-SPECIFIC -->
+      <div class="type-fields" data-for="attendee">
+        <div class="form-section-title">Attendee package</div>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="attendeePackage">Choose a pass</label>
+            <select id="attendeePackage">
+              <option value="Standard Participant Pass — Ksh 1,500">Standard Participant Pass — Ksh 1,500</option>
+              <option value="Cooperative Mining Package — Ksh 5,000 (up to 4 pax)">Cooperative Mining Package — Ksh 5,000 (up to 4 pax)</option>
+            </select>
+          </div>
+        </div>
+        <div class="checkbox-row" style="margin-bottom:22px;">
+          <input type="checkbox" id="galaDinner" />
+          <label for="galaDinner">Add Gala Dinner Pass — Ksh 2,500</label>
+        </div>
+      </div>
+
+      <!-- SPONSOR-SPECIFIC -->
+      <div class="type-fields" data-for="sponsor">
+        <div class="form-section-title">Sponsorship tier</div>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="sponsorTier">Choose a tier</label>
+            <select id="sponsorTier">
+              <option value="Gold Sponsor — USD 40,000">Gold Sponsor — USD 40,000</option>
+              <option value="Silver Sponsor — USD 25,000">Silver Sponsor — USD 25,000</option>
+              <option value="Copper Sponsor — USD 10,000">Copper Sponsor — USD 10,000</option>
+              <option value="Bronze Sponsor — USD 5,000">Bronze Sponsor — USD 5,000</option>
+            </select>
+          </div>
+          <div class="field full"><label for="sponsorWebsite">Company website</label><input type="url" id="sponsorWebsite" placeholder="https://" /></div>
+        </div>
+      </div>
+
+      <!-- EXHIBITOR-SPECIFIC -->
+      <div class="type-fields" data-for="exhibitor">
+        <div class="form-section-title">Exhibition package</div>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="exhibitorTier">Choose a package</label>
+            <select id="exhibitorTier">
+              <option value="Tier 1 Exhibitor — KES 50,000">Tier 1 Exhibitor — KES 50,000</option>
+              <option value="Standard Exhibitor — KES 30,000">Standard Exhibitor — KES 30,000</option>
+              <option value="International Exhibitor — USD 750">International Exhibitor — USD 750</option>
+            </select>
+          </div>
+          <div class="field full"><label for="exhibitorNotes">Booth / equipment notes</label><textarea id="exhibitorNotes" rows="3" placeholder="Power requirements, space needs, equipment on display, etc."></textarea></div>
+        </div>
+      </div>
+
+      <div class="form-section-title">Create your login</div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="password">Password *</label>
+          <div class="password-input-wrap">
+            <input type="password" id="password" required minlength="8" />
+            <button type="button" class="password-toggle-btn" aria-label="Show password">
+              <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <svg class="eye-off-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="display: none;">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="confirmPassword">Confirm password *</label>
+          <div class="password-input-wrap">
+            <input type="password" id="confirmPassword" required minlength="8" />
+            <button type="button" class="password-toggle-btn" aria-label="Show password">
+              <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <svg class="eye-off-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="display: none;">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="hint">Minimum 8 characters. You'll use this email and password to log in and reach your dashboard.</p>
+
+      <button type="submit" class="btn btn-primary" id="submitBtn">Create Account &amp; Register</button>
+
+      <p class="login-note">Already have an account? <a href="login.html">Log in here</a></p>
+    </form>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth-config.js"></script>
+<script>
+  // Sticky header shadow
+  const siteHeader = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) siteHeader.classList.add('scrolled');
+    else siteHeader.classList.remove('scrolled');
+  });
+
+  // Mobile nav toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle?.addEventListener('click', () => mainNav.classList.toggle('open'));
+  mainNav?.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => mainNav.classList.remove('open'))
+  );
+
+  // Navbar partner carousel
+  const navLogos = document.querySelectorAll('#navPartnerCarousel .partner-logo');
+  let currentNavLogo = 0;
+  if (navLogos.length > 0) {
+    setInterval(() => {
+      navLogos[currentNavLogo].classList.remove('active');
+      currentNavLogo = (currentNavLogo + 1) % navLogos.length;
+      navLogos[currentNavLogo].classList.add('active');
+    }, 3000);
+  }
+
+  let selectedType = "attendee";
+  const tabs = document.querySelectorAll(".type-tab");
+  const typeFieldBlocks = document.querySelectorAll(".type-fields");
+
+  function setType(type) {
+    selectedType = type;
+    tabs.forEach(t => t.classList.toggle("active", t.dataset.type === type));
+    typeFieldBlocks.forEach(b => b.classList.toggle("active", b.dataset.for === type));
+  }
+  tabs.forEach(t => t.addEventListener("click", () => setType(t.dataset.type)));
+
+  // Preselect type from ?type=sponsor style links on the main site.
+  const params = new URLSearchParams(window.location.search);
+  setType(params.get("type") && ["attendee","sponsor","exhibitor"].includes(params.get("type")) ? params.get("type") : "attendee");
+
+  const form = document.getElementById("regForm");
+  const msg = document.getElementById("formMsg");
+  const submitBtn = document.getElementById("submitBtn");
+
+  function packageFor(type) {
+    if (type === "attendee") return document.getElementById("attendeePackage").value;
+    if (type === "sponsor") return document.getElementById("sponsorTier").value;
+    if (type === "exhibitor") return document.getElementById("exhibitorTier").value;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    setFormMessage(msg, "");
+
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    if (password !== confirmPassword) {
+      setFormMessage(msg, "Passwords do not match.");
+      return;
+    }
+    if (password.length < 8) {
+      setFormMessage(msg, "Password must be at least 8 characters.");
+      return;
+    }
+
+    const payload = {
+      full_name: document.getElementById("fullName").value.trim(),
+      job_title: document.getElementById("jobTitle").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      organization: document.getElementById("organization").value.trim(),
+      country: document.getElementById("country").value.trim(),
+      representatives: parseInt(document.getElementById("representatives").value, 10) || 1,
+      participant_type: selectedType,
+      package: packageFor(selectedType),
+      gala_dinner: selectedType === "attendee" ? document.getElementById("galaDinner").checked : false,
+      website: selectedType === "sponsor" ? document.getElementById("sponsorWebsite").value.trim() : null,
+      notes: selectedType === "exhibitor" ? document.getElementById("exhibitorNotes").value.trim() : null,
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Creating account…";
+
+    try {
+      // Create the auth user AND the registration row in one step: all the
+      // profile fields ride along as signup metadata, and a database trigger
+      // (handle_new_user, see schema.sql) writes the registrations row
+      // server-side. This works whether or not email confirmation is on.
+      const { data: signUpData, error: signUpError } = await supabaseClient.auth.signUp({
+        email: payload.email,
+        password: password,
+        options: { data: payload }
+      });
+      if (signUpError) throw signUpError;
+
+      // If email confirmation is OFF, signUp() already returns a live session → go straight to dashboard.
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session) {
+        window.location.href = "dashboard.html";
+      } else {
+        setFormMessage(msg, "Account created! Check your email to confirm it, then log in.", false);
+        form.reset();
+      }
+    } catch (err) {
+      setFormMessage(msg, err.message || "Something went wrong. Please try again.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Create Account & Register";
+    }
+  });
+
+  // Password visibility toggle
+  document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.closest('.password-input-wrap');
+      const input = wrap.querySelector('input');
+      const eyeIcon = btn.querySelector('.eye-icon');
+      const eyeOffIcon = btn.querySelector('.eye-off-icon');
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.setAttribute('aria-label', 'Hide password');
+        eyeIcon.style.display = 'none';
+        eyeOffIcon.style.display = 'block';
+      } else {
+        input.type = 'password';
+        btn.setAttribute('aria-label', 'Show password');
+        eyeIcon.style.display = 'block';
+        eyeOffIcon.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>
