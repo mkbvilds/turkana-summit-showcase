@@ -28,14 +28,18 @@ export function getBasePriceKES(pkg?: string | null): number {
 export interface AddonSelection {
   gala?: boolean;
   tour?: boolean;
+  galaTickets?: number;
+  tourTickets?: number;
   extraReps?: number;
 }
 
 // Total price in KES for a package + chosen add-ons.
 export function computeTotalKES(pkg: string | null | undefined, addons: AddonSelection | undefined): number {
   const base = getBasePriceKES(pkg);
-  const gala = addons?.gala ? ADDON_PRICES_KES.gala : 0;
-  const tour = addons?.tour ? ADDON_PRICES_KES.tour : 0;
+  const galaCount = addons?.galaTickets ?? (addons?.gala ? 1 : 0);
+  const tourCount = addons?.tourTickets ?? (addons?.tour ? 1 : 0);
+  const gala = galaCount * ADDON_PRICES_KES.gala;
+  const tour = tourCount * ADDON_PRICES_KES.tour;
   const reps = (addons?.extraReps || 0) * ADDON_PRICES_KES.extraRep;
   return Math.round(base + gala + tour + reps);
 }

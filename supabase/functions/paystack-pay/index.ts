@@ -43,13 +43,14 @@ serve(async (req: Request) => {
     const body = await req.json();
     const { addons, overrideCurrency } = body; 
     
+    // Fetch user's current registration to verify package
     const { data: reg, error: regError } = await supabaseClient
       .from('registrations')
       .select('*')
       .eq('user_id', user.id)
       .single();
 
-    if (regError || !reg) throw new Error('Registration not found');
+    if (regError || !reg) throw new Error(`Registration not found: ${regError?.message || 'No row returned'}`);
 
     const basePkg = getBasePkg(reg.package);
     
@@ -81,17 +82,27 @@ serve(async (req: Request) => {
       }
     }
 
-    const willHaveGala = addons?.gala || reg.gala_dinner;
-    const willHaveTour = addons?.tour || reg.addon_mine_tour;
+    const reqGalaTickets = Math.max(0, parseInt(addons?.galaTickets ?? (addons?.gala ? '1' : '0'), 10));
+    const reqTourTickets = Math.max(0, parseInt(addons?.tourTickets ?? (addons?.tour ? '1' : '0'), 10));
     const extraReps = Math.max(0, parseInt(addons?.extraReps || '0', 10));
+    
+    const currGalaTickets = reg.gala_tickets ?? (reg.gala_dinner ? 1 : 0);
+    const currTourTickets = reg.tour_tickets ?? (reg.addon_mine_tour ? 1 : 0);
+
+    const willHaveGala = reqGalaTickets > 0 || currGalaTickets > 0;
+    const willHaveTour = reqTourTickets > 0 || currTourTickets > 0;
 
     if (reg.status === 'pending') {
-      if (willHaveGala) amount += (2500 / conversionRate);
-      if (willHaveTour) amount += (5000 / conversionRate);
+      amount += (Math.max(reqGalaTickets, currGalaTickets) * 2500) / conversionRate;
+      amount += (Math.max(reqTourTickets, currTourTickets) * 5000) / conversionRate;
       amount += ((extraReps * 1500) / conversionRate);
     } else {
-      if (addons?.gala && !reg.gala_dinner) amount += (2500 / conversionRate);
-      if (addons?.tour && !reg.addon_mine_tour) amount += (5000 / conversionRate);
+      if (reqGalaTickets > currGalaTickets) {
+        amount += ((reqGalaTickets - currGalaTickets) * 2500) / conversionRate;
+      }
+      if (reqTourTickets > currTourTickets) {
+        amount += ((reqTourTickets - currTourTickets) * 5000) / conversionRate;
+      }
       if (extraReps > (reg.additional_passes || 0)) {
         amount += (((extraReps - (reg.additional_passes || 0)) * 1500) / conversionRate);
       }

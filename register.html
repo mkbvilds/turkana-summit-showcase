@@ -9,14 +9,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
 :root {
-  --navy-900: #0b1f3a; --navy-800: #102a4c; --navy-700: #163560;
-  --orange: #f26522; --orange-600: #d9541a;
-  --white: #ffffff; --off-white: #f7f8fb; --muted: #eef1f6;
-  --text: #1c2536; --text-soft: #4b5568; --border: #e2e6ee;
+  --navy-900: #0b2545; /* Deep Navy Blue */
+  --navy-800: #13315c; /* Navy Blue */
+  --navy-700: #1d4677; /* Slate Blue */
+  --orange:   #e63946; /* Bright Red */
+  --orange-600: #d62828; /* Darker Red */
+  --gold:     #dca743; /* Gold */
+  --gold-600: #c29136; /* Dark Gold */
+  --white: #ffffff;
+  --off-white: #faf9f6;
+  --muted: #f2eee8;
+  --text: #1b212c;
+  --text-soft: #505d73;
+  --border: #e2e6eb;
   --radius: 10px;
-  --shadow-sm: 0 4px 12px rgba(11,31,58,.06);
-  --shadow-md: 0 12px 30px rgba(11,31,58,.10);
-  --shadow-lg: 0 24px 50px rgba(11,31,58,.14);
+  --shadow-sm: 0 4px 12px rgba(11, 37, 69, 0.06);
+  --shadow-md: 0 12px 30px rgba(11, 37, 69, 0.10);
+  --shadow-lg: 0 24px 50px rgba(11, 37, 69, 0.14);
   --font-head: 'Poppins', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -368,6 +377,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
         </div>
         <div class="field"><label for="representatives">Number of representatives</label><input type="number" id="representatives" min="1" value="1" /></div>
       </div>
+      <div id="groupMembersContainer"></div>
 
       <!-- ATTENDEE-SPECIFIC -->
       <div class="type-fields" data-for="attendee">
@@ -518,6 +528,48 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
     if (type === "exhibitor") return document.getElementById("exhibitorTier").value;
   }
 
+  const groupMembersContainer = document.getElementById("groupMembersContainer");
+  const repsInput = document.getElementById("representatives");
+
+  function renderGroupMembers() {
+    const reps = parseInt(repsInput.value, 10) || 1;
+    groupMembersContainer.innerHTML = '';
+    if (reps > 1) {
+      const heading = document.createElement("div");
+      heading.className = "form-section-title";
+      heading.textContent = "Additional Attendees";
+      groupMembersContainer.appendChild(heading);
+
+      for (let i = 2; i <= reps; i++) {
+        const grid = document.createElement("div");
+        grid.className = "form-grid";
+        grid.style.marginBottom = "16px";
+        
+        grid.innerHTML = `
+          <div class="field">
+            <label>Member ${i} Name</label>
+            <input type="text" id="member_${i}_name" required />
+          </div>
+          <div class="field">
+            <label>Member ${i} Email</label>
+            <input type="email" id="member_${i}_email" />
+          </div>
+          <div class="field">
+            <label>Member ${i} Phone</label>
+            <input type="tel" id="member_${i}_phone" />
+          </div>
+          <div class="field">
+            <label>Member ${i} Job Title</label>
+            <input type="text" id="member_${i}_title" />
+          </div>
+        `;
+        groupMembersContainer.appendChild(grid);
+      }
+    }
+  }
+
+  repsInput.addEventListener("input", renderGroupMembers);
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     setFormMessage(msg, "");
@@ -547,6 +599,22 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
       website: selectedType === "sponsor" ? document.getElementById("sponsorWebsite").value.trim() : null,
       notes: selectedType === "exhibitor" ? document.getElementById("exhibitorNotes").value.trim() : null,
     };
+
+    const groupMembers = [];
+    if (payload.representatives > 1) {
+      for (let i = 2; i <= payload.representatives; i++) {
+        const nameEl = document.getElementById(`member_${i}_name`);
+        if (nameEl) {
+          groupMembers.push({
+            full_name: nameEl.value.trim(),
+            email: document.getElementById(`member_${i}_email`).value.trim(),
+            phone: document.getElementById(`member_${i}_phone`).value.trim(),
+            job_title: document.getElementById(`member_${i}_title`).value.trim(),
+          });
+        }
+      }
+    }
+    payload.group_members = groupMembers;
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Creating account…";

@@ -9,21 +9,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root {
-  --navy-900: #0b1f3a;
-  --navy-800: #102a4c;
-  --navy-700: #163560;
-  --orange: #f26522;
-  --orange-600: #d9541a;
+  --navy-900: #0b2545; /* Deep Navy Blue */
+  --navy-800: #13315c; /* Navy Blue */
+  --navy-700: #1d4677; /* Slate Blue */
+  --orange:   #e63946; /* Bright Red */
+  --orange-600: #d62828; /* Darker Red */
+  --gold:     #dca743; /* Gold */
+  --gold-600: #c29136; /* Dark Gold */
   --white: #ffffff;
-  --off-white: #f7f8fb;
-  --muted: #eef1f6;
-  --text: #1c2536;
-  --text-soft: #4b5568;
-  --border: #e2e6ee;
-  --radius: 12px;
-  --shadow-sm: 0 4px 12px rgba(11, 31, 58, 0.06);
-  --shadow-md: 0 12px 30px rgba(11, 31, 58, 0.10);
-  --shadow-lg: 0 24px 50px rgba(11, 31, 58, 0.14);
+  --off-white: #faf9f6;
+  --muted: #f2eee8;
+  --text: #1b212c;
+  --text-soft: #505d73;
+  --border: #e2e6eb;
+  --radius: 10px;
+  --shadow-sm: 0 4px 12px rgba(11, 37, 69, 0.06);
+  --shadow-md: 0 12px 30px rgba(11, 37, 69, 0.10);
+  --shadow-lg: 0 24px 50px rgba(11, 37, 69, 0.14);
   --font-head: 'Poppins', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --success: #1d7a41;
@@ -345,19 +347,19 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
 /* Button general */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 11px 22px;
+  padding: 12px 26px;
   border-radius: 999px;
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: .88rem;
+  font-size: .95rem;
   border: 2px solid transparent;
   cursor: pointer;
   transition: all .2s ease;
   white-space: nowrap;
 }
 .btn-primary { background: var(--orange); color: #fff; }
-.btn-primary:hover { background: var(--orange-600); transform: translateY(-1px); }
-.btn-primary:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.btn-primary:hover { background: var(--orange-600); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-primary:disabled { opacity: 0.65; cursor: not-allowed; transform: none; box-shadow: none; }
 .btn-outline { background: transparent; color: var(--navy-900); border-color: var(--navy-900); }
 .btn-outline:hover { background: var(--navy-900); color: #fff; }
 .btn-sm { padding: 6px 14px; font-size: 0.78rem; }
@@ -658,14 +660,14 @@ select.status-select:focus { border-color: var(--orange); }
 /* Payment Methods tabs */
 .pay-methods {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   margin-bottom: 20px;
 }
 .pay-method-btn {
   border: 2px solid var(--border);
   border-radius: 8px;
-  padding: 12px;
+  padding: 10px 12px;
   text-align: center;
   cursor: pointer;
   font-weight: 600;
@@ -679,6 +681,65 @@ select.status-select:focus { border-color: var(--orange); }
 }
 .pay-form-section { display: none; }
 .pay-form-section.active { display: block; }
+
+.manual-notice {
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 0.84rem;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.manual-notice strong { display: block; margin-bottom: 3px; color: #92400e; }
+
+.paybill-card {
+  background: var(--navy-900);
+  color: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+}
+.paybill-card .pb-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  margin-bottom: 2px;
+}
+.paybill-card .pb-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.paybill-card .pb-value.mono { font-family: monospace; font-size: 1.1rem; }
+.currency-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.currency-btn {
+  padding: 8px 4px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 0.15s;
+}
+.currency-btn.active {
+  border-color: var(--orange);
+  background: #fffaf0;
+  color: var(--orange-600);
+}
+
 
 .form-group {
   display: flex;
@@ -711,12 +772,26 @@ select.status-select:focus { border-color: var(--orange); }
 
 /* Printable invoice styles */
 @media print {
-  body * { visibility: hidden; }
-  #printableInvoice, #printableInvoice * { visibility: visible; }
-  #printableInvoice {
+  body.print-invoice * { visibility: hidden; }
+  body.print-invoice #printableInvoice, body.print-invoice #printableInvoice * { visibility: visible; }
+  body.print-invoice #printableInvoice {
     position: absolute;
     left: 0; top: 0; width: 100%;
     padding: 40px;
+  }
+
+  body.print-tickets * { visibility: hidden; }
+  body.print-tickets #ticketsContainer, body.print-tickets #ticketsContainer * { visibility: visible; }
+  body.print-tickets #ticketsContainer {
+    position: absolute;
+    left: 0; top: 0; width: 100%;
+    padding: 20px;
+  }
+  body.print-tickets .ticket-wrapper {
+    margin-bottom: 30px;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 .invoice-container {
@@ -770,6 +845,56 @@ select.status-select:focus { border-color: var(--orange); }
   max-width: 600px;
   font-family: var(--font-head);
 }
+
+/* ── Toast Notifications ─────────────────────────────────── */
+#toast-container {
+  position: fixed; top: 24px; right: 24px; z-index: 9999;
+  display: flex; flex-direction: column; gap: 10px; pointer-events: none;
+}
+.toast {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 18px; border-radius: 10px; background: #1e293b; color: #f1f5f9;
+  font-size: 0.875rem; box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  min-width: 280px; max-width: 380px; pointer-events: all;
+  animation: toastIn 0.25s ease; transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.toast.success { border-left: 4px solid #22c55e; }
+.toast.error   { border-left: 4px solid #ef4444; }
+.toast.info    { border-left: 4px solid #3b82f6; }
+.toast-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.toast-body strong { display: block; font-weight: 700; margin-bottom: 2px; color: #f1f5f9; }
+.toast-body span { color: #94a3b8; font-size: 0.82rem; line-height: 1.4; }
+.toast.hide { opacity: 0; transform: translateX(20px); }
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+/* ── Confirm Dialog ──────────────────────────────────────── */
+#confirmDialog {
+  position: fixed; inset: 0; z-index: 10000; background: rgba(0,0,0,0.45);
+  display: none; align-items: center; justify-content: center;
+}
+#confirmDialog.active { display: flex; }
+.confirm-card {
+  background: white; border-radius: 14px; padding: 32px 28px 24px;
+  max-width: 400px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.25); text-align: center;
+}
+.confirm-icon-wrap {
+  width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.confirm-icon-wrap.warn    { background: #fef3c7; }
+.confirm-icon-wrap.danger  { background: #fee2e2; }
+.confirm-icon-wrap.success { background: #dcfce7; }
+.confirm-card h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; color: var(--navy-900); }
+.confirm-card p  { font-size: 0.875rem; color: var(--text-soft); margin: 0 0 24px; line-height: 1.5; }
+.confirm-btns { display: flex; gap: 10px; justify-content: center; }
+.confirm-btns button { padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 0.875rem; cursor: pointer; border: none; transition: opacity 0.15s; }
+.confirm-btns button:hover { opacity: 0.88; }
+.confirm-btn-cancel  { background: #f1f5f9; color: #475569; }
+.confirm-btn-ok.warn    { background: #f59e0b; color: white; }
+.confirm-btn-ok.danger  { background: #ef4444; color: white; }
+.confirm-btn-ok.success { background: #22c55e; color: white; }
 </style>
 </head>
 <body>
@@ -814,7 +939,10 @@ select.status-select:focus { border-color: var(--orange); }
       <div class="tab-link active" data-tab="overview">Overview</div>
       <div class="tab-link" data-tab="addons">Add-ons &amp; Packages</div>
       <div class="tab-link" id="boothTab" style="display:none;" data-tab="booths">Exhibitor Booth Selector</div>
-      <div class="tab-link" id="adminTab" style="display:none;" data-tab="admin">⚙ Admin Panel</div>
+      <div class="tab-link" id="adminTab" style="display:none;" data-tab="admin">Admin Panel</div>
+      <div class="tab-link" id="financeTabBtn" style="display:none;" data-tab="finance">
+        Finance <span id="globalFinanceBadge" style="display:none; background:var(--orange); color:#fff; border-radius:10px; padding:2px 6px; font-size:0.7rem; margin-left:4px;">0</span>
+      </div>
     </div>
   </div>
 
@@ -855,36 +983,14 @@ select.status-select:focus { border-color: var(--orange); }
           </div>
         </div>
 
-        <div>
-          <!-- Digital Pass Ticket Widget -->
-          <div class="ticket-wrapper">
-            <div class="ticket-header">
-              <h4>Turkana Gold Summit 2026</h4>
-              <span>Delegate Expo Pass</span>
-            </div>
-            <div class="ticket-details">
-              <div>
-                <span>Delegate</span>
-                <strong id="ticketName">—</strong>
-              </div>
-              <div>
-                <span>Category</span>
-                <strong id="ticketType">—</strong>
-              </div>
-              <div>
-                <span>Company</span>
-                <strong id="ticketOrg">—</strong>
-              </div>
-              <div>
-                <span>Status</span>
-                <strong id="ticketStatus">—</strong>
-              </div>
-            </div>
-            <div class="barcode-area">
-              <div class="barcode-visual"></div>
-              <div class="barcode-text" id="ticketId">TGS-PENDING</div>
-            </div>
+        <div style="display: flex; flex-direction: column;">
+          <!-- Digital Pass Tickets Container -->
+          <div id="ticketsContainer">
+            <!-- Tickets injected via JS -->
           </div>
+          <button class="btn btn-outline btn-block" onclick="printTickets()" id="downloadTicketsBtn" style="display:none; margin-top: 12px;">
+            Download / Print All Passes
+          </button>
         </div>
       </div>
     </div>
@@ -902,9 +1008,9 @@ select.status-select:focus { border-color: var(--orange); }
               <p>Entry to the premium Gold Summit networking Gala dinner event.</p>
             </div>
             <div style="display: flex; align-items: center;">
-              <span class="addon-price">KES 2,500</span>
+              <span class="addon-price">KES 2,500 each</span>
               <div class="addon-control">
-                <input type="checkbox" id="addonGala" />
+                <input type="number" id="addonGala" min="0" value="0" />
               </div>
             </div>
           </div>
@@ -915,9 +1021,9 @@ select.status-select:focus { border-color: var(--orange); }
               <p>Guided physical study tour of selected Artisanal and Small-Scale Gold Mining (ASGM) sites in Turkana.</p>
             </div>
             <div style="display: flex; align-items: center;">
-              <span class="addon-price">KES 5,000</span>
+              <span class="addon-price">KES 5,000 each</span>
               <div class="addon-control">
-                <input type="checkbox" id="addonTour" />
+                <input type="number" id="addonTour" min="0" value="0" />
               </div>
             </div>
           </div>
@@ -933,6 +1039,17 @@ select.status-select:focus { border-color: var(--orange); }
                 <input type="number" id="addonExtraReps" min="0" value="0" />
               </div>
             </div>
+          </div>
+
+          <div class="addon-row" style="flex-direction: column; align-items: flex-start; display: none;" id="extraPassesFormsContainer">
+             <h4 style="margin-bottom: 12px; font-size: 0.95rem;">Extra Pass Details</h4>
+             <div id="extraPassesForms" style="width: 100%;"></div>
+          </div>
+
+          <div class="addon-row" style="flex-direction: column; align-items: flex-start; display: none;" id="allocationsContainer">
+             <h4 style="margin-bottom: 12px; font-size: 0.95rem;">Allocate Tickets to Delegates</h4>
+             <p style="font-size: 0.85rem; color: var(--text-soft); margin-bottom: 12px;">Assign your Gala Dinner and Mine Tour tickets to specific members of your delegation.</p>
+             <div id="allocationsForms" style="width: 100%;"></div>
           </div>
 
           <div class="payment-summary">
@@ -1056,9 +1173,103 @@ select.status-select:focus { border-color: var(--orange); }
           </table>
         </div>
       </div>
+
+      <!-- Pending Manual Payments Review Removed (Now in Finance Tab) -->
     </div>
   </div>
 </div>
+
+<!-- ============ TAB: FINANCE ============ -->
+<div id="financeTab" class="tab-content">
+  <div class="container dash-body">
+
+    <!-- Summary KPI Cards -->
+    <div class="admin-stats" style="margin-bottom:20px;">
+      <div class="stat-card">
+        <span>Total Payments Received</span>
+        <strong id="finTotalPayments">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Approved (Confirmed)</span>
+        <strong id="finApproved">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Pending Review</span>
+        <strong id="finPending">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Total Revenue Collected</span>
+        <strong id="finRevenue">KES 0</strong>
+      </div>
+    </div>
+
+    <!-- Event Headcount Breakdown -->
+    <div class="card" style="margin-bottom:20px;">
+      <div class="card-title" style="margin-bottom:16px;">Event Attendance Breakdown</div>
+      <div class="admin-stats">
+        <div class="stat-card">
+          <span>Gala Dinner</span>
+          <strong id="finGalaCount">0</strong>
+          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">seats booked</span>
+        </div>
+        <div class="stat-card">
+          <span>Mine Tour</span>
+          <strong id="finTourCount">0</strong>
+          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">seats booked</span>
+        </div>
+        <div class="stat-card">
+          <span>Extra Passes</span>
+          <strong id="finExtraCount">0</strong>
+          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">additional passes</span>
+        </div>
+        <div class="stat-card">
+          <span>Total Attendees</span>
+          <strong id="finTotalAttendees">0</strong>
+          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">confirmed only</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Payments Ledger -->
+    <div class="card">
+      <div class="card-title" style="margin-bottom:4px; display:flex; justify-content:space-between; align-items:center;">
+        <span>Payments Ledger</span>
+        <div style="display:flex; gap:8px;">
+          <select id="finStatusFilter" style="padding:6px 10px; border:1px solid var(--border); border-radius:6px; font-size:0.82rem;">
+            <option value="all">All Statuses</option>
+            <option value="pending">Pending</option>
+            <option value="success">Approved</option>
+            <option value="failed">Rejected</option>
+          </select>
+          <button class="btn btn-outline btn-sm" onclick="loadFinanceDashboard()">Refresh</button>
+        </div>
+      </div>
+      <p style="color:var(--text-soft); font-size:0.83rem; margin-bottom:16px;">All manual payment submissions. Each payment reference is unique — duplicates are rejected at the database level.</p>
+      <div class="table-wrapper">
+        <table class="admin-table" style="font-size:0.82rem;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Method</th>
+              <th>Currency</th>
+              <th>Amount</th>
+              <th>Reference</th>
+              <th>Add-ons Purchased</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="finPaymentsBody">
+            <tr><td colspan="9" style="text-align:center; color:var(--text-soft); padding:24px;">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 <!-- ============ MODAL: ADMIN CRM EDIT ============ -->
 <div class="modal-overlay" id="adminCrmModal">
@@ -1123,52 +1334,103 @@ select.status-select:focus { border-color: var(--orange); }
   </div>
 </div>
 
-<!-- ============ MODAL: SIMULATED PAYMENT ============ -->
+<!-- ============ MODAL: PAYMENT ============ -->
 <div class="modal-overlay" id="paymentModal">
-  <div class="modal-card">
+  <div class="modal-card" style="max-width: 520px;">
     <div class="modal-header">
-      <h3>Complete Event Checkout</h3>
+      <h3>Complete Registration Payment</h3>
       <button class="close-modal" id="closePaymentModal">&times;</button>
     </div>
     <div class="modal-body">
-      <div class="pay-methods">
-        <div class="pay-method-btn active" data-method="mpesa">M-Pesa Push</div>
-        <div class="pay-method-btn" data-method="card">Credit Card</div>
-      </div>
 
-      <!-- M-Pesa push form -->
-      <div class="pay-form-section active" id="payMpesaSection">
-        <div class="pay-instructions">
-          A payment prompt will be pushed automatically to your Safaricom mobile phone line. Check your handset for PIN entry.
-        </div>
-        <div class="form-group">
-          <label for="mpesaPhone">M-Pesa Phone Number</label>
-          <input type="tel" id="mpesaPhone" placeholder="e.g. 0712345678" />
-        </div>
-      </div>
-
-      <!-- Card form -->
-      <div class="pay-form-section" id="payCardSection">
-        <div class="pay-instructions">
-          You will be redirected securely to Paystack to complete your card payment. Please choose your preferred currency.
-        </div>
-        <div class="form-group">
-          <label for="cardCurrency">Payment Currency</label>
-          <select id="cardCurrency" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px;">
-            <option value="KES">Kenya Shillings (KES)</option>
-            <option value="USD">US Dollars (USD)</option>
-            <option value="EUR">Euros (EUR)</option>
-          </select>
-        </div>
-      </div>
-
-      <div style="border-top: 1px solid var(--border); padding-top: 18px; display: flex; justify-content: space-between; align-items: center;">
+      <!-- Notice -->
+      <div class="manual-notice">
         <div>
-          <span style="font-size:0.78rem; color: var(--text-soft); display: block;">Checkout Amount</span>
+          <strong>Note: Automated Payment Coming Soon</strong>
+          Automated processing is being configured. Please pay manually using the Paybill details below. Your registration will be confirmed by our admin team within 24 hours.
+        </div>
+      </div>
+
+      <!-- Payment method tabs -->
+      <div class="pay-methods">
+        <div class="pay-method-btn active" data-method="mpesa">M-Pesa Paybill</div>
+        <div class="pay-method-btn" data-method="card">Debit / Bank Card</div>
+      </div>
+
+      <!-- Currency Selector -->
+      <div style="margin-bottom: 16px;">
+        <label style="font-size:0.8rem; font-weight:600; color:var(--navy-900); margin-bottom:6px; display:block;">Payment Currency</label>
+        <div class="currency-selector">
+          <div class="currency-btn active" data-currency="KES">KES</div>
+          <div class="currency-btn" data-currency="USD">USD</div>
+          <div class="currency-btn" data-currency="EUR">EUR</div>
+        </div>
+      </div>
+
+      <!-- M-Pesa Section -->
+      <div class="pay-form-section active" id="payMpesaSection">
+        <div class="paybill-card">
+          <div>
+            <div class="pb-label">Paybill Number</div>
+            <div class="pb-value mono">522522</div>
+          </div>
+          <div>
+            <div class="pb-label">Account Number</div>
+            <div class="pb-value mono" id="mpesaAccountNo">1345650450</div>
+          </div>
+          <div style="grid-column: 1 / -1;">
+            <div class="pb-label">Steps</div>
+            <div style="font-size:0.8rem; opacity:0.85; margin-top:4px; line-height:1.7;">
+              M-Pesa &rarr; Lipa na M-Pesa &rarr; Pay Bill &rarr; Business No: <strong>522522</strong> &rarr; Account No: (above) &rarr; Amount &rarr; PIN &amp; Send
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mpesaPaymentRef">Transaction Code <span style="color:red;">*</span></label>
+          <input type="text" id="mpesaPaymentRef" placeholder="e.g. QEJ4X8ABCD" style="text-transform: uppercase; letter-spacing: 0.05em;" />
+          <span style="font-size:0.75rem; color:var(--text-soft);">The confirmation code from your M-Pesa SMS</span>
+        </div>
+
+      </div>
+
+      <!-- Debit / Bank Card Section -->
+      <div class="pay-form-section" id="payCardSection">
+        <div class="paybill-card">
+          <div>
+            <div class="pb-label">Paybill Number</div>
+            <div class="pb-value mono">522522</div>
+          </div>
+          <div>
+            <div class="pb-label">Account Number</div>
+            <div class="pb-value mono" id="cardAccountNo">1345650450</div>
+          </div>
+          <div style="grid-column: 1 / -1;">
+            <div class="pb-label">Accepted Methods</div>
+            <div style="font-size:0.8rem; opacity:0.85; margin-top:4px; line-height:1.5;">
+              Visa, Mastercard, or Bank Transfer via your bank's app, USSD, or branch using the Paybill and Account above.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cardPaymentRef">Transaction / Reference ID <span style="color:red;">*</span></label>
+          <input type="text" id="cardPaymentRef" placeholder="e.g. TXN-20260705-001" />
+          <span style="font-size:0.75rem; color:var(--text-soft);">The reference or confirmation number from your bank</span>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.78rem; color:var(--text-soft); border-top: 1px solid var(--border); padding-top: 12px; margin-bottom:16px; line-height:1.5;">
+        Once submitted, our admin team will verify your payment reference and confirm your registration. You will receive an email notification within 24 hours.
+      </p>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; gap:12px;">
+        <div>
+          <span style="font-size:0.78rem; color: var(--text-soft); display: block;">Amount to Pay</span>
           <strong id="checkoutTotalText" style="font-size: 1.1rem; color: var(--navy-900);">KES 0</strong>
         </div>
-        <button class="btn btn-primary" id="confirmCheckoutBtn">Complete Payment</button>
+        <button class="btn btn-primary" id="confirmCheckoutBtn" style="flex-shrink:0;">Submit Payment for Review</button>
       </div>
+
     </div>
   </div>
 </div>
@@ -1190,7 +1452,8 @@ select.status-select:focus { border-color: var(--orange); }
           <div class="invoice-meta">
             <strong>INVOICE / RECEIPT</strong><br/>
             <span>Invoice No: TGS-2026-<span id="invNo">1042</span></span><br/>
-            <span>Date: <span id="invDate">July 3, 2026</span></span>
+            <span>Date: <span id="invDate">July 3, 2026</span></span><br/>
+            <span style="display:inline-block; margin-top:4px;">Status: <strong id="invStatus" style="padding:2px 6px; border-radius:4px;">Pending</strong></span>
           </div>
         </div>
 
@@ -1236,7 +1499,7 @@ select.status-select:focus { border-color: var(--orange); }
         </div>
       </div>
       <div style="margin-top: 24px; display: flex; justify-content: flex-end; gap: 12px;" class="no-print">
-        <button class="btn btn-outline btn-sm" onclick="window.print()">Print Document</button>
+        <button class="btn btn-outline btn-sm" onclick="printInvoice()">Print Document</button>
       </div>
     </div>
   </div>
@@ -1245,6 +1508,56 @@ select.status-select:focus { border-color: var(--orange); }
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="auth-config.js"></script>
 <script>
+
+  /* ── UI Notification Utilities ──────────────────────────── */
+  function showToast(title, message = '', type = 'info', duration = 4000) {
+    const icons = { success: '&#10003;', error: '&#10007;', info: 'i' };
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `<div class="toast-icon">${icons[type] || 'i'}</div>
+      <div class="toast-body"><strong>${title}</strong><span>${message}</span></div>`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.classList.add('hide');
+      setTimeout(() => toast.remove(), 350);
+    }, duration);
+  }
+
+  function showConfirm({ title, message, type = 'warn', okLabel = 'Confirm', cancelLabel = 'Cancel' }) {
+    return new Promise(resolve => {
+      const dialog  = document.getElementById('confirmDialog');
+      const iconWrap = document.getElementById('confirmIconWrap');
+      const emoji   = document.getElementById('confirmIconEmoji');
+      const titleEl = document.getElementById('confirmTitle');
+      const msgEl   = document.getElementById('confirmMessage');
+      const okBtn   = document.getElementById('confirmOkBtn');
+      const cancelBtn = document.getElementById('confirmCancelBtn');
+
+      const iconMap = { warn: '!', danger: '!', success: '&#10003;' };
+      iconWrap.className = `confirm-icon-wrap ${type}`;
+      emoji.innerHTML = iconMap[type] || '?';
+      titleEl.textContent = title;
+      msgEl.textContent = message;
+      okBtn.textContent = okLabel;
+      okBtn.className = `confirm-btn-ok ${type}`;
+      cancelBtn.textContent = cancelLabel;
+
+      dialog.classList.add('active');
+
+      const cleanup = (result) => {
+        dialog.classList.remove('active');
+        okBtn.removeEventListener('click', onOk);
+        cancelBtn.removeEventListener('click', onCancel);
+        resolve(result);
+      };
+      const onOk = () => cleanup(true);
+      const onCancel = () => cleanup(false);
+      okBtn.addEventListener('click', onOk);
+      cancelBtn.addEventListener('click', onCancel);
+    });
+  }
+
   let currentUserProfile = null;
   let allRegistrationsCache = [];
   let currentAdminTabFilter = 'attendee';
@@ -1263,8 +1576,17 @@ select.status-select:focus { border-color: var(--orange); }
         tabLinks.forEach(t => t.classList.toggle("active", t === link));
         
         document.querySelectorAll(".tab-content").forEach(content => {
-          content.classList.toggle("active", content.id === `${tabTarget}Tab` || (tabTarget === 'admin' && content.id === 'adminTabContent') || (tabTarget === 'booths' && content.id === 'boothsTab'));
+          content.classList.toggle("active",
+            content.id === `${tabTarget}Tab` ||
+            (tabTarget === 'admin' && content.id === 'adminTabContent') ||
+            (tabTarget === 'booths' && content.id === 'boothsTab') ||
+            (tabTarget === 'finance' && content.id === 'financeTab')
+          );
         });
+        // Load Finance data on first visit
+        if (tabTarget === 'finance' && typeof loadFinanceDashboard === 'function') {
+          loadFinanceDashboard();
+        }
       });
     });
 
@@ -1293,17 +1615,17 @@ select.status-select:focus { border-color: var(--orange); }
       document.getElementById("profPhone").textContent = profile.phone || "—";
       document.getElementById("profOrg").textContent = profile.organization || "—";
       document.getElementById("profCountry").textContent = profile.country || "—";
-      document.getElementById("profReps").textContent = profile.representatives || "1";
 
       const badgeType = profile.participant_type.charAt(0).toUpperCase() + profile.participant_type.slice(1);
       document.getElementById("typeBadge").textContent = badgeType;
-      document.getElementById("ticketType").textContent = badgeType;
-      document.getElementById("ticketName").textContent = profile.full_name;
-      document.getElementById("ticketOrg").textContent = profile.organization || "—";
-
+      
       document.getElementById("pkgBase").textContent = profile.package || "Standard Registration";
-      document.getElementById("pkgGala").textContent = profile.gala_dinner ? "Yes (Included)" : "No";
-      document.getElementById("pkgTour").textContent = profile.addon_mine_tour ? "Yes (Reserved)" : "No";
+      const gCount = profile.gala_tickets || (profile.gala_dinner ? 1 : 0);
+      document.getElementById("pkgGala").textContent = gCount > 0 ? `Yes (${gCount} pass${gCount>1?'es':''})` : "No";
+      
+      const tCount = profile.tour_tickets || (profile.addon_mine_tour ? 1 : 0);
+      document.getElementById("pkgTour").textContent = tCount > 0 ? `Yes (${tCount} slot${tCount>1?'s':''})` : "No";
+      
       document.getElementById("pkgExtra").textContent = profile.additional_passes || "0";
 
       // Setup status badges
@@ -1311,8 +1633,86 @@ select.status-select:focus { border-color: var(--orange); }
       const statusPill = document.getElementById("profileStatusPill");
       statusPill.textContent = statusClean;
       statusPill.className = `status-pill ${profile.status}`;
-      document.getElementById("ticketStatus").textContent = statusClean;
-      document.getElementById("ticketId").textContent = `TGS-2026-${profile.id.substring(0, 5).toUpperCase()}`;
+
+      // Fetch extra passes from group_members table
+      const { data: dbGroupMembers, error: gmError } = await supabaseClient
+        .from('group_members')
+        .select('*')
+        .eq('registration_id', profile.id)
+        .order('id', { ascending: true });
+        
+      window.extraPassesData = dbGroupMembers || [];
+      const metaGroupMembers = currentSession.user.user_metadata.group_members || [];
+
+      // Generate Tickets
+      const ticketsContainer = document.getElementById("ticketsContainer");
+      ticketsContainer.innerHTML = "";
+      
+      const baseTicketsCount = profile.representatives || 1;
+      const extraPasses = profile.additional_passes || 0;
+      const totalTickets = baseTicketsCount + extraPasses;
+      
+      document.getElementById("profReps").textContent = totalTickets;
+      
+      const baseTicketId = `TGS-2026-${profile.id.substring(0, 5).toUpperCase()}`;
+
+      for (let i = 0; i < totalTickets; i++) {
+        let ticketLabel = "Delegate";
+        let delegateName = profile.full_name;
+        let delegateJob = profile.job_title || "—";
+        let delegateEmail = profile.email || "—";
+        
+        if (i > 0 && i < baseTicketsCount) {
+          ticketLabel = `Group Member ${i + 1}`;
+          const memberData = metaGroupMembers[i - 1];
+          if (memberData && memberData.full_name) delegateName = memberData.full_name;
+        } else if (i >= baseTicketsCount) {
+          ticketLabel = `Extra Pass ${i - baseTicketsCount + 1}`;
+          const extraIndex = i - baseTicketsCount;
+          const memberData = window.extraPassesData[extraIndex];
+          if (memberData && memberData.full_name) delegateName = memberData.full_name;
+        }
+        
+        const ticketHtml = `
+          <div class="ticket-wrapper" style="margin-bottom: 20px;">
+            <div class="ticket-header">
+              <h4>Turkana Gold Summit 2026</h4>
+              <span>Delegate Expo Pass - ${ticketLabel}</span>
+            </div>
+            <div class="ticket-details">
+              <div>
+                <span>Delegate</span>
+                <strong>${delegateName}</strong>
+              </div>
+              <div>
+                <span>Category</span>
+                <strong>${badgeType}</strong>
+              </div>
+              <div>
+                <span>Company</span>
+                <strong>${profile.organization || "—"}</strong>
+              </div>
+              <div>
+                <span>Status</span>
+                <strong>${statusClean}</strong>
+              </div>
+            </div>
+            <div class="barcode-area">
+              <div class="barcode-visual"></div>
+              <div class="barcode-text">${baseTicketId}-${i+1}</div>
+            </div>
+          </div>
+        `;
+        ticketsContainer.innerHTML += ticketHtml;
+      }
+
+      const downloadBtn = document.getElementById("downloadTicketsBtn");
+      if (totalTickets > 0 && profile.status === 'confirmed') {
+        downloadBtn.style.display = "block";
+        downloadBtn.textContent = `Download / Print All Passes (${totalTickets})`;
+      } else {
+        downloadBtn.style.display = "none";
+      }
 
       // Conditionally show/hide Quick Pay button
       const quickPayBtn = document.getElementById("quickPayBtn");
@@ -1336,19 +1736,32 @@ select.status-select:focus { border-color: var(--orange); }
         await loadAndPopulateBooths();
       }
 
-      // If admin, reveal admin dashboard tab
+      // If admin, reveal admin + finance tabs
       const adminTab = document.getElementById("adminTab");
+      const financeTabBtn = document.getElementById("financeTabBtn");
       if (profile.is_admin) {
         adminTab.style.display = "block";
+        financeTabBtn.style.display = "block";
         document.getElementById("adminBadge").style.display = "inline-block";
         await loadAdminDashboard();
+        updateGlobalFinanceBadge();
       }
 
       // Setup form fields on the Add-ons page to match current database status
-      document.getElementById("addonGala").checked = profile.gala_dinner;
-      document.getElementById("addonTour").checked = profile.addon_mine_tour;
+      window.addonAllocations = profile.addon_allocations || { gala: [], tour: [] };
+      document.getElementById("addonGala").value = profile.gala_tickets ?? (profile.gala_dinner ? 1 : 0);
+      document.getElementById("addonTour").value = profile.tour_tickets ?? (profile.addon_mine_tour ? 1 : 0);
       document.getElementById("addonExtraReps").value = profile.additional_passes || 0;
+      
+      if (profile.status === 'confirmed') {
+        document.getElementById("addonGala").min = document.getElementById("addonGala").value;
+        document.getElementById("addonTour").min = document.getElementById("addonTour").value;
+        document.getElementById("addonExtraReps").min = document.getElementById("addonExtraReps").value;
+      }
+      
       recalculateAddonPrices();
+      if(typeof renderExtraPassForms === 'function') renderExtraPassForms();
+      if(typeof renderAllocations === 'function') renderAllocations();
 
       loadingEl.style.display = "none";
       contentEl.style.display = "block";
@@ -1384,33 +1797,323 @@ select.status-select:focus { border-color: var(--orange); }
   }
 
   function recalculateAddonPrices() {
+    if (!currentUserProfile) return;
     const baseVal = getBasePrice(currentUserProfile.package);
-    const hasGala = document.getElementById("addonGala").checked;
-    const hasTour = document.getElementById("addonTour").checked;
+    const reqGala = parseInt(document.getElementById("addonGala").value, 10) || 0;
+    const reqTour = parseInt(document.getElementById("addonTour").value, 10) || 0;
     const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
 
-    const galaCost = hasGala ? 2500 : 0;
-    const tourCost = hasTour ? 5000 : 0;
+    const galaCost = reqGala * 2500;
+    const tourCost = reqTour * 5000;
     const repsCost = extraReps * 1500;
     const totalCost = baseVal + galaCost + tourCost + repsCost;
+
+    let alreadyPaid = 0;
+    if (currentUserProfile.status === 'confirmed') {
+      const currentGala = currentUserProfile.gala_tickets ?? (currentUserProfile.gala_dinner ? 1 : 0);
+      const currentTour = currentUserProfile.tour_tickets ?? (currentUserProfile.addon_mine_tour ? 1 : 0);
+      const currentExtra = (currentUserProfile.additional_passes || 0);
+      alreadyPaid = baseVal + (currentGala * 2500) + (currentTour * 5000) + (currentExtra * 1500);
+    }
+    const amountDue = Math.max(0, totalCost - alreadyPaid);
 
     document.getElementById("sumBasePrice").textContent = `KES ${baseVal.toLocaleString()}`;
     document.getElementById("sumGalaPrice").textContent = `KES ${galaCost.toLocaleString()}`;
     document.getElementById("sumTourPrice").textContent = `KES ${tourCost.toLocaleString()}`;
     document.getElementById("sumExtraPrice").textContent = `KES ${repsCost.toLocaleString()}`;
     document.getElementById("sumTotalPrice").textContent = `KES ${totalCost.toLocaleString()}`;
-    document.getElementById("checkoutTotalText").textContent = `KES ${totalCost.toLocaleString()}`;
+
+    // Update UI for Already Paid and Amount Due
+    let paidEl = document.getElementById("sumAlreadyPaid");
+    let dueEl = document.getElementById("sumDueAmount");
+    if (!paidEl) {
+      const summaryDiv = document.querySelector(".payment-summary");
+      
+      paidEl = document.createElement("strong");
+      paidEl.id = "sumAlreadyPaid";
+      paidEl.style.color = "var(--success)";
+      const pLine = document.createElement("div");
+      pLine.className = "summary-line";
+      pLine.innerHTML = `<span>Less Already Paid:</span>`;
+      pLine.appendChild(paidEl);
+      
+      dueEl = document.createElement("strong");
+      dueEl.id = "sumDueAmount";
+      dueEl.style.color = "var(--orange-600)";
+      const dLine = document.createElement("div");
+      dLine.className = "summary-line total";
+      dLine.style.borderTop = "none";
+      dLine.style.marginTop = "0";
+      dLine.style.paddingTop = "0";
+      dLine.innerHTML = `<span>Amount Due Now:</span>`;
+      dLine.appendChild(dueEl);
+
+      summaryDiv.appendChild(pLine);
+      summaryDiv.appendChild(dLine);
+    }
+
+    document.getElementById("sumAlreadyPaid").textContent = `- KES ${alreadyPaid.toLocaleString()}`;
+    document.getElementById("sumDueAmount").textContent = `KES ${amountDue.toLocaleString()}`;
+    document.getElementById("checkoutTotalText").textContent = `KES ${amountDue.toLocaleString()}`;
+
+    const saveBtn = document.getElementById("saveAddonsBtn");
+    if (amountDue === 0) {
+      saveBtn.textContent = "Update Details (No Payment Required)";
+    } else {
+      saveBtn.textContent = "Update Details & Pay";
+    }
+  }
+
+  function renderExtraPassForms() {
+    const count = parseInt(document.getElementById('addonExtraReps').value, 10) || 0;
+    const container = document.getElementById('extraPassesForms');
+    const mainContainer = document.getElementById('extraPassesFormsContainer');
+    
+    if (count > 0) mainContainer.style.display = "flex";
+    else mainContainer.style.display = "none";
+    
+    const currentForms = container.querySelectorAll('.extra-pass-form');
+    const currentCount = currentForms.length;
+    
+    if (count > currentCount) {
+      for(let i=currentCount; i<count; i++) {
+        const isPaid = (currentUserProfile && currentUserProfile.status === 'confirmed' && i < (currentUserProfile.additional_passes || 0));
+        const readonlyAttr = isPaid ? 'readonly' : '';
+        const bgStyle = isPaid ? 'background: #e9ecef;' : 'background: var(--off-white);';
+        const titleBadge = isPaid ? ' <span style="font-size:0.7rem; background:var(--success); color:white; padding:2px 6px; border-radius:4px; margin-left:8px;">Already Purchased</span>' : ' <span style="font-size:0.7rem; background:var(--orange-500); color:white; padding:2px 6px; border-radius:4px; margin-left:8px;">In Cart</span>';
+
+        const prefill = window.extraPassesData && window.extraPassesData[i] ? window.extraPassesData[i] : {full_name:'', email:'', job_title:'', id:''};
+        const formHtml = `
+          <div class="extra-pass-form" data-index="${i}" style="${bgStyle} padding: 16px; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border); width: 100%; box-sizing: border-box;">
+            <input type="hidden" class="ep-id" value="${prefill.id || ''}" />
+            <strong style="display:block; margin-bottom: 10px; font-size:0.9rem; display:flex; align-items:center;">Pass ${i+1} ${titleBadge}</strong>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div>
+                <label style="font-size: 0.8rem; font-weight: 600;">Full Name</label>
+                <input type="text" class="ep-name" value="${prefill.full_name}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" required ${readonlyAttr} />
+              </div>
+              <div>
+                <label style="font-size: 0.8rem; font-weight: 600;">Email</label>
+                <input type="email" class="ep-email" value="${prefill.email}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" required ${readonlyAttr} />
+              </div>
+              <div style="grid-column: 1 / -1;">
+                <label style="font-size: 0.8rem; font-weight: 600;">Occupation / Job Title</label>
+                <input type="text" class="ep-job" value="${prefill.job_title}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" required ${readonlyAttr} />
+              </div>
+            </div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', formHtml);
+      }
+    } else if (count < currentCount) {
+      for(let i=currentCount - 1; i >= count; i--) {
+        currentForms[i].remove();
+      }
+    }
+    
+    // We bind a listener to inputs so allocations re-render on name change
+    document.querySelectorAll('.ep-name').forEach(input => {
+      input.addEventListener('change', () => { if(typeof renderAllocations === 'function') renderAllocations(); });
+    });
+  }
+
+  function renderAllocations() {
+    if (!currentUserProfile) return;
+    const galaCount = parseInt(document.getElementById("addonGala").value, 10) || 0;
+    const tourCount = parseInt(document.getElementById("addonTour").value, 10) || 0;
+    
+    const container = document.getElementById("allocationsContainer");
+    const formsDiv = document.getElementById("allocationsForms");
+    
+    if (galaCount === 0 && tourCount === 0) {
+      container.style.display = "none";
+      formsDiv.innerHTML = "";
+      return;
+    }
+    
+    container.style.display = "flex";
+    
+    let delegates = [];
+    const baseTicketsCount = currentUserProfile.representatives || 1;
+    delegates.push({ id: `main_delegate`, name: currentUserProfile.full_name + " (Main Delegate)" });
+    
+    const metaGroupMembers = currentUserProfile.user_metadata?.group_members || [];
+    for (let i = 1; i < baseTicketsCount; i++) {
+       const m = metaGroupMembers[i-1];
+       delegates.push({ id: `group_member_${i}`, name: m && m.full_name ? m.full_name : `Group Member ${i}` });
+    }
+    
+    const extraCount = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+    for (let i = 0; i < extraCount; i++) {
+       let name = `Extra Pass ${i+1}`;
+       const formNameEl = document.querySelector(`.extra-pass-form[data-index="${i}"] .ep-name`);
+       if (formNameEl && formNameEl.value) {
+           name = formNameEl.value;
+       } else if (window.extraPassesData && window.extraPassesData[i] && window.extraPassesData[i].full_name) {
+           name = window.extraPassesData[i].full_name;
+       }
+       delegates.push({ id: `extra_pass_${i}`, name: name });
+    }
+    
+    let html = `
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; background: var(--off-white); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+        <thead>
+          <tr style="background: var(--surface-hover); border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px;">Delegate Name</th>
+            ${galaCount > 0 ? `<th style="padding: 12px;">Gala Dinner <br><span style="font-weight:normal; font-size:0.8rem; color:var(--text-soft);">(Max: ${galaCount})</span></th>` : ''}
+            ${tourCount > 0 ? `<th style="padding: 12px;">Mine Tour <br><span style="font-weight:normal; font-size:0.8rem; color:var(--text-soft);">(Max: ${tourCount})</span></th>` : ''}
+          </tr>
+        </thead>
+        <tbody>
+    `;
+    
+    delegates.forEach((del, idx) => {
+      const isGalaChecked = window.addonAllocations?.gala?.includes(del.id) ? 'checked' : '';
+      const isTourChecked = window.addonAllocations?.tour?.includes(del.id) ? 'checked' : '';
+      const borderBottom = idx < delegates.length - 1 ? 'border-bottom: 1px solid var(--border);' : '';
+      
+      html += `
+        <tr style="${borderBottom}">
+          <td style="padding: 12px;"><strong>${del.name}</strong></td>
+          ${galaCount > 0 ? `<td style="padding: 12px;"><input type="checkbox" class="gala-alloc-cb" value="${del.id}" ${isGalaChecked} style="transform: scale(1.2);" /></td>` : ''}
+          ${tourCount > 0 ? `<td style="padding: 12px;"><input type="checkbox" class="tour-alloc-cb" value="${del.id}" ${isTourChecked} style="transform: scale(1.2);" /></td>` : ''}
+        </tr>
+      `;
+    });
+    
+    html += `</tbody></table>`;
+    formsDiv.innerHTML = html;
+    
+    const galaCbs = formsDiv.querySelectorAll('.gala-alloc-cb');
+    galaCbs.forEach(cb => {
+      cb.addEventListener('change', () => {
+         const checkedCount = Array.from(galaCbs).filter(c => c.checked).length;
+         if (checkedCount > galaCount) {
+            alert(`You can only allocate up to ${galaCount} Gala Dinner tickets.`);
+            cb.checked = false;
+         }
+         saveAllocationsToMemory();
+      });
+    });
+    
+    const tourCbs = formsDiv.querySelectorAll('.tour-alloc-cb');
+    tourCbs.forEach(cb => {
+      cb.addEventListener('change', () => {
+         const checkedCount = Array.from(tourCbs).filter(c => c.checked).length;
+         if (checkedCount > tourCount) {
+            alert(`You can only allocate up to ${tourCount} Mine Tour tickets.`);
+            cb.checked = false;
+         }
+         saveAllocationsToMemory();
+      });
+    });
+  }
+
+  function saveAllocationsToMemory() {
+    window.addonAllocations = { gala: [], tour: [] };
+    document.querySelectorAll('.gala-alloc-cb:checked').forEach(cb => window.addonAllocations.gala.push(cb.value));
+    document.querySelectorAll('.tour-alloc-cb:checked').forEach(cb => window.addonAllocations.tour.push(cb.value));
+  }
+
+  async function saveExtraPasses() {
+    const forms = document.querySelectorAll('.extra-pass-form');
+    const passesToSave = Array.from(forms).map(f => {
+      const id = f.querySelector('.ep-id').value;
+      const obj = {
+        registration_id: currentUserProfile.id,
+        full_name: f.querySelector('.ep-name').value.trim(),
+        email: f.querySelector('.ep-email').value.trim(),
+        job_title: f.querySelector('.ep-job').value.trim()
+      };
+      if (id) obj.id = id;
+      return obj;
+    });
+
+    if (passesToSave.length > 0) {
+      const { data, error } = await supabaseClient.from('group_members').upsert(passesToSave).select();
+      if (error) console.error("Error saving extra passes:", error);
+      else if (data) window.extraPassesData = data; // Update local cache with IDs
+    }
+
+    const keptIds = passesToSave.map(ep => ep.id).filter(Boolean);
+    if (window.extraPassesData) {
+      const idsToDelete = window.extraPassesData.map(ep => ep.id).filter(id => id && !keptIds.includes(id));
+      if (idsToDelete.length > 0) {
+        await supabaseClient.from('group_members').delete().in('id', idsToDelete);
+      }
+    }
   }
 
   // Bind change events
-  document.getElementById("addonGala").addEventListener("change", recalculateAddonPrices);
-  document.getElementById("addonTour").addEventListener("change", recalculateAddonPrices);
-  document.getElementById("addonExtraReps").addEventListener("input", recalculateAddonPrices);
+  document.getElementById("addonGala").addEventListener("input", () => {
+    recalculateAddonPrices();
+    renderAllocations();
+  });
+  document.getElementById("addonTour").addEventListener("input", () => {
+    recalculateAddonPrices();
+    renderAllocations();
+  });
+  document.getElementById("addonExtraReps").addEventListener("input", () => {
+    recalculateAddonPrices();
+    renderExtraPassForms();
+    renderAllocations();
+  });
 
   // Forms submit click opens checkout modal
-  document.getElementById("addonsForm").addEventListener("submit", (e) => {
+  document.getElementById("addonsForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    openCheckoutModal();
+    
+    if (!currentUserProfile) return;
+    const baseVal = getBasePrice(currentUserProfile.package);
+    const reqGala = parseInt(document.getElementById("addonGala").value, 10) || 0;
+    const reqTour = parseInt(document.getElementById("addonTour").value, 10) || 0;
+    const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+
+    const galaCost = reqGala * 2500;
+    const tourCost = reqTour * 5000;
+    const repsCost = extraReps * 1500;
+    const totalCost = baseVal + galaCost + tourCost + repsCost;
+
+    let alreadyPaid = 0;
+    if (currentUserProfile.status === 'confirmed') {
+      const currentGala = currentUserProfile.gala_tickets ?? (currentUserProfile.gala_dinner ? 1 : 0);
+      const currentTour = currentUserProfile.tour_tickets ?? (currentUserProfile.addon_mine_tour ? 1 : 0);
+      const currentExtra = (currentUserProfile.additional_passes || 0);
+      alreadyPaid = baseVal + (currentGala * 2500) + (currentTour * 5000) + (currentExtra * 1500);
+    }
+    const amountDue = Math.max(0, totalCost - alreadyPaid);
+
+    if (amountDue === 0) {
+      const saveBtn = document.getElementById("saveAddonsBtn");
+      const originalText = saveBtn.textContent;
+      saveBtn.disabled = true;
+      saveBtn.textContent = "Updating...";
+      try {
+        await saveExtraPasses();
+        const payload = {
+          gala_tickets: reqGala,
+          tour_tickets: reqTour,
+          additional_passes: extraReps,
+          addon_allocations: window.addonAllocations || { gala: [], tour: [] }
+        };
+        // Also update legacy boolean fields just in case
+        payload.gala_dinner = reqGala > 0;
+        payload.addon_mine_tour = reqTour > 0;
+
+        const { error } = await supabaseClient.from("registrations").update(payload).eq("user_id", currentSession.user.id);
+        if (error) throw error;
+        alert("Details updated successfully!");
+        await refreshUserProfile();
+      } catch (err) {
+        alert(`Update failed: ${err.message}`);
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = originalText;
+      }
+    } else {
+      await saveExtraPasses();
+      openCheckoutModal();
+    }
   });
   
   document.getElementById("quickPayBtn").addEventListener("click", () => {
@@ -1439,61 +2142,113 @@ select.status-select:focus { border-color: var(--orange); }
     });
   });
 
-  // Checkout Submission
+  // Currency account number mapping & selector
+  const PAYBILL_ACCOUNTS = { KES: '1345650450', USD: '1345650477', EUR: '1345650566' };
+  let selectedPayCurrency = 'KES';
+
+  document.querySelectorAll('.currency-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedPayCurrency = btn.dataset.currency;
+      const accountNo = PAYBILL_ACCOUNTS[selectedPayCurrency];
+      if (document.getElementById('mpesaAccountNo')) document.getElementById('mpesaAccountNo').textContent = accountNo;
+      if (document.getElementById('cardAccountNo')) document.getElementById('cardAccountNo').textContent = accountNo;
+    });
+  });
+
+  // Checkout Submission — Manual Paybill Review Flow
   document.getElementById("confirmCheckoutBtn").addEventListener("click", async () => {
     const btn = document.getElementById("confirmCheckoutBtn");
     btn.disabled = true;
-    btn.textContent = "Processing Transaction…";
+    btn.textContent = "Submitting…";
 
     try {
       const activeMethod = document.querySelector(".pay-method-btn.active").dataset.method;
-      const hasGala = document.getElementById("addonGala").checked;
-      const hasTour = document.getElementById("addonTour").checked;
+      const reqGala = parseInt(document.getElementById("addonGala").value, 10) || 0;
+      const reqTour = parseInt(document.getElementById("addonTour").value, 10) || 0;
       const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
-      
-      const payload = {
-        addons: { gala: hasGala, tour: hasTour, extraReps: extraReps }
-      };
 
-      if (activeMethod === "mpesa") {
-        const phone = document.getElementById("mpesaPhone").value;
-        if (!phone) throw new Error("Please enter your M-Pesa phone number.");
-        payload.phone = phone;
-
-        const { data, error } = await supabaseClient.functions.invoke('mpesa-pay', {
-          body: payload
-        });
-
-        if (error) throw new Error(error.message || "Failed to trigger M-Pesa STK push.");
-        if (data && data.error) throw new Error(data.error);
-
-        alert("STK Push sent! Please check your Safaricom phone and enter your PIN. After paying, your dashboard will update shortly.");
-        paymentModal.classList.remove("active");
-        
-      } else if (activeMethod === "card") {
-        const currency = document.getElementById("cardCurrency").value;
-        payload.overrideCurrency = currency;
-
-        const { data, error } = await supabaseClient.functions.invoke('paystack-pay', {
-          body: payload
-        });
-
-        if (error) throw new Error(error.message || "Failed to initialize card payment.");
-        if (data && data.error) throw new Error(data.error);
-
-        if (data && data.authorization_url) {
-          window.location.href = data.authorization_url;
-        } else {
-          throw new Error("Missing authorization URL from payment gateway.");
-        }
+      // Read reference from whichever tab is active
+      let paymentRef;
+      if (activeMethod === 'mpesa') {
+        paymentRef = (document.getElementById('mpesaPaymentRef').value || '').trim().toUpperCase();
+      } else {
+        paymentRef = (document.getElementById('cardPaymentRef').value || '').trim();
       }
+
+      if (!paymentRef) throw new Error('Please enter your transaction / payment reference code.');
+      const paymentTimestamp = new Date().toISOString();
+
+      // Compute amount due
+      const baseVal = getBasePrice(currentUserProfile.package);
+      const galaCost = reqGala * 2500;
+      const tourCost = reqTour * 5000;
+      const repsCost = extraReps * 1500;
+      const totalCost = baseVal + galaCost + tourCost + repsCost;
+      let alreadyPaid = 0;
+      if (currentUserProfile.status === 'confirmed') {
+        const cg = currentUserProfile.gala_tickets ?? (currentUserProfile.gala_dinner ? 1 : 0);
+        const ct = currentUserProfile.tour_tickets ?? (currentUserProfile.addon_mine_tour ? 1 : 0);
+        const ce = currentUserProfile.additional_passes || 0;
+        alreadyPaid = baseVal + (cg * 2500) + (ct * 5000) + (ce * 1500);
+      }
+      const amountDue = Math.max(0, totalCost - alreadyPaid);
+
+      // Insert payment record for admin review
+      const { error: payError } = await supabaseClient.from('payments').insert({
+        registration_id: currentUserProfile.id,
+        user_id: currentSession.user.id,
+        provider: 'manual',
+        provider_reference: paymentRef,
+        currency: selectedPayCurrency,
+        amount: amountDue,
+        status: 'pending',
+        addons: { galaTickets: reqGala, tourTickets: reqTour, extraReps },
+        raw_response: {
+          method: activeMethod,
+          paybill: '522522',
+          account: PAYBILL_ACCOUNTS[selectedPayCurrency],
+          payment_timestamp: paymentTimestamp,
+          submitted_at: new Date().toISOString()
+        }
+      });
+
+      if (payError) throw new Error('Could not save payment record: ' + payError.message);
+
+      // Also persist the addon selections on the registration
+      await supabaseClient.from('registrations').update({
+        gala_tickets: reqGala,
+        tour_tickets: reqTour,
+        gala_dinner: reqGala > 0,
+        addon_mine_tour: reqTour > 0,
+        additional_passes: extraReps,
+        addon_allocations: window.addonAllocations || { gala: [], tour: [] }
+      }).eq('user_id', currentSession.user.id);
+
+      paymentModal.classList.remove('active');
+
+      showToast(
+        'Payment Submitted',
+        `Reference ${paymentRef} received. Our team will verify and confirm within 24 hours.`,
+        'success',
+        6000
+      );
+
+      // Clear input fields
+      ['mpesaPaymentRef','cardPaymentRef'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+
     } catch (err) {
-      alert(`Payment error: ${err.message}`);
+      showToast('Submission Failed', err.message, 'error');
     } finally {
       btn.disabled = false;
-      btn.textContent = "Complete Payment";
+      btn.textContent = "Submit Payment for Review";
     }
   });
+
 
 
   /* --------------------------------------------------------------------------
@@ -1605,7 +2360,7 @@ select.status-select:focus { border-color: var(--orange); }
     try {
       const { data: list, error } = await supabaseClient
         .from("registrations")
-        .select("*")
+        .select(`*, payments(id, amount, currency, status, provider_reference, provider)`)
         .order("created_at", { ascending: false });
 
       if (error) throw error;
@@ -1665,8 +2420,207 @@ select.status-select:focus { border-color: var(--orange); }
 
       // Initial load
       applyAdminFilters();
+
     } catch (err) {
       console.error("Failed to fetch admin dashboard directory:", err);
+    }
+  }
+
+      // Removed loadPendingPayments and approve/reject manually, now in Finance tab
+
+  /* ------------------------------------------------------------------
+     FINANCE DASHBOARD
+     ------------------------------------------------------------------ */
+  let allPaymentsCache = [];
+
+  async function loadFinanceDashboard() {
+    const tbody = document.getElementById('finPaymentsBody');
+    if (!tbody) return;
+    tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; color:var(--text-soft); padding:24px;">Loading…</td></tr>`;
+
+    try {
+      // ── Fetch all payments (with registrant info joined) ──────────────
+      const { data: payments, error: pErr } = await supabaseClient
+        .from('payments')
+        .select(`
+          id, provider, provider_reference, currency, amount, status,
+          raw_response, addons, created_at,
+          registrations ( id, full_name, email, organization, status,
+            gala_tickets, tour_tickets, additional_passes,
+            gala_dinner, addon_mine_tour, representatives )
+        `)
+        .order('created_at', { ascending: false })
+        .limit(500);
+      if (pErr) throw pErr;
+
+      // ── Fetch all confirmed registrations for headcount ───────────────
+      const { data: regs, error: rErr } = await supabaseClient
+        .from('registrations')
+        .select('status, gala_tickets, tour_tickets, additional_passes, gala_dinner, addon_mine_tour, representatives')
+        .eq('status', 'confirmed');
+      if (rErr) throw rErr;
+
+      allPaymentsCache = payments || [];
+
+      // ── KPI Cards ─────────────────────────────────────────────────────
+      const total = allPaymentsCache.length;
+      const approved = allPaymentsCache.filter(p => p.status === 'success').length;
+      const pending = allPaymentsCache.filter(p => p.status === 'pending').length;
+      const revenue = allPaymentsCache
+        .filter(p => p.status === 'success')
+        .reduce((sum, p) => sum + Number(p.amount || 0), 0);
+
+      document.getElementById('finTotalPayments').textContent = total;
+      document.getElementById('finApproved').textContent = approved;
+      document.getElementById('finPending').textContent = pending;
+      document.getElementById('finRevenue').textContent = `KES ${revenue.toLocaleString()}`;
+
+      // ── Event Headcounts from confirmed registrations ─────────────────
+      let galaTotal = 0, tourTotal = 0, extraTotal = 0, attendeeTotal = 0;
+      (regs || []).forEach(r => {
+        const reps = r.representatives || 1;
+        attendeeTotal += reps;
+        galaTotal += r.gala_tickets ?? (r.gala_dinner ? reps : 0);
+        tourTotal  += r.tour_tickets ?? (r.addon_mine_tour ? reps : 0);
+        extraTotal += r.additional_passes || 0;
+      });
+      document.getElementById('finGalaCount').textContent = galaTotal;
+      document.getElementById('finTourCount').textContent = tourTotal;
+      document.getElementById('finExtraCount').textContent = extraTotal;
+      document.getElementById('finTotalAttendees').textContent = attendeeTotal;
+
+      // ── Render table (respects status filter) ────────────────────────
+      renderFinanceTable();
+
+      // ── Status filter dropdown ────────────────────────────────────────
+      const filterEl = document.getElementById('finStatusFilter');
+      if (filterEl && !filterEl._bound) {
+        filterEl._bound = true;
+        filterEl.addEventListener('change', renderFinanceTable);
+      }
+
+    } catch (err) {
+      if (document.getElementById('finPaymentsBody')) {
+        document.getElementById('finPaymentsBody').innerHTML =
+          `<tr><td colspan="9" style="color:red; text-align:center; padding:24px;">Error: ${err.message}</td></tr>`;
+      }
+    }
+  }
+
+  function renderFinanceTable() {
+    const tbody = document.getElementById('finPaymentsBody');
+    const filterStatus = (document.getElementById('finStatusFilter')?.value) || 'all';
+    const list = filterStatus === 'all'
+      ? allPaymentsCache
+      : allPaymentsCache.filter(p => p.status === filterStatus);
+
+    if (!list.length) {
+      tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; color:var(--text-soft); padding:24px;">No payments found.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = list.map(p => {
+      const reg = p.registrations || {};
+      const date = new Date(p.created_at).toLocaleString('en-KE', { dateStyle: 'medium', timeStyle: 'short' });
+      const method = p.raw_response?.method === 'mpesa' ? 'M-Pesa' : 'Card / Bank';
+
+      // Add-ons breakdown
+      const addons = p.addons || {};
+      const addonParts = [];
+      if (addons.galaTickets) addonParts.push(`Gala x${addons.galaTickets}`);
+      if (addons.tourTickets) addonParts.push(`Tour x${addons.tourTickets}`);
+      if (addons.extraReps) addonParts.push(`Extra passes x${addons.extraReps}`);
+      const addonStr = addonParts.length ? addonParts.join(', ') : 'Base only';
+
+      const statusColor = { pending: '#92400e', success: '#065f46', failed: '#991b1b' };
+      const statusBg    = { pending: '#fef3c7', success: '#d1fae5', failed: '#fee2e2' };
+      const statusLabel = { pending: 'Pending', success: 'Approved', failed: 'Rejected' };
+      const st = p.status;
+
+      const badge = `<span style="background:${statusBg[st]||'#f3f4f6'}; color:${statusColor[st]||'#374151'}; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600;">${statusLabel[st]||st}</span>`;
+
+      const actions = st === 'pending' ? `
+        <button onclick="finApprove('${p.id}','${reg.id||''}')" style="padding:4px 9px; background:var(--success); color:white; border:none; border-radius:5px; cursor:pointer; font-size:0.78rem; margin-right:4px;">Approve</button>
+        <button onclick="finReject('${p.id}')" style="padding:4px 9px; background:#ef4444; color:white; border:none; border-radius:5px; cursor:pointer; font-size:0.78rem;">Reject</button>
+      ` : '—';
+
+      return `<tr>
+        <td style="white-space:nowrap;">${date}</td>
+        <td><strong>${reg.full_name||'—'}</strong><br/><span style="font-size:0.74rem; color:var(--text-soft);">${reg.email||''}</span></td>
+        <td>${method}</td>
+        <td>${p.currency}</td>
+        <td style="font-weight:600;">${Number(p.amount||0).toLocaleString()}</td>
+        <td style="font-family:monospace; font-weight:700; font-size:0.8rem;">${p.provider_reference}</td>
+        <td style="font-size:0.78rem; color:var(--text-soft);">${addonStr}</td>
+        <td>${badge}</td>
+        <td style="white-space:nowrap;">${actions}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  async function finApprove(paymentId, registrationId) {
+    const ok = await showConfirm({
+      title: 'Approve Payment',
+      message: 'This will mark the payment as successful and confirm the registration.',
+      type: 'success',
+      okLabel: 'Approve'
+    });
+    if (!ok) return;
+    try {
+      const { data, error: pe } = await supabaseClient.from('payments').update({ status: 'success' }).eq('id', paymentId).select();
+      if (pe) throw pe;
+      if (!data || data.length === 0) throw new Error("Update blocked by database. Did you run the latest update_summit.sql?");
+      
+      if (registrationId) {
+        const { error: re } = await supabaseClient.from('registrations').update({ status: 'confirmed' }).eq('id', registrationId);
+        if (re) throw re;
+      }
+      showToast('Payment Approved', 'Registration confirmed successfully.', 'success');
+      if (typeof refreshUserProfile === 'function') await refreshUserProfile();
+      loadFinanceDashboard();
+      if (typeof loadPendingPayments === 'function') loadPendingPayments();
+      updateGlobalFinanceBadge();
+    } catch (err) {
+      showToast('Error', err.message, 'error');
+    }
+  }
+
+  async function updateGlobalFinanceBadge() {
+    try {
+      const { data, error, count } = await supabaseClient
+        .from('payments')
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'pending');
+      
+      const badge = document.getElementById('globalFinanceBadge');
+      if (badge && !error) {
+        if (count > 0) {
+          badge.textContent = count;
+          badge.style.display = 'inline-block';
+        } else {
+          badge.style.display = 'none';
+        }
+      }
+    } catch (e) { console.error("Error updating finance badge", e); }
+  }
+
+  async function finReject(paymentId) {
+    const ok = await showConfirm({
+      title: 'Reject Payment',
+      message: 'The payment will be marked as failed.',
+      type: 'danger',
+      okLabel: 'Reject'
+    });
+    if (!ok) return;
+    try {
+      const { data, error } = await supabaseClient.from('payments').update({ status: 'failed' }).eq('id', paymentId).select();
+      if (error) throw error;
+      if (!data || data.length === 0) throw new Error("Update blocked by database. Did you run the latest update_summit.sql?");
+      showToast('Payment Rejected', 'Marked as failed.', 'error');
+      loadFinanceDashboard();
+      updateGlobalFinanceBadge();
+    } catch (err) {
+      showToast('Error', err.message, 'error');
     }
   }
 
@@ -1746,24 +2700,32 @@ select.status-select:focus { border-color: var(--orange); }
         const boothTd = document.createElement("td"); boothTd.textContent = row.booth_number || "—";
         
         const statusTd = document.createElement("td");
-        const select = document.createElement("select");
-        select.className = "status-select";
-        ['pending', 'confirmed', 'cancelled'].forEach(s => {
-          const opt = document.createElement("option"); opt.value = s; opt.textContent = s.toUpperCase();
-          if (row.status === s) opt.selected = true;
-          select.appendChild(opt);
-        });
-        select.addEventListener("change", async (e) => {
-          const nextStatus = e.target.value;
-          try {
-            const { error } = await supabaseClient.from("registrations").update({ status: nextStatus }).eq("id", row.id);
-            if (error) throw error;
-            alert(`Status for ${row.full_name || 'user'} updated to ${nextStatus.toUpperCase()}`);
-            await loadAdminDashboard();
-            if (row.user_id === currentSession.user.id) { await refreshUserProfile(); }
-          } catch (err) { alert(`Status update failed: ${err.message || "Write error"}`); }
-        });
-        statusTd.appendChild(select);
+        const statusStr = (row.status || 'pending').toLowerCase();
+        
+        let badgeHtml = '';
+        if (statusStr === 'confirmed') {
+          badgeHtml = `<span style="background:#d1fae5; color:#065f46; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600; display:inline-block; margin-bottom:4px;">CONFIRMED</span>`;
+        } else if (statusStr === 'cancelled') {
+          badgeHtml = `<span style="background:#fee2e2; color:#991b1b; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600; display:inline-block; margin-bottom:4px;">CANCELLED</span>`;
+        } else {
+          badgeHtml = `<span style="background:#fef3c7; color:#92400e; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600; display:inline-block; margin-bottom:4px;">PENDING</span>`;
+        }
+
+        let payInfo = '';
+        if (row.payments && row.payments.length > 0) {
+          const successPays = row.payments.filter(p => p.status === 'success');
+          if (successPays.length > 0) {
+            const p = successPays[successPays.length - 1];
+            payInfo = `<div style="font-size:0.7rem; color:var(--text-soft); line-height:1.2;">
+              ${p.currency} ${Number(p.amount||0).toLocaleString()}<br/>
+              Ref: <span style="font-family:monospace;">${p.provider_reference}</span>
+            </div>`;
+          } else {
+            const p = row.payments[row.payments.length - 1];
+            payInfo = `<div style="font-size:0.7rem; color:var(--text-soft);">Paid (${p.status})</div>`;
+          }
+        }
+        statusTd.innerHTML = badgeHtml + payInfo;
 
         tr.append(nameTd, typeTd, pkgTd, countryTd, galaTd, boothTd, statusTd, actionTd);
       } else if (currentAdminTabFilter === 'stakeholder') {
@@ -1894,6 +2856,18 @@ select.status-select:focus { border-color: var(--orange); }
     
     const now = new Date(profile.created_at);
     document.getElementById("invDate").textContent = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    
+    const invStatus = document.getElementById("invStatus");
+    if (profile.status === 'confirmed') {
+      invStatus.textContent = 'Confirmed';
+      invStatus.style.background = '#d1fae5';
+      invStatus.style.color = '#065f46';
+    } else {
+      invStatus.textContent = 'Pending Review';
+      invStatus.style.background = '#fef3c7';
+      invStatus.style.color = '#92400e';
+    }
+
     document.getElementById("invBilledTo").innerHTML = `
       <strong>${profile.full_name}</strong><br/>
       Organization: ${profile.organization || "—"}<br/>
@@ -1918,28 +2892,30 @@ select.status-select:focus { border-color: var(--orange); }
 
     // Add Gala Dinner if checked
     let galaCost = 0;
-    if (profile.gala_dinner) {
-      galaCost = 2500;
+    const galaCount = profile.gala_tickets || (profile.gala_dinner ? 1 : 0);
+    if (galaCount > 0) {
+      galaCost = galaCount * 2500;
       html += `
         <tr>
           <td>Gala Networking Dinner Pass Add-on</td>
-          <td>1</td>
+          <td>${galaCount}</td>
           <td style="text-align: right;">KES 2,500</td>
-          <td style="text-align: right;">KES 2,500</td>
+          <td style="text-align: right;">KES ${galaCost.toLocaleString()}</td>
         </tr>
       `;
     }
 
     // Add Mine Tour if checked
     let tourCost = 0;
-    if (profile.addon_mine_tour) {
-      tourCost = 5000;
+    const tourCount = profile.tour_tickets || (profile.addon_mine_tour ? 1 : 0);
+    if (tourCount > 0) {
+      tourCost = tourCount * 5000;
       html += `
         <tr>
           <td>Artisanal Mining Field Study Tour Slot</td>
-          <td>1</td>
+          <td>${tourCount}</td>
           <td style="text-align: right;">KES 5,000</td>
-          <td style="text-align: right;">KES 5,000</td>
+          <td style="text-align: right;">KES ${tourCost.toLocaleString()}</td>
         </tr>
       `;
     }
@@ -1970,6 +2946,34 @@ select.status-select:focus { border-color: var(--orange); }
   document.getElementById("closeInvoiceModal").addEventListener("click", () => {
     document.getElementById("invoiceModal").classList.remove("active");
   });
+
+  function printTickets() {
+    document.body.classList.add("print-tickets");
+    window.print();
+    document.body.classList.remove("print-tickets");
+  }
+
+  function printInvoice() {
+    document.body.classList.add("print-invoice");
+    window.print();
+    document.body.classList.remove("print-invoice");
+  }
 </script>
+
+<!-- ── Toast Container ───────────────────────────── -->
+<div id="toast-container"></div>
+
+<!-- ── Confirm Dialog ────────────────────────────── -->
+<div id="confirmDialog">
+  <div class="confirm-card">
+    <div class="confirm-icon-wrap warn" id="confirmIconWrap"><span id="confirmIconEmoji">?</span></div>
+    <h4 id="confirmTitle">Are you sure?</h4>
+    <p id="confirmMessage">This action cannot be undone.</p>
+    <div class="confirm-btns">
+      <button class="confirm-btn-cancel" id="confirmCancelBtn">Cancel</button>
+      <button class="confirm-btn-ok success" id="confirmOkBtn">Confirm</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

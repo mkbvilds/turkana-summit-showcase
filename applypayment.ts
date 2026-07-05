@@ -27,7 +27,7 @@ export async function applyAddonsAndConfirm(
       .eq("id", registrationId)
       .single();
     const current = existing?.additional_passes || 0;
-    update.additional_passes = current + addons.extraReps;
+    update.additional_passes = Math.max(current, addons.extraReps);
   }
 
   await supabase.from("registrations").update(update).eq("id", registrationId);

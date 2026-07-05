@@ -54,7 +54,7 @@ serve(async (req: Request) => {
       .eq('user_id', user.id)
       .single();
 
-    if (regError || !reg) throw new Error('Registration not found');
+    if (regError || !reg) throw new Error(`Registration not found: ${regError?.message || 'No row returned'}`);
 
     // Calculate total amount securely
     let amount = 0;
@@ -65,24 +65,27 @@ serve(async (req: Request) => {
     }
     
     // Add-ons
-    const willHaveGala = addons?.gala || reg.gala_dinner;
-    const willHaveTour = addons?.tour || reg.addon_mine_tour;
+    const reqGalaTickets = Math.max(0, parseInt(addons?.galaTickets ?? (addons?.gala ? '1' : '0'), 10));
+    const reqTourTickets = Math.max(0, parseInt(addons?.tourTickets ?? (addons?.tour ? '1' : '0'), 10));
     const extraReps = Math.max(0, parseInt(addons?.extraReps || '0', 10));
+    
+    const currGalaTickets = reg.gala_tickets ?? (reg.gala_dinner ? 1 : 0);
+    const currTourTickets = reg.tour_tickets ?? (reg.addon_mine_tour ? 1 : 0);
 
-    // Calculate difference (only charge for new add-ons if they already paid base, 
-    // but if pending, we charge everything they selected).
-    // For simplicity, if status is 'pending', we charge the full new amount.
-    // If 'confirmed', we'd theoretically only charge the difference, but let's assume
-    // Daraja is mostly used for the initial payment. If they are confirmed and adding things,
-    // we charge just the new items.
+    const willHaveGala = reqGalaTickets > 0 || currGalaTickets > 0;
+    const willHaveTour = reqTourTickets > 0 || currTourTickets > 0;
     
     if (reg.status === 'pending') {
-      if (willHaveGala) amount += 2500;
-      if (willHaveTour) amount += 5000;
+      amount += Math.max(reqGalaTickets, currGalaTickets) * 2500;
+      amount += Math.max(reqTourTickets, currTourTickets) * 5000;
       amount += extraReps * 1500;
     } else {
-      if (addons?.gala && !reg.gala_dinner) amount += 2500;
-      if (addons?.tour && !reg.addon_mine_tour) amount += 5000;
+      if (reqGalaTickets > currGalaTickets) {
+        amount += (reqGalaTickets - currGalaTickets) * 2500;
+      }
+      if (reqTourTickets > currTourTickets) {
+        amount += (reqTourTickets - currTourTickets) * 5000;
+      }
       if (extraReps > (reg.additional_passes || 0)) {
         amount += (extraReps - (reg.additional_passes || 0)) * 1500;
       }
