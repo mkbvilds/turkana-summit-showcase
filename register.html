@@ -375,7 +375,12 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
             <option value="Other">Other</option>
           </select>
         </div>
-        <div class="field"><label for="representatives">Number of representatives</label><input type="number" id="representatives" min="1" value="1" /></div>
+        <div class="field">
+          <label for="representatives">Number of representatives</label>
+          <select id="representatives">
+            <option value="1">1</option>
+          </select>
+        </div>
       </div>
       <div id="groupMembersContainer"></div>
 
@@ -511,12 +516,9 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
     selectedType = type;
     tabs.forEach(t => t.classList.toggle("active", t.dataset.type === type));
     typeFieldBlocks.forEach(b => b.classList.toggle("active", b.dataset.for === type));
+    if (typeof updateRepsMax === "function") updateRepsMax();
   }
   tabs.forEach(t => t.addEventListener("click", () => setType(t.dataset.type)));
-
-  // Preselect type from ?type=sponsor style links on the main site.
-  const params = new URLSearchParams(window.location.search);
-  setType(params.get("type") && ["attendee","sponsor","exhibitor"].includes(params.get("type")) ? params.get("type") : "attendee");
 
   const form = document.getElementById("regForm");
   const msg = document.getElementById("formMsg");
@@ -528,8 +530,65 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
     if (type === "exhibitor") return document.getElementById("exhibitorTier").value;
   }
 
+  function getPackageMaxPasses(pkgName) {
+    if (!pkgName) return 1;
+    const name = pkgName.toLowerCase();
+    if (name.includes('gold sponsor')) return 8;
+    if (name.includes('silver sponsor')) return 6;
+    if (name.includes('copper sponsor') || name.includes('cooperative')) return 4;
+    if (name.includes('bronze sponsor') || name.includes('tier 1')) return 3;
+    if (name.includes('tier 2') || name.includes('small business')) return 2;
+    return 1;
+  }
+
   const groupMembersContainer = document.getElementById("groupMembersContainer");
   const repsInput = document.getElementById("representatives");
+
+  function updateRepsMax() {
+    const pkg = packageFor(selectedType);
+    const maxPasses = getPackageMaxPasses(pkg);
+    
+    // Remember currently selected value
+    let currentValue = parseInt(repsInput.value, 10) || 1;
+    
+    // Clear existing options
+    repsInput.innerHTML = '';
+    
+    // Populate dropdown up to maxPasses
+    for (let i = 1; i <= maxPasses; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      repsInput.appendChild(option);
+    }
+    
+    // Restore value if it's within bounds, otherwise select maxPasses
+    if (currentValue > maxPasses) {
+      repsInput.value = maxPasses;
+    } else {
+      repsInput.value = currentValue;
+    }
+    
+    // Update label to show max passes
+    const label = document.querySelector('label[for="representatives"]');
+    if (label) {
+      label.textContent = `Number of representatives (Max ${maxPasses})`;
+    }
+    
+    renderGroupMembers();
+  }
+
+  // Listen to package changes
+  document.getElementById("attendeePackage").addEventListener("change", updateRepsMax);
+  document.getElementById("sponsorTier").addEventListener("change", updateRepsMax);
+  document.getElementById("exhibitorTier").addEventListener("change", updateRepsMax);
+  
+  // Preselect type from ?type=sponsor style links on the main site.
+  const params = new URLSearchParams(window.location.search);
+  setType(params.get("type") && ["attendee","sponsor","exhibitor"].includes(params.get("type")) ? params.get("type") : "attendee");
+  
+  // Initialize on load
+  updateRepsMax();
 
   function renderGroupMembers() {
     const reps = parseInt(repsInput.value, 10) || 1;
@@ -568,7 +627,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
     }
   }
 
-  repsInput.addEventListener("input", renderGroupMembers);
+  repsInput.addEventListener("change", renderGroupMembers);
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();

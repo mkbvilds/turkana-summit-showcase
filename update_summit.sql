@@ -82,3 +82,62 @@ UPDATE public.registrations
 UPDATE public.registrations
   SET tour_tickets = 1
   WHERE addon_mine_tour = true AND (tour_tickets IS NULL OR tour_tickets = 0);
+
+-- =============================================================
+-- BOOTH STATUS FUNCTION
+-- Returns booth occupancy map for the exhibition hall.
+-- Runs as SECURITY DEFINER so any authenticated user can see
+-- the state of every booth without exposing private data.
+-- Only exposes: booth_number, lock_state, and organisation name.
+-- =============================================================
+
+DROP FUNCTION IF EXISTS public.get_booth_statuses();
+CREATE OR REPLACE FUNCTION public.get_booth_statuses()
+RETURNS TABLE (
+  booth_number    text,
+  lock_state      text,   -- 'locked' | 'under_review' | 'occupied'
+  organization    text,
+  hold_expires_at timestamptz
+)
+LANGUAGE sql
+SECURITY DEFINER
+STABLE
+SET search_path = public
+AS $$
+  SELECT
+    r.booth_number,
+    CASE
+      -- Confirmed & paid → permanently locked
+      WHEN r.status = 'confirmed' THEN 'locked'
+      -- Has a pending payment submitted within last 7 days → under review
+      WHEN p.id IS NOT NULL
+           AND p.status = 'pending'
+           AND p.created_at >= (now() - interval '7 days') THEN 'under_review'
+      -- Booth assigned but no qualifying payment → generic occupied
+      ELSE 'occupied'
+    END AS lock_state,
+    r.organization,
+    -- When the 7-day hold expires (null for locked/occupied)
+    CASE
+      WHEN p.id IS NOT NULL
+           AND p.status = 'pending'
+           AND p.created_at >= (now() - interval '7 days')
+      THEN p.created_at + interval '7 days'
+      ELSE NULL
+    END AS hold_expires_at
+  FROM public.registrations r
+  LEFT JOIN LATERAL (
+    -- Most recent pending payment for this registration
+    SELECT id, status, created_at
+    FROM public.payments
+    WHERE payments.registration_id = r.id
+      AND payments.status = 'pending'
+    ORDER BY created_at DESC
+    LIMIT 1
+  ) p ON true
+  WHERE r.booth_number IS NOT NULL
+    AND r.status <> 'cancelled';
+$$;
+
+-- Grant execute to authenticated role
+GRANT EXECUTE ON FUNCTION public.get_booth_statuses() TO authenticated;

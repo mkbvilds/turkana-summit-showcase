@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Event Dashboard — Turkana Gold Summit & Minerals Expo 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy-900: #0b2545; /* Deep Navy Blue */
-  --navy-800: #13315c; /* Navy Blue */
-  --navy-700: #1d4677; /* Slate Blue */
-  --orange:   #e63946; /* Bright Red */
-  --orange-600: #d62828; /* Darker Red */
-  --gold:     #dca743; /* Gold */
-  --gold-600: #c29136; /* Dark Gold */
+  --navy-900: #0b2545;
+  --navy-800: #13315c;
+  --navy-700: #1d4677;
+  --orange:   #e63946;
+  --orange-600: #d62828;
+  --gold:     #dca743;
+  --gold-600: #c29136;
   --white: #ffffff;
   --off-white: #faf9f6;
   --muted: #f2eee8;
@@ -49,7 +47,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
 
 .container { width: min(1200px, 94%); margin: 0 auto; }
 
-/* ---------- HEADER / NAV ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: var(--navy-900);
@@ -90,7 +87,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   border-color: var(--orange);
 }
 
-/* ---------- HERO BANNER ---------- */
 .hero-banner {
   background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
   color: #fff;
@@ -126,7 +122,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
 .hero-banner h1 { color: #fff; font-size: 1.8rem; margin: 0; }
 .hero-banner p { color: rgba(255, 255, 255, 0.8); margin: 6px 0 0; font-size: 0.95rem; }
 
-/* ---------- TABS NAVIGATION ---------- */
 .tabs-nav-bar {
   background: #fff;
   border-bottom: 1px solid var(--border);
@@ -155,7 +150,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   border-bottom-color: var(--orange);
 }
 
-/* ---------- MAIN BODY / CARDS ---------- */
 .tracker-navbar {
   display: flex;
   gap: 16px;
@@ -171,7 +165,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   color: var(--text-soft);
   padding: 8px 16px;
   border-radius: 20px;
-  background: var(--bg-soft);
+  background: var(--muted);
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s ease;
@@ -194,7 +188,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Overview layout */
 .overview-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -223,7 +216,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   align-items: center;
 }
 
-/* Status Widget */
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -239,7 +231,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
 .status-pill.pending { background: var(--warning-bg); color: var(--warning); }
 .status-pill.cancelled { background: var(--danger-bg); color: var(--danger); }
 
-/* Details grid */
 .details-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -260,7 +251,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   color: var(--navy-900);
 }
 
-/* Ticket Display */
 .ticket-wrapper {
   background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
   color: #fff;
@@ -344,7 +334,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   letter-spacing: 0.2em;
 }
 
-/* Button general */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 12px 26px;
@@ -365,7 +354,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
 .btn-sm { padding: 6px 14px; font-size: 0.78rem; }
 .btn-block { display: flex; width: 100%; }
 
-/* ---------- ADD-ONS & PAYMENTS ---------- */
 .addon-row {
   display: flex;
   justify-content: space-between;
@@ -423,7 +411,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   margin-top: 12px;
 }
 
-/* ---------- BOOTH BOOKING GRID ---------- */
 .booth-hall-wrap {
   display: flex;
   flex-direction: column;
@@ -508,6 +495,26 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
 .booth-cell.occupied span { color: #718096; }
 .booth-cell.occupied:hover { transform: none; box-shadow: none; }
 
+.booth-cell.locked {
+  background: #fff1f2;
+  border-color: #e11d48;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+.booth-cell.locked h5 { color: #9f1239; }
+.booth-cell.locked span { color: #e11d48; }
+.booth-cell.locked:hover { transform: none; box-shadow: none; }
+
+.booth-cell.under-review {
+  background: #fffbeb;
+  border-color: #d97706;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+.booth-cell.under-review h5 { color: #92400e; }
+.booth-cell.under-review span { color: #b45309; }
+.booth-cell.under-review:hover { transform: none; box-shadow: none; }
+
 .tooltip-org {
   display: none;
   position: absolute;
@@ -526,7 +533,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy-900); margin: 
   display: block;
 }
 
-/* ---------- ADMIN DASHBOARD ---------- */
 .admin-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -608,7 +614,6 @@ select.status-select {
 }
 select.status-select:focus { border-color: var(--orange); }
 
-/* ---------- CHECKOUT / RECEIPT MODALS ---------- */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -657,7 +662,6 @@ select.status-select:focus { border-color: var(--orange); }
 
 .modal-body { padding: 24px; }
 
-/* Payment Methods tabs */
 .pay-methods {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -740,7 +744,6 @@ select.status-select:focus { border-color: var(--orange); }
   color: var(--orange-600);
 }
 
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -770,7 +773,31 @@ select.status-select:focus { border-color: var(--orange); }
   margin-bottom: 16px;
 }
 
-/* Printable invoice styles */
+/* Addon status badges */
+.addon-status-approved {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.addon-status-pending {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.addon-status-none {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
 @media print {
   body.print-invoice * { visibility: hidden; }
   body.print-invoice #printableInvoice, body.print-invoice #printableInvoice * { visibility: visible; }
@@ -778,6 +805,8 @@ select.status-select:focus { border-color: var(--orange); }
     position: absolute;
     left: 0; top: 0; width: 100%;
     padding: 40px;
+    overflow: visible !important;
+    max-height: none !important;
   }
 
   body.print-tickets * { visibility: hidden; }
@@ -826,7 +855,6 @@ select.status-select:focus { border-color: var(--orange); }
   margin-top: 20px;
 }
 
-/* Loading & Error States */
 .loading {
   text-align: center;
   padding: 100px 20px;
@@ -846,7 +874,19 @@ select.status-select:focus { border-color: var(--orange); }
   font-family: var(--font-head);
 }
 
-/* ── Toast Notifications ─────────────────────────────────── */
+/* Overview addon allocation section */
+.overview-addon-section {
+  background: var(--muted);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+.overview-addon-section h4 {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: var(--navy-900);
+}
+
 #toast-container {
   position: fixed; top: 24px; right: 24px; z-index: 9999;
   display: flex; flex-direction: column; gap: 10px; pointer-events: none;
@@ -869,7 +909,7 @@ select.status-select:focus { border-color: var(--orange); }
   from { opacity: 0; transform: translateX(20px); }
   to   { opacity: 1; transform: translateX(0); }
 }
-/* ── Confirm Dialog ──────────────────────────────────────── */
+
 #confirmDialog {
   position: fixed; inset: 0; z-index: 10000; background: rgba(0,0,0,0.45);
   display: none; align-items: center; justify-content: center;
@@ -895,6 +935,78 @@ select.status-select:focus { border-color: var(--orange); }
 .confirm-btn-ok.warn    { background: #f59e0b; color: white; }
 .confirm-btn-ok.danger  { background: #ef4444; color: white; }
 .confirm-btn-ok.success { background: #22c55e; color: white; }
+
+/* Form grid for CRM */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+.field input, .field select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  outline: none;
+}
+.field input:focus, .field select:focus {
+  border-color: var(--orange);
+}
+
+/* Admin full exhibition map */
+.admin-map-legend-note {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+}
+.unassigned-list {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.unassigned-list h5 {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  color: var(--navy-900);
+  margin: 0 0 10px;
+}
+.unassigned-chip {
+  display: inline-block;
+  background: var(--danger-bg);
+  color: var(--danger);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0 6px 6px 0;
+}
+.owned-count-note {
+  font-size: 0.76rem;
+  color: var(--text-soft);
+  margin-top: 6px;
+}
+.owned-count-note strong { color: var(--navy-900); }
+.addon-control-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.addon-control-stack label {
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 </style>
 </head>
 <body>
@@ -910,21 +1022,21 @@ select.status-select:focus { border-color: var(--orange); }
 </header>
 
 <!-- ============ LOADING STATE ============ -->
-<div id="loadingState" class="loading">Loading dashboard profile…</div>
+<div id="loadingState" class="loading" style="display: none;">Loading dashboard profile…</div>
 
 <!-- ============ ERROR STATE ============ -->
 <div id="errorState" class="error-state" style="display:none;"></div>
 
 <!-- ============ MAIN CONTENT ============ -->
-<div id="dashboardContent" style="display:none;">
+<div id="dashboardContent" style="display: block;">
   <section class="hero-banner">
     <div class="container hero-banner-inner">
       <div>
         <div class="badge-row">
-          <span class="badge" id="typeBadge">Delegate</span>
+          <span class="badge" id="typeBadge">Exhibitor</span>
           <span class="badge admin-badge" id="adminBadge" style="display:none;">Admin</span>
         </div>
-        <h1 id="welcomeMsg">Welcome back</h1>
+        <h1 id="welcomeMsg">Welcome, qwerty</h1>
         <p>Manage your registrations, explore add-on passes, and visual hall bookings.</p>
       </div>
       <div>
@@ -937,12 +1049,13 @@ select.status-select:focus { border-color: var(--orange); }
   <div class="tabs-nav-bar">
     <div class="container tabs-inner">
       <div class="tab-link active" data-tab="overview">Overview</div>
-      <div class="tab-link" data-tab="addons">Add-ons &amp; Packages</div>
-      <div class="tab-link" id="boothTab" style="display:none;" data-tab="booths">Exhibitor Booth Selector</div>
+      <div class="tab-link" data-tab="addons">Add-ons & Packages</div>
+      <div class="tab-link" id="boothTab" style="display: none;" data-tab="booths">Exhibitor Booth Selector</div>
       <div class="tab-link" id="adminTab" style="display:none;" data-tab="admin">Admin Panel</div>
       <div class="tab-link" id="financeTabBtn" style="display:none;" data-tab="finance">
         Finance <span id="globalFinanceBadge" style="display:none; background:var(--orange); color:#fff; border-radius:10px; padding:2px 6px; font-size:0.7rem; margin-left:4px;">0</span>
       </div>
+      <div class="tab-link" data-tab="exhibition-map">Exhibition Hall Map</div>
     </div>
   </div>
 
@@ -955,28 +1068,51 @@ select.status-select:focus { border-color: var(--orange); }
           <div class="card">
             <div class="card-title">
               <span>Your Profile Details</span>
-              <span id="profileStatusPill" class="status-pill pending">Pending</span>
+              <span id="profileStatusPill" class="status-pill confirmed">Confirmed</span>
             </div>
             <div class="details-grid">
-              <div class="detail-item"><span>Full Name</span><strong id="profName">—</strong></div>
-              <div class="detail-item"><span>Email Address</span><strong id="profEmail">—</strong></div>
-              <div class="detail-item"><span>Phone Number</span><strong id="profPhone">—</strong></div>
-              <div class="detail-item"><span>Organization</span><strong id="profOrg">—</strong></div>
-              <div class="detail-item"><span>Country</span><strong id="profCountry">—</strong></div>
+              <div class="detail-item"><span>Full Name</span><strong id="profName">qwerty</strong></div>
+              <div class="detail-item"><span>Email Address</span><strong id="profEmail">qwertyz@gmail.com</strong></div>
+              <div class="detail-item"><span>Phone Number</span><strong id="profPhone">qwertyz@gmail.com</strong></div>
+              <div class="detail-item"><span>Organization</span><strong id="profOrg">minerai</strong></div>
+              <div class="detail-item"><span>Country</span><strong id="profCountry">Kenya</strong></div>
               <div class="detail-item"><span>Representatives</span><strong id="profReps">1</strong></div>
             </div>
           </div>
 
-          <!-- Package Details Card -->
+          <!-- Package Details Card with Addon Status -->
           <div class="card">
-            <div class="card-title">Event Package &amp; Add-ons</div>
+            <div class="card-title">Event Package & Add-ons</div>
             <div class="details-grid">
-              <div class="detail-item"><span>Base Package</span><strong id="pkgBase">—</strong></div>
-              <div class="detail-item"><span>Gala Dinner Pass</span><strong id="pkgGala">No</strong></div>
-              <div class="detail-item"><span>Mine Tour Slot</span><strong id="pkgTour">No</strong></div>
-              <div class="detail-item"><span>Additional Passes</span><strong id="pkgExtra">0</strong></div>
-              <div class="detail-item" id="pkgBoothItem" style="display:none;"><span>Exhibitor Booth</span><strong id="pkgBooth">Unassigned</strong></div>
+              <div class="detail-item"><span>Base Package</span><strong id="pkgBase">Tier 1 Exhibitor — KES 50,000</strong></div>
+              <div class="detail-item">
+                <span>Gala Dinner Pass</span>
+                <strong id="pkgGala">No</strong>
+                <span id="pkgGalaStatus" style="display:none; font-size:0.7rem;"></span>
+              </div>
+              <div class="detail-item">
+                <span>Mine Tour Slot</span>
+                <strong id="pkgTour">Yes (1 slot)</strong>
+                <span id="pkgTourStatus" style="display:none; font-size:0.7rem;"></span>
+              </div>
+              <div class="detail-item">
+                <span>Additional Passes</span>
+                <strong id="pkgExtra">0</strong>
+                <span id="pkgExtraStatus" style="display:none; font-size:0.7rem;"></span>
+              </div>
+              <div class="detail-item" id="pkgBoothItem" style="display: none;"><span>Exhibitor Booth</span><strong id="pkgBooth">A1</strong></div>
             </div>
+
+            <!-- Overview Addon Allocation Section -->
+            <div id="overviewAllocationSection" class="overview-addon-section" style="display:none;">
+              <h4>Quick Allocation</h4>
+              <p style="font-size:0.8rem; color:var(--text-soft); margin-bottom:12px;">Assign your purchased add-ons to delegates below. Changes save automatically.</p>
+              <div id="overviewAllocationsForms"></div>
+              <div style="margin-top:12px; text-align:right;">
+                <button class="btn btn-outline btn-sm" onclick="saveOverviewAllocations()">Save Allocations</button>
+              </div>
+            </div>
+
             <div style="margin-top: 24px; display: flex; gap: 12px;">
               <button class="btn btn-primary btn-sm" id="viewInvoiceBtn">View Invoice / Receipt</button>
             </div>
@@ -986,11 +1122,36 @@ select.status-select:focus { border-color: var(--orange); }
         <div style="display: flex; flex-direction: column;">
           <!-- Digital Pass Tickets Container -->
           <div id="ticketsContainer">
-            <!-- Tickets injected via JS -->
+          <div class="ticket-wrapper" style="margin-bottom: 20px;">
+            <div class="ticket-header">
+              <h4>Turkana Gold Summit 2026</h4>
+              <span>Delegate Expo Pass - Delegate</span>
+            </div>
+            <div class="ticket-details">
+              <div>
+                <span>Delegate</span>
+                <strong>qwerty</strong>
+              </div>
+              <div>
+                <span>Category</span>
+                <strong>Exhibitor</strong>
+              </div>
+              <div>
+                <span>Company</span>
+                <strong>minerai</strong>
+              </div>
+              <div>
+                <span>Status</span>
+                <strong>Confirmed</strong>
+              </div>
+            </div>
+            <div class="barcode-area">
+              <div class="barcode-visual"></div>
+              <div class="barcode-text">TGS-2026-16924-1</div>
+            </div>
           </div>
-          <button class="btn btn-outline btn-block" onclick="printTickets()" id="downloadTicketsBtn" style="display:none; margin-top: 12px;">
-            Download / Print All Passes
-          </button>
+        </div>
+          <button class="btn btn-outline btn-block" onclick="printTickets()" id="downloadTicketsBtn" style="display: block; margin-top: 12px;">Download / Print All Passes (1)</button>
         </div>
       </div>
     </div>
@@ -998,19 +1159,23 @@ select.status-select:focus { border-color: var(--orange); }
     <!-- ============ TAB: ADD-ONS & PACKAGES ============ -->
     <div id="addonsTab" class="tab-content">
       <div class="card">
-        <div class="card-title">Manage Extra Packages &amp; Add-ons</div>
-        <p style="color: var(--text-soft); font-size: 0.9rem; margin-top: -10px; margin-bottom: 24px;">Configure add-ons for the Turkana Gold Summit &amp; Expo. If you already paid, modifying your selection will calculate any pending differences.</p>
+        <div class="card-title">Manage Extra Packages & Add-ons</div>
+        <p style="color: var(--text-soft); font-size: 0.9rem; margin-top: -10px; margin-bottom: 24px;">Configure add-ons for the Turkana Gold Summit & Expo. Each add-on will be tracked separately for payment status. Quantities below only reflect <strong>new</strong> add-ons you want to purchase now — anything you already own is listed separately and does not need to be re-entered.</p>
         
         <form id="addonsForm">
           <div class="addon-row">
             <div class="addon-info">
               <h4>Gala Dinner Ticket</h4>
               <p>Entry to the premium Gold Summit networking Gala dinner event.</p>
+              <p class="owned-count-note">Currently owned: <strong id="ownedGalaCount">0</strong></p>
             </div>
             <div style="display: flex; align-items: center;">
               <span class="addon-price">KES 2,500 each</span>
-              <div class="addon-control">
-                <input type="number" id="addonGala" min="0" value="0" />
+              <div class="addon-control-stack">
+                <label for="addonGala">Add more</label>
+                <div class="addon-control">
+                  <input type="number" id="addonGala" min="0" value="0">
+                </div>
               </div>
             </div>
           </div>
@@ -1019,11 +1184,15 @@ select.status-select:focus { border-color: var(--orange); }
             <div class="addon-info">
               <h4>Field Mine Tour Slot</h4>
               <p>Guided physical study tour of selected Artisanal and Small-Scale Gold Mining (ASGM) sites in Turkana.</p>
+              <p class="owned-count-note">Currently owned: <strong id="ownedTourCount">0</strong></p>
             </div>
             <div style="display: flex; align-items: center;">
               <span class="addon-price">KES 5,000 each</span>
-              <div class="addon-control">
-                <input type="number" id="addonTour" min="0" value="0" />
+              <div class="addon-control-stack">
+                <label for="addonTour">Add more</label>
+                <div class="addon-control">
+                  <input type="number" id="addonTour" min="0" value="0">
+                </div>
               </div>
             </div>
           </div>
@@ -1032,21 +1201,26 @@ select.status-select:focus { border-color: var(--orange); }
             <div class="addon-info">
               <h4>Extra Representative Passes</h4>
               <p>Purchase additional attendee entry credentials for members of your delegation.</p>
+              <p class="owned-count-note">Currently owned: <strong id="ownedExtraCount">0</strong></p>
             </div>
             <div style="display: flex; align-items: center;">
               <span class="addon-price">KES 1,500 each</span>
-              <div class="addon-control">
-                <input type="number" id="addonExtraReps" min="0" value="0" />
+              <div class="addon-control-stack">
+                <label for="addonExtraReps">Add more</label>
+                <div class="addon-control">
+                  <input type="number" id="addonExtraReps" min="0" value="0">
+                </div>
               </div>
             </div>
           </div>
 
           <div class="addon-row" style="flex-direction: column; align-items: flex-start; display: none;" id="extraPassesFormsContainer">
              <h4 style="margin-bottom: 12px; font-size: 0.95rem;">Extra Pass Details</h4>
+             <p style="font-size:0.8rem; color:var(--text-soft); margin-top:-8px; margin-bottom:12px;">Passes already saved to your record are locked once confirmed. Only newly added passes below can be edited.</p>
              <div id="extraPassesForms" style="width: 100%;"></div>
           </div>
 
-          <div class="addon-row" style="flex-direction: column; align-items: flex-start; display: none;" id="allocationsContainer">
+          <div class="addon-row" style="flex-direction: column; align-items: flex-start; display: flex;" id="allocationsContainer">
              <h4 style="margin-bottom: 12px; font-size: 0.95rem;">Allocate Tickets to Delegates</h4>
              <p style="font-size: 0.85rem; color: var(--text-soft); margin-bottom: 12px;">Assign your Gala Dinner and Mine Tour tickets to specific members of your delegation.</p>
              <div id="allocationsForms" style="width: 100%;"></div>
@@ -1055,28 +1229,30 @@ select.status-select:focus { border-color: var(--orange); }
           <div class="payment-summary">
             <div class="summary-line">
               <span>Base Registration package:</span>
-              <strong id="sumBasePrice">KES 0</strong>
+              <strong id="sumBasePrice">KES 50,000</strong>
             </div>
             <div class="summary-line">
-              <span>Gala Dinner add-ons:</span>
+              <span>New Gala Dinner add-ons:</span>
               <strong id="sumGalaPrice">KES 0</strong>
             </div>
             <div class="summary-line">
-              <span>Mine Tour add-ons:</span>
+              <span>New Mine Tour add-ons:</span>
               <strong id="sumTourPrice">KES 0</strong>
             </div>
             <div class="summary-line">
-              <span>Extra representatives:</span>
+              <span>New extra representatives:</span>
               <strong id="sumExtraPrice">KES 0</strong>
             </div>
             <div class="summary-line total">
-              <span>Total Calculated Fees:</span>
+              <span>Total Calculated Fees (all-time):</span>
               <strong id="sumTotalPrice">KES 0</strong>
             </div>
+            <div class="summary-line"><span>Less Already Paid:</span><strong id="sumAlreadyPaid" style="color: var(--success);">- KES 0</strong></div>
+            <div class="summary-line total" style="border-top: none; margin-top: 0; padding-top: 0;"><span>Amount Due Now:</span><strong id="sumDueAmount" style="color: var(--orange-600);">KES 0</strong></div>
           </div>
 
           <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
-            <button type="submit" class="btn btn-primary" id="saveAddonsBtn">Update Details &amp; Pay</button>
+            <button type="submit" class="btn btn-primary" id="saveAddonsBtn">Update Details</button>
           </div>
         </form>
       </div>
@@ -1087,14 +1263,16 @@ select.status-select:focus { border-color: var(--orange); }
       <div class="card">
         <div class="card-title">
           <span>Exhibitor Booth Reservation Hall</span>
-          <span id="boothReservedBadge" class="status-pill confirmed" style="display:none;">Booth Reserved</span>
+          <span id="boothReservedBadge" class="status-pill confirmed" style="display: inline-flex;">Reserved: Booth A1</span>
         </div>
-        <p style="color: var(--text-soft); font-size: 0.9rem; margin-top: -10px; margin-bottom: 24px;">Exhibitors can reserve their booth slot on the interactive exhibition hall floor layout. Selected booths will update in real time.</p>
+        <p style="color: var(--text-soft); font-size: 0.9rem; margin-top: -10px; margin-bottom: 24px;">Exhibitors can reserve their booth slot on the interactive exhibition hall floor layout.</p>
         
         <div class="legend">
           <div class="legend-item"><div class="legend-color available"></div><span>Available</span></div>
           <div class="legend-item"><div class="legend-color selected"></div><span>Selected by You</span></div>
-          <div class="legend-item"><div class="legend-color occupied"></div><span>Occupied</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#fff1f2;border:2px solid #e11d48;"></div><span>Locked (Confirmed)</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#fffbeb;border:2px solid #d97706;"></div><span>Under Review (7-day hold)</span></div>
+          <div class="legend-item"><div class="legend-color occupied"></div><span>Occupied / Other</span></div>
         </div>
 
         <div class="booth-hall-wrap">
@@ -1104,13 +1282,11 @@ select.status-select:focus { border-color: var(--orange); }
             <span>Catering Section →</span>
           </div>
 
-          <div class="booth-grid" id="boothSelectorGrid">
-            <!-- Dynamically populated via JS -->
-          </div>
+          <div class="booth-grid" id="boothSelectorGrid"></div>
 
           <div style="margin-top: 28px; display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <p id="boothSelectionText" style="margin: 0; font-weight: 600; color: var(--navy-900);">No booth selected.</p>
+              <p id="boothSelectionText" style="margin: 0; font-weight: 600; color: var(--navy-900);">Select a booth to reserve</p>
             </div>
             <button class="btn btn-primary" id="confirmBoothBtn" disabled>Confirm Booth Booking</button>
           </div>
@@ -1139,6 +1315,8 @@ select.status-select:focus { border-color: var(--orange); }
         </div>
       </div>
 
+
+
       <div class="card">
         <div class="card-title" id="adminTableTitle" style="margin-bottom: 16px;">Registered Attendees</div>
         
@@ -1155,7 +1333,7 @@ select.status-select:focus { border-color: var(--orange); }
           <div class="tracker-tab admin-filter" data-filter="all">All Records</div>
         </div>
         <div class="table-controls">
-          <input type="text" class="search-input" id="adminSearchInput" placeholder="Search by name, email, org..." />
+          <input type="text" class="search-input" id="adminSearchInput" placeholder="Search by name, email, org...">
           <div>
             <button class="btn btn-outline btn-sm" id="newRecordBtn" style="margin-right: 8px;">New Record</button>
             <button class="btn btn-outline btn-sm" id="exportCsvBtn">Export CSV</button>
@@ -1164,132 +1342,143 @@ select.status-select:focus { border-color: var(--orange); }
 
         <div class="table-wrapper">
           <table class="admin-table">
-            <thead id="adminTableHead">
-              <!-- Dynamically populated -->
+            <thead id="adminTableHead"></thead>
+            <tbody id="adminTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TAB: FINANCE ============ -->
+    <div id="financeTab" class="tab-content">
+      <div class="admin-stats" style="margin-bottom:20px;">
+        <div class="stat-card">
+          <span>Total Payments Received</span>
+          <strong id="finTotalPayments">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Approved (Confirmed)</span>
+          <strong id="finApproved">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Pending Review</span>
+          <strong id="finPending">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Total Revenue Collected</span>
+          <strong id="finRevenue">KES 0</strong>
+        </div>
+      </div>
+
+      <!-- Event Headcount Breakdown -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title" style="margin-bottom:16px;">Event Attendance Breakdown</div>
+        <div class="admin-stats">
+          <div class="stat-card">
+            <span>Gala Dinner</span>
+            <strong id="finGalaCount">0</strong>
+            <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">seats booked</span>
+          </div>
+          <div class="stat-card">
+            <span>Mine Tour</span>
+            <strong id="finTourCount">0</strong>
+            <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">seats booked</span>
+          </div>
+          <div class="stat-card">
+            <span>Extra Passes</span>
+            <strong id="finExtraCount">0</strong>
+            <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">additional passes</span>
+          </div>
+          <div class="stat-card">
+            <span>Total Attendees</span>
+            <strong id="finTotalAttendees">0</strong>
+            <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">confirmed only</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Payments Ledger -->
+      <div class="card">
+        <div class="card-title" style="margin-bottom:4px; display:flex; justify-content:space-between; align-items:center;">
+          <span>Payments Ledger</span>
+          <div style="display:flex; gap:8px;">
+            <select id="finStatusFilter" style="padding:6px 10px; border:1px solid var(--border); border-radius:6px; font-size:0.82rem;">
+              <option value="all">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="success">Approved</option>
+              <option value="failed">Rejected</option>
+            </select>
+            <button class="btn btn-outline btn-sm" onclick="loadFinanceDashboard()">Refresh</button>
+          </div>
+        </div>
+        <p style="color:var(--text-soft); font-size:0.83rem; margin-bottom:16px;">All payment submissions. Each add-on payment is tracked independently.</p>
+        <div class="table-wrapper">
+          <table class="admin-table" style="font-size:0.82rem;">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Method</th>
+                <th>Currency</th>
+                <th>Amount</th>
+                <th>Reference</th>
+                <th>Add-ons Purchased</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
             </thead>
-            <tbody id="adminTableBody">
-              <!-- Dynamically populated -->
+            <tbody id="finPaymentsBody">
+              <tr><td colspan="9" style="text-align:center; color:var(--text-soft); padding:24px;">Loading…</td></tr>
             </tbody>
           </table>
         </div>
       </div>
-
-      <!-- Pending Manual Payments Review Removed (Now in Finance Tab) -->
+    </div>
+    
+    <!-- ============ TAB: EXHIBITION MAP ============ -->
+    <div id="exhibition-mapTab" class="tab-content">
+      <!-- Full Exhibition Hall Map -->
+      <div class="card">
+        <div class="card-title">
+          <span>Complete Exhibition Hall Map</span>
+          <button class="btn btn-outline btn-sm" onclick="loadAdminBoothMap()">Refresh Map</button>
+        </div>
+        <p class="admin-map-legend-note">Full view of every booth across the hall — who has reserved a spot and who has not, regardless of your own package or booth assignment.</p>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-color available"></div><span>Available</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#fff1f2;border:2px solid #e11d48;"></div><span>Locked (Confirmed)</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#fffbeb;border:2px solid #d97706;"></div><span>Under Review (7-day hold)</span></div>
+          <div class="legend-item"><div class="legend-color occupied"></div><span>Occupied / Other</span></div>
+        </div>
+        <div class="booth-grid" id="adminBoothMapGrid"></div>
+        <div class="unassigned-list">
+          <h5>Exhibitors without a booth assignment</h5>
+          <div id="unassignedExhibitorsList"><span style="font-size:0.82rem; color:var(--text-soft);">Loading…</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- ============ TAB: FINANCE ============ -->
-<div id="financeTab" class="tab-content">
-  <div class="container dash-body">
-
-    <!-- Summary KPI Cards -->
-    <div class="admin-stats" style="margin-bottom:20px;">
-      <div class="stat-card">
-        <span>Total Payments Received</span>
-        <strong id="finTotalPayments">0</strong>
-      </div>
-      <div class="stat-card">
-        <span>Approved (Confirmed)</span>
-        <strong id="finApproved">0</strong>
-      </div>
-      <div class="stat-card">
-        <span>Pending Review</span>
-        <strong id="finPending">0</strong>
-      </div>
-      <div class="stat-card">
-        <span>Total Revenue Collected</span>
-        <strong id="finRevenue">KES 0</strong>
-      </div>
-    </div>
-
-    <!-- Event Headcount Breakdown -->
-    <div class="card" style="margin-bottom:20px;">
-      <div class="card-title" style="margin-bottom:16px;">Event Attendance Breakdown</div>
-      <div class="admin-stats">
-        <div class="stat-card">
-          <span>Gala Dinner</span>
-          <strong id="finGalaCount">0</strong>
-          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">seats booked</span>
-        </div>
-        <div class="stat-card">
-          <span>Mine Tour</span>
-          <strong id="finTourCount">0</strong>
-          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">seats booked</span>
-        </div>
-        <div class="stat-card">
-          <span>Extra Passes</span>
-          <strong id="finExtraCount">0</strong>
-          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">additional passes</span>
-        </div>
-        <div class="stat-card">
-          <span>Total Attendees</span>
-          <strong id="finTotalAttendees">0</strong>
-          <span style="font-size:0.75rem; color:var(--text-soft); margin-top:2px;">confirmed only</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Full Payments Ledger -->
-    <div class="card">
-      <div class="card-title" style="margin-bottom:4px; display:flex; justify-content:space-between; align-items:center;">
-        <span>Payments Ledger</span>
-        <div style="display:flex; gap:8px;">
-          <select id="finStatusFilter" style="padding:6px 10px; border:1px solid var(--border); border-radius:6px; font-size:0.82rem;">
-            <option value="all">All Statuses</option>
-            <option value="pending">Pending</option>
-            <option value="success">Approved</option>
-            <option value="failed">Rejected</option>
-          </select>
-          <button class="btn btn-outline btn-sm" onclick="loadFinanceDashboard()">Refresh</button>
-        </div>
-      </div>
-      <p style="color:var(--text-soft); font-size:0.83rem; margin-bottom:16px;">All manual payment submissions. Each payment reference is unique — duplicates are rejected at the database level.</p>
-      <div class="table-wrapper">
-        <table class="admin-table" style="font-size:0.82rem;">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Method</th>
-              <th>Currency</th>
-              <th>Amount</th>
-              <th>Reference</th>
-              <th>Add-ons Purchased</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="finPaymentsBody">
-            <tr><td colspan="9" style="text-align:center; color:var(--text-soft); padding:24px;">Loading…</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
 <!-- ============ MODAL: ADMIN CRM EDIT ============ -->
 <div class="modal-overlay" id="adminCrmModal">
   <div class="modal-card" style="max-width: 600px;">
     <div class="modal-header">
       <h3>Edit Registration / CRM Record</h3>
-      <button class="close-modal" id="closeAdminCrmModal">&times;</button>
+      <button class="close-modal" id="closeAdminCrmModal">×</button>
     </div>
     <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
-      <form id="adminCrmForm" class="reg-form" style="box-shadow: none; padding: 0;">
-        <input type="hidden" id="crmId" />
+      <form id="adminCrmForm">
+        <input type="hidden" id="crmId">
         
         <h4 style="margin-top: 0; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 8px;">1. Personal & Organization Info</h4>
         <div class="form-grid" style="margin-bottom: 24px;">
-          <div class="field"><label>Full Name</label><input type="text" id="crmFullName" required /></div>
-          <div class="field"><label>Email</label><input type="email" id="crmEmail" required /></div>
-          <div class="field"><label>Phone</label><input type="text" id="crmPhone" /></div>
-          <div class="field"><label>Country</label><input type="text" id="crmCountry" /></div>
-          <div class="field"><label>Organization</label><input type="text" id="crmOrganization" /></div>
-          <div class="field"><label>Job Title</label><input type="text" id="crmJobTitle" /></div>
+          <div class="field"><label>Full Name</label><input type="text" id="crmFullName" required></div>
+          <div class="field"><label>Email</label><input type="email" id="crmEmail" required></div>
+          <div class="field"><label>Phone</label><input type="text" id="crmPhone"></div>
+          <div class="field"><label>Country</label><input type="text" id="crmCountry"></div>
+          <div class="field"><label>Organization</label><input type="text" id="crmOrganization"></div>
+          <div class="field"><label>Job Title</label><input type="text" id="crmJobTitle"></div>
         </div>
 
         <h4 style="margin-top: 0; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 8px;">2. Event Roles & Industry</h4>
@@ -1307,8 +1496,8 @@ select.status-select:focus { border-color: var(--orange); }
               <option value="volunteer">Volunteer</option>
             </select>
           </div>
-          <div class="field"><label>Industry Affiliate</label><input type="text" id="crmIndustryAffiliate" /></div>
-          <div class="field" style="grid-column: span 2;"><label>Contact Person</label><input type="text" id="crmContactPerson" /></div>
+          <div class="field"><label>Industry Affiliate</label><input type="text" id="crmIndustryAffiliate"></div>
+          <div class="field" style="grid-column: span 2;"><label>Contact Person</label><input type="text" id="crmContactPerson"></div>
         </div>
 
         <h4 style="margin-top: 0; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 8px;">3. Status & Tracking</h4>
@@ -1320,10 +1509,10 @@ select.status-select:focus { border-color: var(--orange); }
               <option value="cancelled">Cancelled</option>
             </select>
           </div>
-          <div class="field"><label>Invitation Status</label><input type="text" id="crmInvitationStatus" placeholder="e.g. Invited, Accepted" /></div>
-          <div class="field"><label>Invitation Sent By</label><input type="text" id="crmInvitationSentBy" /></div>
-          <div class="field"><label>Attendance Status</label><input type="text" id="crmAttendanceStatus" /></div>
-          <div class="field" style="grid-column: span 2;"><label>Supplies Provided</label><input type="text" id="crmSuppliesProvided" /></div>
+          <div class="field"><label>Invitation Status</label><input type="text" id="crmInvitationStatus" placeholder="e.g. Invited, Accepted"></div>
+          <div class="field"><label>Invitation Sent By</label><input type="text" id="crmInvitationSentBy"></div>
+          <div class="field"><label>Attendance Status</label><input type="text" id="crmAttendanceStatus"></div>
+          <div class="field" style="grid-column: span 2;"><label>Supplies Provided</label><input type="text" id="crmSuppliesProvided"></div>
         </div>
         <div style="margin-top: 15px; text-align: right;">
           <button type="button" class="btn btn-outline" id="cancelCrmBtn" style="padding: 8px 16px; margin-right: 10px;">Cancel</button>
@@ -1339,11 +1528,9 @@ select.status-select:focus { border-color: var(--orange); }
   <div class="modal-card" style="max-width: 520px;">
     <div class="modal-header">
       <h3>Complete Registration Payment</h3>
-      <button class="close-modal" id="closePaymentModal">&times;</button>
+      <button class="close-modal" id="closePaymentModal">×</button>
     </div>
     <div class="modal-body">
-
-      <!-- Notice -->
       <div class="manual-notice">
         <div>
           <strong>Note: Automated Payment Coming Soon</strong>
@@ -1351,13 +1538,11 @@ select.status-select:focus { border-color: var(--orange); }
         </div>
       </div>
 
-      <!-- Payment method tabs -->
       <div class="pay-methods">
         <div class="pay-method-btn active" data-method="mpesa">M-Pesa Paybill</div>
         <div class="pay-method-btn" data-method="card">Debit / Bank Card</div>
       </div>
 
-      <!-- Currency Selector -->
       <div style="margin-bottom: 16px;">
         <label style="font-size:0.8rem; font-weight:600; color:var(--navy-900); margin-bottom:6px; display:block;">Payment Currency</label>
         <div class="currency-selector">
@@ -1367,7 +1552,6 @@ select.status-select:focus { border-color: var(--orange); }
         </div>
       </div>
 
-      <!-- M-Pesa Section -->
       <div class="pay-form-section active" id="payMpesaSection">
         <div class="paybill-card">
           <div>
@@ -1381,19 +1565,17 @@ select.status-select:focus { border-color: var(--orange); }
           <div style="grid-column: 1 / -1;">
             <div class="pb-label">Steps</div>
             <div style="font-size:0.8rem; opacity:0.85; margin-top:4px; line-height:1.7;">
-              M-Pesa &rarr; Lipa na M-Pesa &rarr; Pay Bill &rarr; Business No: <strong>522522</strong> &rarr; Account No: (above) &rarr; Amount &rarr; PIN &amp; Send
+              M-Pesa → Lipa na M-Pesa → Pay Bill → Business No: <strong>522522</strong> → Account No: (above) → Amount → PIN & Send
             </div>
           </div>
         </div>
         <div class="form-group">
           <label for="mpesaPaymentRef">Transaction Code <span style="color:red;">*</span></label>
-          <input type="text" id="mpesaPaymentRef" placeholder="e.g. QEJ4X8ABCD" style="text-transform: uppercase; letter-spacing: 0.05em;" />
+          <input type="text" id="mpesaPaymentRef" placeholder="e.g. QEJ4X8ABCD" style="text-transform: uppercase; letter-spacing: 0.05em;">
           <span style="font-size:0.75rem; color:var(--text-soft);">The confirmation code from your M-Pesa SMS</span>
         </div>
-
       </div>
 
-      <!-- Debit / Bank Card Section -->
       <div class="pay-form-section" id="payCardSection">
         <div class="paybill-card">
           <div>
@@ -1413,10 +1595,9 @@ select.status-select:focus { border-color: var(--orange); }
         </div>
         <div class="form-group">
           <label for="cardPaymentRef">Transaction / Reference ID <span style="color:red;">*</span></label>
-          <input type="text" id="cardPaymentRef" placeholder="e.g. TXN-20260705-001" />
+          <input type="text" id="cardPaymentRef" placeholder="e.g. TXN-20260705-001">
           <span style="font-size:0.75rem; color:var(--text-soft);">The reference or confirmation number from your bank</span>
         </div>
-
       </div>
 
       <p style="font-size:0.78rem; color:var(--text-soft); border-top: 1px solid var(--border); padding-top: 12px; margin-bottom:16px; line-height:1.5;">
@@ -1430,7 +1611,6 @@ select.status-select:focus { border-color: var(--orange); }
         </div>
         <button class="btn btn-primary" id="confirmCheckoutBtn" style="flex-shrink:0;">Submit Payment for Review</button>
       </div>
-
     </div>
   </div>
 </div>
@@ -1439,10 +1619,10 @@ select.status-select:focus { border-color: var(--orange); }
 <div class="modal-overlay" id="invoiceModal">
   <div class="modal-card" style="max-width: 650px;">
     <div class="modal-header">
-      <h3>Registration Invoice &amp; Receipt</h3>
-      <button class="close-modal" id="closeInvoiceModal">&times;</button>
+      <h3>Registration Invoice & Receipt</h3>
+      <button class="close-modal" id="closeInvoiceModal">×</button>
     </div>
-    <div class="modal-body" id="printableInvoice">
+    <div class="modal-body" id="printableInvoice" style="max-height: 70vh; overflow-y: auto;">
       <div class="invoice-container">
         <div class="invoice-header-row">
           <div>
@@ -1450,10 +1630,10 @@ select.status-select:focus { border-color: var(--orange); }
             <span style="font-size:0.8rem; color:var(--text-soft);">artisanalglobalsummit.com</span>
           </div>
           <div class="invoice-meta">
-            <strong>INVOICE / RECEIPT</strong><br/>
-            <span>Invoice No: TGS-2026-<span id="invNo">1042</span></span><br/>
-            <span>Date: <span id="invDate">July 3, 2026</span></span><br/>
-            <span style="display:inline-block; margin-top:4px;">Status: <strong id="invStatus" style="padding:2px 6px; border-radius:4px;">Pending</strong></span>
+            <strong>INVOICE / RECEIPT</strong><br>
+            <span>Invoice No: TGS-2026-<span id="invNo">0000</span></span><br>
+            <span>Date: <span id="invDate">—</span></span><br>
+            <span style="display:inline-block; margin-top:4px;">Status: <strong id="invStatus" style="padding: 2px 6px; border-radius: 4px;">—</strong></span>
           </div>
         </div>
 
@@ -1461,18 +1641,14 @@ select.status-select:focus { border-color: var(--orange); }
           <div>
             <strong style="color:var(--navy-900);">Summit Venue:</strong>
             <p style="margin: 4px 0 0; font-size: 0.82rem; color: var(--text-soft);">
-              The Cradle Hotel, Lodwar<br/>
-              Turkana County, Kenya<br/>
+              The Cradle Hotel, Lodwar<br>
+              Turkana County, Kenya<br>
               Dates: Sept 15 - 17, 2026
             </p>
           </div>
           <div>
             <strong style="color:var(--navy-900);">Billed To:</strong>
-            <p style="margin: 4px 0 0; font-size: 0.82rem; color: var(--text-soft);" id="invBilledTo">
-              —<br/>
-              Organization: —<br/>
-              Country: Kenya
-            </p>
+            <p style="margin: 4px 0 0; font-size: 0.82rem; color: var(--text-soft);" id="invBilledTo">—</p>
           </div>
         </div>
 
@@ -1483,15 +1659,15 @@ select.status-select:focus { border-color: var(--orange); }
               <th>Qty</th>
               <th style="text-align: right;">Unit Price</th>
               <th style="text-align: right;">Amount</th>
+              <th style="text-align: center;">Status</th>
             </tr>
           </thead>
-          <tbody id="invoiceDetailsBody">
-            <!-- Populated via JS -->
-          </tbody>
+          <tbody id="invoiceDetailsBody"></tbody>
         </table>
 
         <div class="invoice-total-row">
-          Total Fee Paid: <span id="invTotalFee">KES 0</span>
+          Total Amount: <span id="invTotalFee">KES 0</span>
+          &nbsp;&nbsp;<span id="invTotalPaid" style="font-size:0.82rem; color:var(--success);"></span>
         </div>
 
         <div style="margin-top: 36px; border-top: 1px dashed var(--border); padding-top: 16px; text-align: center; font-size: 0.78rem; color: var(--text-soft);">
@@ -1508,10 +1684,9 @@ select.status-select:focus { border-color: var(--orange); }
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="auth-config.js"></script>
 <script>
-
-  /* ── UI Notification Utilities ──────────────────────────── */
+  /* ── Toast & Confirm Utilities ──────────────────────────── */
   function showToast(title, message = '', type = 'info', duration = 4000) {
-    const icons = { success: '&#10003;', error: '&#10007;', info: 'i' };
+    const icons = { success: '✓', error: '✗', info: 'i' };
     const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
@@ -1534,7 +1709,7 @@ select.status-select:focus { border-color: var(--orange); }
       const okBtn   = document.getElementById('confirmOkBtn');
       const cancelBtn = document.getElementById('confirmCancelBtn');
 
-      const iconMap = { warn: '!', danger: '!', success: '&#10003;' };
+      const iconMap = { warn: '!', danger: '!', success: '✓' };
       iconWrap.className = `confirm-icon-wrap ${type}`;
       emoji.innerHTML = iconMap[type] || '?';
       titleEl.textContent = title;
@@ -1558,15 +1733,60 @@ select.status-select:focus { border-color: var(--orange); }
     });
   }
 
+  /* ── Global State ──────────────────────────────────────── */
   let currentUserProfile = null;
   let allRegistrationsCache = [];
   let currentAdminTabFilter = 'attendee';
   let currentlySelectedBooth = null;
   let currentSession = null;
+  let allUserPayments = [];  // Cache of payments for current user
 
+  /* ── Price Mapping ─────────────────────────────────────── */
+  const priceMapping = {
+    "Standard Participant Pass — Ksh 1,500": 1500,
+    "Cooperative Mining Package — Ksh 5,000 (up to 4 pax)": 5000,
+    "Gold Sponsor — USD 40,000": 40000 * 130,
+    "Silver Sponsor — USD 25,000": 25000 * 130,
+    "Copper Sponsor — USD 10,000": 10000 * 130,
+    "Bronze Sponsor — USD 5,000": 5000 * 130,
+    "Tier 1 Exhibitor — KES 50,000": 50000,
+    "Standard Exhibitor — KES 30,000": 30000,
+    "International Exhibitor — USD 750": 750 * 130
+  };
+
+  function getBasePrice(pkgName) {
+    if (!pkgName) return 1500;
+    return priceMapping[pkgName] || 1500;
+  }
+
+  function getPackageMaxPasses(pkgName) {
+    if (!pkgName) return 1;
+    const name = pkgName.toLowerCase();
+    if (name.includes('gold sponsor')) return 8;
+    if (name.includes('silver sponsor')) return 6;
+    if (name.includes('copper sponsor') || name.includes('cooperative')) return 4;
+    if (name.includes('bronze sponsor') || name.includes('tier 1')) return 3;
+    if (name.includes('tier 2') || name.includes('small business')) return 2;
+    return 1;
+  }
+
+  /* ── Registration Status Helper ────────────────────────── */
+  // Recomputes the overall registration status from the full set of payments
+  // for that registration, so the invoice/profile pill can never show
+  // "Confirmed" while a payment sits rejected or pending.
+  function computeOverallStatus(paymentsList) {
+    const list = paymentsList || [];
+    if (list.length === 0) return 'pending';
+    if (list.some(p => p.status === 'pending')) return 'pending';
+    if (list.some(p => p.status === 'failed')) return 'pending';
+    if (list.every(p => p.status === 'success')) return 'confirmed';
+    return 'pending';
+  }
+
+  /* ── Init ──────────────────────────────────────────────── */
   (async function initDashboard() {
     currentSession = await requireAuth();
-    if (!currentSession) return; 
+    if (!currentSession) return;
 
     // Tab Navigation switching
     const tabLinks = document.querySelectorAll(".tab-link");
@@ -1583,9 +1803,11 @@ select.status-select:focus { border-color: var(--orange); }
             (tabTarget === 'finance' && content.id === 'financeTab')
           );
         });
-        // Load Finance data on first visit
         if (tabTarget === 'finance' && typeof loadFinanceDashboard === 'function') {
           loadFinanceDashboard();
+        }
+        if (tabTarget === 'exhibition-map' && typeof loadAdminBoothMap === 'function') {
+          loadAdminBoothMap();
         }
       });
     });
@@ -1593,6 +1815,7 @@ select.status-select:focus { border-color: var(--orange); }
     await refreshUserProfile();
   })();
 
+  /* ── Refresh User Profile ──────────────────────────────── */
   async function refreshUserProfile() {
     const loadingEl = document.getElementById("loadingState");
     const contentEl = document.getElementById("dashboardContent");
@@ -1608,6 +1831,14 @@ select.status-select:focus { border-color: var(--orange); }
       if (error) throw error;
       currentUserProfile = profile;
 
+      // Fetch all payments for this user
+      const { data: payments } = await supabaseClient
+        .from('payments')
+        .select('*')
+        .eq('user_id', currentSession.user.id)
+        .order('created_at', { ascending: true });
+      allUserPayments = payments || [];
+
       // Populate Overview Panel fields
       document.getElementById("welcomeMsg").textContent = `Welcome, ${profile.full_name.split(" ")[0]}`;
       document.getElementById("profName").textContent = profile.full_name;
@@ -1620,14 +1851,22 @@ select.status-select:focus { border-color: var(--orange); }
       document.getElementById("typeBadge").textContent = badgeType;
       
       document.getElementById("pkgBase").textContent = profile.package || "Standard Registration";
+      
+      // Gala status
       const gCount = profile.gala_tickets || (profile.gala_dinner ? 1 : 0);
       document.getElementById("pkgGala").textContent = gCount > 0 ? `Yes (${gCount} pass${gCount>1?'es':''})` : "No";
+      updateAddonStatusBadge('pkgGalaStatus', 'gala', gCount);
       
+      // Tour status
       const tCount = profile.tour_tickets || (profile.addon_mine_tour ? 1 : 0);
       document.getElementById("pkgTour").textContent = tCount > 0 ? `Yes (${tCount} slot${tCount>1?'s':''})` : "No";
+      updateAddonStatusBadge('pkgTourStatus', 'tour', tCount);
       
-      document.getElementById("pkgExtra").textContent = profile.additional_passes || "0";
-
+      // Extra passes status
+      const eCount = profile.additional_passes || 0;
+      document.getElementById("pkgExtra").textContent = eCount > 0 ? `${eCount} pass${eCount>1?'es':''}` : "0";
+      updateAddonStatusBadge('pkgExtraStatus', 'extra', eCount);
+      
       // Setup status badges
       const statusClean = profile.status.charAt(0).toUpperCase() + profile.status.slice(1);
       const statusPill = document.getElementById("profileStatusPill");
@@ -1642,7 +1881,7 @@ select.status-select:focus { border-color: var(--orange); }
         .order('id', { ascending: true });
         
       window.extraPassesData = dbGroupMembers || [];
-      const metaGroupMembers = currentSession.user.user_metadata.group_members || [];
+      const metaGroupMembers = currentSession.user.user_metadata?.group_members || [];
 
       // Generate Tickets
       const ticketsContainer = document.getElementById("ticketsContainer");
@@ -1659,8 +1898,6 @@ select.status-select:focus { border-color: var(--orange); }
       for (let i = 0; i < totalTickets; i++) {
         let ticketLabel = "Delegate";
         let delegateName = profile.full_name;
-        let delegateJob = profile.job_title || "—";
-        let delegateEmail = profile.email || "—";
         
         if (i > 0 && i < baseTicketsCount) {
           ticketLabel = `Group Member ${i + 1}`;
@@ -1680,22 +1917,10 @@ select.status-select:focus { border-color: var(--orange); }
               <span>Delegate Expo Pass - ${ticketLabel}</span>
             </div>
             <div class="ticket-details">
-              <div>
-                <span>Delegate</span>
-                <strong>${delegateName}</strong>
-              </div>
-              <div>
-                <span>Category</span>
-                <strong>${badgeType}</strong>
-              </div>
-              <div>
-                <span>Company</span>
-                <strong>${profile.organization || "—"}</strong>
-              </div>
-              <div>
-                <span>Status</span>
-                <strong>${statusClean}</strong>
-              </div>
+              <div><span>Delegate</span><strong>${delegateName}</strong></div>
+              <div><span>Category</span><strong>${badgeType}</strong></div>
+              <div><span>Company</span><strong>${profile.organization || "—"}</strong></div>
+              <div><span>Status</span><strong>${statusClean}</strong></div>
             </div>
             <div class="barcode-area">
               <div class="barcode-visual"></div>
@@ -1714,15 +1939,11 @@ select.status-select:focus { border-color: var(--orange); }
         downloadBtn.style.display = "none";
       }
 
-      // Conditionally show/hide Quick Pay button
+      // Quick Pay button
       const quickPayBtn = document.getElementById("quickPayBtn");
-      if (profile.status === 'pending') {
-        quickPayBtn.style.display = "block";
-      } else {
-        quickPayBtn.style.display = "none";
-      }
+      quickPayBtn.style.display = profile.status === 'pending' ? "block" : "none";
 
-      // If exhibitor, reveal booth tab and initialize it
+      // Exhibitor tab
       const boothTab = document.getElementById("boothTab");
       const pkgBoothItem = document.getElementById("pkgBoothItem");
       if (profile.participant_type === 'exhibitor') {
@@ -1734,9 +1955,12 @@ select.status-select:focus { border-color: var(--orange); }
           document.getElementById("boothReservedBadge").textContent = `Reserved: Booth ${profile.booth_number}`;
         }
         await loadAndPopulateBooths();
+      } else {
+        boothTab.style.display = "none";
+        pkgBoothItem.style.display = "none";
       }
 
-      // If admin, reveal admin + finance tabs
+      // Admin + Finance tabs
       const adminTab = document.getElementById("adminTab");
       const financeTabBtn = document.getElementById("financeTabBtn");
       if (profile.is_admin) {
@@ -1744,24 +1968,24 @@ select.status-select:focus { border-color: var(--orange); }
         financeTabBtn.style.display = "block";
         document.getElementById("adminBadge").style.display = "inline-block";
         await loadAdminDashboard();
+        await loadAdminBoothMap();
         updateGlobalFinanceBadge();
       }
 
-      // Setup form fields on the Add-ons page to match current database status
+      // Setup addon form fields — inputs represent NEW quantities to add (default 0);
+      // what the delegate already owns is shown read-only alongside them.
       window.addonAllocations = profile.addon_allocations || { gala: [], tour: [] };
-      document.getElementById("addonGala").value = profile.gala_tickets ?? (profile.gala_dinner ? 1 : 0);
-      document.getElementById("addonTour").value = profile.tour_tickets ?? (profile.addon_mine_tour ? 1 : 0);
-      document.getElementById("addonExtraReps").value = profile.additional_passes || 0;
-      
-      if (profile.status === 'confirmed') {
-        document.getElementById("addonGala").min = document.getElementById("addonGala").value;
-        document.getElementById("addonTour").min = document.getElementById("addonTour").value;
-        document.getElementById("addonExtraReps").min = document.getElementById("addonExtraReps").value;
-      }
-      
+      document.getElementById("ownedGalaCount").textContent = gCount;
+      document.getElementById("ownedTourCount").textContent = tCount;
+      document.getElementById("ownedExtraCount").textContent = eCount;
+      document.getElementById("addonGala").value = 0;
+      document.getElementById("addonTour").value = 0;
+      document.getElementById("addonExtraReps").value = 0;
+
       recalculateAddonPrices();
-      if(typeof renderExtraPassForms === 'function') renderExtraPassForms();
-      if(typeof renderAllocations === 'function') renderAllocations();
+      renderExtraPassForms();
+      renderAllocations();
+      renderOverviewAllocations();
 
       loadingEl.style.display = "none";
       contentEl.style.display = "block";
@@ -1773,99 +1997,125 @@ select.status-select:focus { border-color: var(--orange); }
     }
   }
 
-  /* --------------------------------------------------------------------------
-     Payments & Add-ons logic
-     -------------------------------------------------------------------------- */
-  const priceMapping = {
-    // Attendees passes
-    "Standard Participant Pass — Ksh 1,500": 1500,
-    "Cooperative Mining Package — Ksh 5,000 (up to 4 pax)": 5000,
-    // Sponsors
-    "Gold Sponsor — USD 40,000": 40000 * 130, // KES equivalent approx 130
-    "Silver Sponsor — USD 25,000": 25000 * 130,
-    "Copper Sponsor — USD 10,000": 10000 * 130,
-    "Bronze Sponsor — USD 5,000": 5000 * 130,
-    // Exhibitors
-    "Tier 1 Exhibitor — KES 50,000": 50000,
-    "Standard Exhibitor — KES 30,000": 30000,
-    "International Exhibitor — USD 750": 750 * 130
-  };
+  /* ── Addon Status Badge Helper ─────────────────────────── */
+  function updateAddonStatusBadge(elementId, addonType, count) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    
+    if (count <= 0) {
+      el.style.display = 'none';
+      return;
+    }
+    
+    el.style.display = 'inline-block';
+    
+    // Check if there's a payment that covers this addon
+    const hasApprovedPayment = allUserPayments.some(p => {
+      if (p.status !== 'success') return false;
+      const addons = p.addons || {};
+      if (addonType === 'gala' && addons.galaTickets > 0) return true;
+      if (addonType === 'tour' && addons.tourTickets > 0) return true;
+      if (addonType === 'extra' && addons.extraReps > 0) return true;
+      return false;
+    });
+    
+    const hasPendingPayment = allUserPayments.some(p => {
+      if (p.status !== 'pending') return false;
+      const addons = p.addons || {};
+      if (addonType === 'gala' && addons.galaTickets > 0) return true;
+      if (addonType === 'tour' && addons.tourTickets > 0) return true;
+      if (addonType === 'extra' && addons.extraReps > 0) return true;
+      return false;
+    });
 
-  function getBasePrice(pkgName) {
-    if (!pkgName) return 1500; // default standard
-    return priceMapping[pkgName] || 1500;
+    if (hasApprovedPayment) {
+      el.className = 'addon-status-approved';
+      el.textContent = '✓ Approved';
+    } else if (hasPendingPayment) {
+      el.className = 'addon-status-pending';
+      el.textContent = '⏳ Pending';
+    } else if (currentUserProfile && currentUserProfile.status === 'confirmed') {
+      // Confirmed registration but no separate addon payment - base package covers it
+      el.className = 'addon-status-approved';
+      el.textContent = '✓ Included';
+    } else {
+      el.className = 'addon-status-pending';
+      el.textContent = 'Payment Required';
+    }
   }
 
-  function recalculateAddonPrices() {
-    if (!currentUserProfile) return;
+  /* ── Shared Addon Totals Helper ────────────────────────── */
+  // Centralizes the owned vs. new-quantity math so every function (pricing,
+  // ticket forms, allocations, save, checkout) agrees on the same numbers.
+  function computeAddonTotals() {
     const baseVal = getBasePrice(currentUserProfile.package);
-    const reqGala = parseInt(document.getElementById("addonGala").value, 10) || 0;
-    const reqTour = parseInt(document.getElementById("addonTour").value, 10) || 0;
-    const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
 
-    const galaCost = reqGala * 2500;
-    const tourCost = reqTour * 5000;
-    const repsCost = extraReps * 1500;
-    const totalCost = baseVal + galaCost + tourCost + repsCost;
+    const ownedGala = currentUserProfile.gala_tickets || (currentUserProfile.gala_dinner ? 1 : 0);
+    const ownedTour = currentUserProfile.tour_tickets || (currentUserProfile.addon_mine_tour ? 1 : 0);
+    const ownedExtra = currentUserProfile.additional_passes || 0;
 
-    let alreadyPaid = 0;
-    if (currentUserProfile.status === 'confirmed') {
-      const currentGala = currentUserProfile.gala_tickets ?? (currentUserProfile.gala_dinner ? 1 : 0);
-      const currentTour = currentUserProfile.tour_tickets ?? (currentUserProfile.addon_mine_tour ? 1 : 0);
-      const currentExtra = (currentUserProfile.additional_passes || 0);
-      alreadyPaid = baseVal + (currentGala * 2500) + (currentTour * 5000) + (currentExtra * 1500);
-    }
+    const addlGala = parseInt(document.getElementById("addonGala").value, 10) || 0;
+    const addlTour = parseInt(document.getElementById("addonTour").value, 10) || 0;
+    const addlExtra = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+
+    const totalGala = ownedGala + addlGala;
+    const totalTour = ownedTour + addlTour;
+    const totalExtra = ownedExtra + addlExtra;
+
+    const maxIncluded = getPackageMaxPasses(currentUserProfile.package);
+    const initialReps = currentUserProfile.representatives || 1;
+    const chargeableTotalExtra = Math.max(0, totalExtra - Math.max(0, maxIncluded - initialReps));
+    const remainingFreeNow = Math.max(0, maxIncluded - initialReps - ownedExtra);
+
+    const galaCostNew = addlGala * 2500;
+    const tourCostNew = addlTour * 5000;
+    const extraCostNew = Math.max(0, addlExtra - remainingFreeNow) * 1500;
+
+    const totalCost = baseVal + (totalGala * 2500) + (totalTour * 5000) + (chargeableTotalExtra * 1500);
+
+    const alreadyPaid = allUserPayments
+      .filter(p => p.status === 'success')
+      .reduce((sum, p) => sum + Number(p.amount || 0), 0);
+
     const amountDue = Math.max(0, totalCost - alreadyPaid);
 
-    document.getElementById("sumBasePrice").textContent = `KES ${baseVal.toLocaleString()}`;
-    document.getElementById("sumGalaPrice").textContent = `KES ${galaCost.toLocaleString()}`;
-    document.getElementById("sumTourPrice").textContent = `KES ${tourCost.toLocaleString()}`;
-    document.getElementById("sumExtraPrice").textContent = `KES ${repsCost.toLocaleString()}`;
-    document.getElementById("sumTotalPrice").textContent = `KES ${totalCost.toLocaleString()}`;
+    return {
+      baseVal,
+      ownedGala, ownedTour, ownedExtra,
+      addlGala, addlTour, addlExtra,
+      totalGala, totalTour, totalExtra,
+      galaCostNew, tourCostNew, extraCostNew,
+      totalCost, alreadyPaid, amountDue
+    };
+  }
 
-    // Update UI for Already Paid and Amount Due
-    let paidEl = document.getElementById("sumAlreadyPaid");
-    let dueEl = document.getElementById("sumDueAmount");
-    if (!paidEl) {
-      const summaryDiv = document.querySelector(".payment-summary");
-      
-      paidEl = document.createElement("strong");
-      paidEl.id = "sumAlreadyPaid";
-      paidEl.style.color = "var(--success)";
-      const pLine = document.createElement("div");
-      pLine.className = "summary-line";
-      pLine.innerHTML = `<span>Less Already Paid:</span>`;
-      pLine.appendChild(paidEl);
-      
-      dueEl = document.createElement("strong");
-      dueEl.id = "sumDueAmount";
-      dueEl.style.color = "var(--orange-600)";
-      const dLine = document.createElement("div");
-      dLine.className = "summary-line total";
-      dLine.style.borderTop = "none";
-      dLine.style.marginTop = "0";
-      dLine.style.paddingTop = "0";
-      dLine.innerHTML = `<span>Amount Due Now:</span>`;
-      dLine.appendChild(dueEl);
+  /* ── Recalculate Addon Prices ──────────────────────────── */
+  function recalculateAddonPrices() {
+    if (!currentUserProfile) return;
+    const t = computeAddonTotals();
 
-      summaryDiv.appendChild(pLine);
-      summaryDiv.appendChild(dLine);
-    }
-
-    document.getElementById("sumAlreadyPaid").textContent = `- KES ${alreadyPaid.toLocaleString()}`;
-    document.getElementById("sumDueAmount").textContent = `KES ${amountDue.toLocaleString()}`;
-    document.getElementById("checkoutTotalText").textContent = `KES ${amountDue.toLocaleString()}`;
+    document.getElementById("sumBasePrice").textContent = `KES ${t.baseVal.toLocaleString()}`;
+    document.getElementById("sumGalaPrice").textContent = `KES ${t.galaCostNew.toLocaleString()}`;
+    document.getElementById("sumTourPrice").textContent = `KES ${t.tourCostNew.toLocaleString()}`;
+    document.getElementById("sumExtraPrice").textContent = `KES ${t.extraCostNew.toLocaleString()}`;
+    document.getElementById("sumTotalPrice").textContent = `KES ${t.totalCost.toLocaleString()}`;
+    document.getElementById("sumAlreadyPaid").textContent = `- KES ${t.alreadyPaid.toLocaleString()}`;
+    document.getElementById("sumDueAmount").textContent = `KES ${t.amountDue.toLocaleString()}`;
+    document.getElementById("checkoutTotalText").textContent = `KES ${t.amountDue.toLocaleString()}`;
 
     const saveBtn = document.getElementById("saveAddonsBtn");
-    if (amountDue === 0) {
+    if (t.amountDue === 0) {
       saveBtn.textContent = "Update Details (No Payment Required)";
     } else {
       saveBtn.textContent = "Update Details & Pay";
     }
   }
 
+  /* ── Render Extra Pass Forms ───────────────────────────── */
   function renderExtraPassForms() {
-    const count = parseInt(document.getElementById('addonExtraReps').value, 10) || 0;
+    const t = computeAddonTotals();
+    const ownedExtra = t.ownedExtra;
+    const count = t.totalExtra; // existing owned passes + newly requested passes
     const container = document.getElementById('extraPassesForms');
     const mainContainer = document.getElementById('extraPassesFormsContainer');
     
@@ -1876,13 +2126,18 @@ select.status-select:focus { border-color: var(--orange); }
     const currentCount = currentForms.length;
     
     if (count > currentCount) {
-      for(let i=currentCount; i<count; i++) {
-        const isPaid = (currentUserProfile && currentUserProfile.status === 'confirmed' && i < (currentUserProfile.additional_passes || 0));
-        const readonlyAttr = isPaid ? 'readonly' : '';
-        const bgStyle = isPaid ? 'background: #e9ecef;' : 'background: var(--off-white);';
-        const titleBadge = isPaid ? ' <span style="font-size:0.7rem; background:var(--success); color:white; padding:2px 6px; border-radius:4px; margin-left:8px;">Already Purchased</span>' : ' <span style="font-size:0.7rem; background:var(--orange-500); color:white; padding:2px 6px; border-radius:4px; margin-left:8px;">In Cart</span>';
-
+      for(let i = currentCount; i < count; i++) {
+        // Once a pass has already been saved to the database (index below the
+        // owned count) it is locked — only newly added passes in this session
+        // (index >= ownedExtra) or a fully unconfirmed registration remain editable.
         const prefill = window.extraPassesData && window.extraPassesData[i] ? window.extraPassesData[i] : {full_name:'', email:'', job_title:'', id:''};
+        const hasName = prefill.full_name && prefill.full_name.trim().length > 0;
+        const isLocked = ((i < ownedExtra) || (currentUserProfile.status === 'confirmed')) && hasName;
+        const readonlyAttr = isLocked ? 'readonly' : '';
+        const bgStyle = isLocked ? 'background: #e9ecef;' : 'background: var(--off-white);';
+        const titleBadge = isLocked
+          ? ' <span style="font-size:0.7rem; background:var(--success); color:white; padding:2px 6px; border-radius:4px; margin-left:8px;">Existing — Locked</span>'
+          : ' <span style="font-size:0.7rem; background:var(--orange); color:white; padding:2px 6px; border-radius:4px; margin-left:8px;">New</span>';
         const formHtml = `
           <div class="extra-pass-form" data-index="${i}" style="${bgStyle} padding: 16px; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border); width: 100%; box-sizing: border-box;">
             <input type="hidden" class="ep-id" value="${prefill.id || ''}" />
@@ -1890,15 +2145,15 @@ select.status-select:focus { border-color: var(--orange); }
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
               <div>
                 <label style="font-size: 0.8rem; font-weight: 600;">Full Name</label>
-                <input type="text" class="ep-name" value="${prefill.full_name}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" required ${readonlyAttr} />
+                <input type="text" class="ep-name" value="${prefill.full_name || ''}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" ${readonlyAttr} />
               </div>
               <div>
                 <label style="font-size: 0.8rem; font-weight: 600;">Email</label>
-                <input type="email" class="ep-email" value="${prefill.email}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" required ${readonlyAttr} />
+                <input type="email" class="ep-email" value="${prefill.email || ''}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" ${readonlyAttr} />
               </div>
               <div style="grid-column: 1 / -1;">
                 <label style="font-size: 0.8rem; font-weight: 600;">Occupation / Job Title</label>
-                <input type="text" class="ep-job" value="${prefill.job_title}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" required ${readonlyAttr} />
+                <input type="text" class="ep-job" value="${prefill.job_title || ''}" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; box-sizing: border-box;" ${readonlyAttr} />
               </div>
             </div>
           </div>
@@ -1906,21 +2161,25 @@ select.status-select:focus { border-color: var(--orange); }
         container.insertAdjacentHTML('beforeend', formHtml);
       }
     } else if (count < currentCount) {
-      for(let i=currentCount - 1; i >= count; i--) {
+      for(let i = currentCount - 1; i >= count; i--) {
         currentForms[i].remove();
       }
     }
     
-    // We bind a listener to inputs so allocations re-render on name change
     document.querySelectorAll('.ep-name').forEach(input => {
-      input.addEventListener('change', () => { if(typeof renderAllocations === 'function') renderAllocations(); });
+      input.addEventListener('change', () => { 
+        renderAllocations(); 
+        renderOverviewAllocations();
+      });
     });
   }
 
+  /* ── Render Allocations (Add-ons tab) ──────────────────── */
   function renderAllocations() {
     if (!currentUserProfile) return;
-    const galaCount = parseInt(document.getElementById("addonGala").value, 10) || 0;
-    const tourCount = parseInt(document.getElementById("addonTour").value, 10) || 0;
+    const t = computeAddonTotals();
+    const galaCount = t.totalGala;
+    const tourCount = t.totalTour;
     
     const container = document.getElementById("allocationsContainer");
     const formsDiv = document.getElementById("allocationsForms");
@@ -1943,22 +2202,19 @@ select.status-select:focus { border-color: var(--orange); }
        delegates.push({ id: `group_member_${i}`, name: m && m.full_name ? m.full_name : `Group Member ${i}` });
     }
     
-    const extraCount = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+    const extraCount = t.totalExtra;
     for (let i = 0; i < extraCount; i++) {
        let name = `Extra Pass ${i+1}`;
        const formNameEl = document.querySelector(`.extra-pass-form[data-index="${i}"] .ep-name`);
-       if (formNameEl && formNameEl.value) {
-           name = formNameEl.value;
-       } else if (window.extraPassesData && window.extraPassesData[i] && window.extraPassesData[i].full_name) {
-           name = window.extraPassesData[i].full_name;
-       }
+       if (formNameEl && formNameEl.value) name = formNameEl.value;
+       else if (window.extraPassesData && window.extraPassesData[i] && window.extraPassesData[i].full_name) name = window.extraPassesData[i].full_name;
        delegates.push({ id: `extra_pass_${i}`, name: name });
     }
     
     let html = `
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; background: var(--off-white); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
         <thead>
-          <tr style="background: var(--surface-hover); border-bottom: 2px solid var(--border);">
+          <tr style="background: var(--muted); border-bottom: 2px solid var(--border);">
             <th style="padding: 12px;">Delegate Name</th>
             ${galaCount > 0 ? `<th style="padding: 12px;">Gala Dinner <br><span style="font-weight:normal; font-size:0.8rem; color:var(--text-soft);">(Max: ${galaCount})</span></th>` : ''}
             ${tourCount > 0 ? `<th style="padding: 12px;">Mine Tour <br><span style="font-weight:normal; font-size:0.8rem; color:var(--text-soft);">(Max: ${tourCount})</span></th>` : ''}
@@ -1984,15 +2240,17 @@ select.status-select:focus { border-color: var(--orange); }
     html += `</tbody></table>`;
     formsDiv.innerHTML = html;
     
+    // Bind checkbox limits
     const galaCbs = formsDiv.querySelectorAll('.gala-alloc-cb');
     galaCbs.forEach(cb => {
       cb.addEventListener('change', () => {
          const checkedCount = Array.from(galaCbs).filter(c => c.checked).length;
          if (checkedCount > galaCount) {
-            alert(`You can only allocate up to ${galaCount} Gala Dinner tickets.`);
+            showToast('Limit Reached', `You can only allocate up to ${galaCount} Gala Dinner tickets.`, 'error');
             cb.checked = false;
          }
          saveAllocationsToMemory();
+         syncOverviewAllocations();
       });
     });
     
@@ -2001,12 +2259,152 @@ select.status-select:focus { border-color: var(--orange); }
       cb.addEventListener('change', () => {
          const checkedCount = Array.from(tourCbs).filter(c => c.checked).length;
          if (checkedCount > tourCount) {
-            alert(`You can only allocate up to ${tourCount} Mine Tour tickets.`);
+            showToast('Limit Reached', `You can only allocate up to ${tourCount} Mine Tour tickets.`, 'error');
             cb.checked = false;
          }
          saveAllocationsToMemory();
+         syncOverviewAllocations();
       });
     });
+  }
+
+  /* ── Overview Allocations ──────────────────────────────── */
+  function renderOverviewAllocations() {
+    if (!currentUserProfile) return;
+    const t = computeAddonTotals();
+    const galaCount = t.totalGala;
+    const tourCount = t.totalTour;
+    
+    const section = document.getElementById("overviewAllocationSection");
+    const formsDiv = document.getElementById("overviewAllocationsForms");
+    
+    if (galaCount === 0 && tourCount === 0) {
+      section.style.display = "none";
+      formsDiv.innerHTML = "";
+      return;
+    }
+    
+    section.style.display = "block";
+    
+    let delegates = [];
+    const baseTicketsCount = currentUserProfile.representatives || 1;
+    delegates.push({ id: `main_delegate`, name: currentUserProfile.full_name + " (Main Delegate)" });
+    
+    const metaGroupMembers = currentUserProfile.user_metadata?.group_members || [];
+    for (let i = 1; i < baseTicketsCount; i++) {
+       const m = metaGroupMembers[i-1];
+       delegates.push({ id: `group_member_${i}`, name: m && m.full_name ? m.full_name : `Group Member ${i}` });
+    }
+    
+    const extraCount = t.totalExtra;
+    for (let i = 0; i < extraCount; i++) {
+       let name = `Extra Pass ${i+1}`;
+       const formNameEl = document.querySelector(`.extra-pass-form[data-index="${i}"] .ep-name`);
+       if (formNameEl && formNameEl.value) name = formNameEl.value;
+       else if (window.extraPassesData && window.extraPassesData[i] && window.extraPassesData[i].full_name) name = window.extraPassesData[i].full_name;
+       delegates.push({ id: `extra_pass_${i}`, name: name });
+    }
+    
+    let html = `
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; background: white; border-radius: 8px; overflow: hidden;">
+        <thead>
+          <tr style="background: var(--navy-900); color: white; border-bottom: 2px solid var(--border);">
+            <th style="padding: 10px;">Delegate</th>
+            ${galaCount > 0 ? `<th style="padding: 10px; text-align:center;">Gala<br><span style="font-weight:normal; font-size:0.7rem;">Max: ${galaCount}</span></th>` : ''}
+            ${tourCount > 0 ? `<th style="padding: 10px; text-align:center;">Tour<br><span style="font-weight:normal; font-size:0.7rem;">Max: ${tourCount}</span></th>` : ''}
+          </tr>
+        </thead>
+        <tbody>
+    `;
+    
+    delegates.forEach((del, idx) => {
+      const isGalaChecked = window.addonAllocations?.gala?.includes(del.id) ? 'checked' : '';
+      const isTourChecked = window.addonAllocations?.tour?.includes(del.id) ? 'checked' : '';
+      const bg = idx % 2 === 0 ? 'background: #fafafa;' : '';
+      
+      html += `
+        <tr style="${bg}">
+          <td style="padding: 8px 10px;"><strong>${del.name}</strong></td>
+          ${galaCount > 0 ? `<td style="padding: 8px; text-align:center;"><input type="checkbox" class="overview-gala-cb" value="${del.id}" ${isGalaChecked} style="transform: scale(1.1);" /></td>` : ''}
+          ${tourCount > 0 ? `<td style="padding: 8px; text-align:center;"><input type="checkbox" class="overview-tour-cb" value="${del.id}" ${isTourChecked} style="transform: scale(1.1);" /></td>` : ''}
+        </tr>
+      `;
+    });
+    
+    html += `</tbody></table>`;
+    formsDiv.innerHTML = html;
+    
+    // Bind checkbox limits
+    formsDiv.querySelectorAll('.overview-gala-cb').forEach(cb => {
+      cb.addEventListener('change', () => {
+         const checkedCount = Array.from(formsDiv.querySelectorAll('.overview-gala-cb')).filter(c => c.checked).length;
+         if (checkedCount > galaCount) {
+            showToast('Limit Reached', `You can only allocate up to ${galaCount} Gala Dinner tickets.`, 'error');
+            cb.checked = false;
+         }
+         saveOverviewAllocationsToMemory();
+         syncAddonTabAllocations();
+      });
+    });
+    
+    formsDiv.querySelectorAll('.overview-tour-cb').forEach(cb => {
+      cb.addEventListener('change', () => {
+         const checkedCount = Array.from(formsDiv.querySelectorAll('.overview-tour-cb')).filter(c => c.checked).length;
+         if (checkedCount > tourCount) {
+            showToast('Limit Reached', `You can only allocate up to ${tourCount} Mine Tour tickets.`, 'error');
+            cb.checked = false;
+         }
+         saveOverviewAllocationsToMemory();
+         syncAddonTabAllocations();
+      });
+    });
+  }
+
+  function saveOverviewAllocationsToMemory() {
+    window.addonAllocations = { gala: [], tour: [] };
+    document.querySelectorAll('.overview-gala-cb:checked').forEach(cb => window.addonAllocations.gala.push(cb.value));
+    document.querySelectorAll('.overview-tour-cb:checked').forEach(cb => window.addonAllocations.tour.push(cb.value));
+  }
+
+  function syncOverviewAllocations() {
+    // Sync from addon tab to overview
+    const overviewGalaCbs = document.querySelectorAll('.overview-gala-cb');
+    const overviewTourCbs = document.querySelectorAll('.overview-tour-cb');
+    
+    overviewGalaCbs.forEach(cb => {
+      cb.checked = window.addonAllocations?.gala?.includes(cb.value) || false;
+    });
+    overviewTourCbs.forEach(cb => {
+      cb.checked = window.addonAllocations?.tour?.includes(cb.value) || false;
+    });
+  }
+
+  function syncAddonTabAllocations() {
+    // Sync from overview to addon tab
+    const galaCbs = document.querySelectorAll('.gala-alloc-cb');
+    const tourCbs = document.querySelectorAll('.tour-alloc-cb');
+    
+    galaCbs.forEach(cb => {
+      cb.checked = window.addonAllocations?.gala?.includes(cb.value) || false;
+    });
+    tourCbs.forEach(cb => {
+      cb.checked = window.addonAllocations?.tour?.includes(cb.value) || false;
+    });
+  }
+
+  async function saveOverviewAllocations() {
+    saveOverviewAllocationsToMemory();
+    syncAddonTabAllocations();
+    
+    try {
+      await supabaseClient.from('registrations').update({
+        addon_allocations: window.addonAllocations
+      }).eq('user_id', currentSession.user.id);
+      
+      showToast('Saved', 'Allocations saved successfully.', 'success');
+    } catch (err) {
+      showToast('Error', 'Failed to save allocations: ' + err.message, 'error');
+    }
   }
 
   function saveAllocationsToMemory() {
@@ -2015,24 +2413,48 @@ select.status-select:focus { border-color: var(--orange); }
     document.querySelectorAll('.tour-alloc-cb:checked').forEach(cb => window.addonAllocations.tour.push(cb.value));
   }
 
+  /* ── Save Extra Passes ─────────────────────────────────── */
   async function saveExtraPasses() {
     const forms = document.querySelectorAll('.extra-pass-form');
-    const passesToSave = Array.from(forms).map(f => {
-      const id = f.querySelector('.ep-id').value;
-      const obj = {
+    const passesToSave = [];
+
+    forms.forEach(f => {
+      const idInput = f.querySelector('.ep-id');
+      const existingId = idInput.value;
+      const name = f.querySelector('.ep-name').value.trim();
+      const email = f.querySelector('.ep-email').value.trim();
+      const job = f.querySelector('.ep-job').value.trim();
+
+      // Skip brand-new, still-blank rows so we don't insert empty pass records.
+      if (!existingId && !name && !email && !job) return;
+
+      // Every row needs an id going into the DB — group_members.id has no
+      // default value, so generate one client-side for new rows instead of
+      // relying on the database to fill it in (this was causing the
+      // "null value in column id" error).
+      const id = existingId || (window.crypto && window.crypto.randomUUID ? window.crypto.randomUUID() : `gm_${Date.now()}_${Math.random().toString(36).slice(2)}`);
+
+      passesToSave.push({
+        id,
         registration_id: currentUserProfile.id,
-        full_name: f.querySelector('.ep-name').value.trim(),
-        email: f.querySelector('.ep-email').value.trim(),
-        job_title: f.querySelector('.ep-job').value.trim()
-      };
-      if (id) obj.id = id;
-      return obj;
+        full_name: name,
+        email: email,
+        job_title: job
+      });
+
+      // Reflect the generated id back into the hidden field immediately so
+      // repeat saves in the same session reuse it instead of minting a new one.
+      idInput.value = id;
     });
 
     if (passesToSave.length > 0) {
       const { data, error } = await supabaseClient.from('group_members').upsert(passesToSave).select();
-      if (error) console.error("Error saving extra passes:", error);
-      else if (data) window.extraPassesData = data; // Update local cache with IDs
+      if (error) {
+        showToast('Error', 'Could not save extra passes: ' + error.message, 'error');
+        console.error("Error saving extra passes:", error);
+      } else if (data) {
+        window.extraPassesData = data;
+      }
     }
 
     const keptIds = passesToSave.map(ep => ep.id).filter(Boolean);
@@ -2044,74 +2466,60 @@ select.status-select:focus { border-color: var(--orange); }
     }
   }
 
-  // Bind change events
+  /* ── Event Listeners ───────────────────────────────────── */
   document.getElementById("addonGala").addEventListener("input", () => {
     recalculateAddonPrices();
     renderAllocations();
+    renderOverviewAllocations();
   });
   document.getElementById("addonTour").addEventListener("input", () => {
     recalculateAddonPrices();
     renderAllocations();
+    renderOverviewAllocations();
   });
   document.getElementById("addonExtraReps").addEventListener("input", () => {
     recalculateAddonPrices();
     renderExtraPassForms();
     renderAllocations();
+    renderOverviewAllocations();
   });
 
-  // Forms submit click opens checkout modal
+  // Addons form submit
   document.getElementById("addonsForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     
     if (!currentUserProfile) return;
-    const baseVal = getBasePrice(currentUserProfile.package);
-    const reqGala = parseInt(document.getElementById("addonGala").value, 10) || 0;
-    const reqTour = parseInt(document.getElementById("addonTour").value, 10) || 0;
-    const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+    const t = computeAddonTotals();
 
-    const galaCost = reqGala * 2500;
-    const tourCost = reqTour * 5000;
-    const repsCost = extraReps * 1500;
-    const totalCost = baseVal + galaCost + tourCost + repsCost;
+    await saveExtraPasses();
 
-    let alreadyPaid = 0;
-    if (currentUserProfile.status === 'confirmed') {
-      const currentGala = currentUserProfile.gala_tickets ?? (currentUserProfile.gala_dinner ? 1 : 0);
-      const currentTour = currentUserProfile.tour_tickets ?? (currentUserProfile.addon_mine_tour ? 1 : 0);
-      const currentExtra = (currentUserProfile.additional_passes || 0);
-      alreadyPaid = baseVal + (currentGala * 2500) + (currentTour * 5000) + (currentExtra * 1500);
-    }
-    const amountDue = Math.max(0, totalCost - alreadyPaid);
-
-    if (amountDue === 0) {
+    if (t.amountDue === 0) {
       const saveBtn = document.getElementById("saveAddonsBtn");
       const originalText = saveBtn.textContent;
       saveBtn.disabled = true;
       saveBtn.textContent = "Updating...";
       try {
-        await saveExtraPasses();
         const payload = {
-          gala_tickets: reqGala,
-          tour_tickets: reqTour,
-          additional_passes: extraReps,
+          gala_tickets: t.totalGala,
+          tour_tickets: t.totalTour,
+          additional_passes: t.totalExtra,
+          gala_dinner: t.totalGala > 0,
+          addon_mine_tour: t.totalTour > 0,
           addon_allocations: window.addonAllocations || { gala: [], tour: [] }
         };
-        // Also update legacy boolean fields just in case
-        payload.gala_dinner = reqGala > 0;
-        payload.addon_mine_tour = reqTour > 0;
 
         const { error } = await supabaseClient.from("registrations").update(payload).eq("user_id", currentSession.user.id);
         if (error) throw error;
-        alert("Details updated successfully!");
+        
+        showToast('Updated', 'Details updated successfully!', 'success');
         await refreshUserProfile();
       } catch (err) {
-        alert(`Update failed: ${err.message}`);
+        showToast('Error', `Update failed: ${err.message}`, 'error');
       } finally {
         saveBtn.disabled = false;
         saveBtn.textContent = originalText;
       }
     } else {
-      await saveExtraPasses();
       openCheckoutModal();
     }
   });
@@ -2120,6 +2528,7 @@ select.status-select:focus { border-color: var(--orange); }
     openCheckoutModal();
   });
 
+  /* ── Payment Modal ─────────────────────────────────────── */
   const paymentModal = document.getElementById("paymentModal");
   function openCheckoutModal() {
     paymentModal.classList.add("active");
@@ -2130,10 +2539,9 @@ select.status-select:focus { border-color: var(--orange); }
   });
 
   // Payment Methods toggle
-  const payMethodBtns = document.querySelectorAll(".pay-method-btn");
-  payMethodBtns.forEach(btn => {
+  document.querySelectorAll(".pay-method-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      payMethodBtns.forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".pay-method-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       
       const method = btn.dataset.method;
@@ -2142,7 +2550,7 @@ select.status-select:focus { border-color: var(--orange); }
     });
   });
 
-  // Currency account number mapping & selector
+  // Currency selector
   const PAYBILL_ACCOUNTS = { KES: '1345650450', USD: '1345650477', EUR: '1345650566' };
   let selectedPayCurrency = 'KES';
 
@@ -2157,7 +2565,7 @@ select.status-select:focus { border-color: var(--orange); }
     });
   });
 
-  // Checkout Submission — Manual Paybill Review Flow
+  // Checkout Submission
   document.getElementById("confirmCheckoutBtn").addEventListener("click", async () => {
     const btn = document.getElementById("confirmCheckoutBtn");
     btn.disabled = true;
@@ -2165,11 +2573,8 @@ select.status-select:focus { border-color: var(--orange); }
 
     try {
       const activeMethod = document.querySelector(".pay-method-btn.active").dataset.method;
-      const reqGala = parseInt(document.getElementById("addonGala").value, 10) || 0;
-      const reqTour = parseInt(document.getElementById("addonTour").value, 10) || 0;
-      const extraReps = parseInt(document.getElementById("addonExtraReps").value, 10) || 0;
+      const t = computeAddonTotals();
 
-      // Read reference from whichever tab is active
       let paymentRef;
       if (activeMethod === 'mpesa') {
         paymentRef = (document.getElementById('mpesaPaymentRef').value || '').trim().toUpperCase();
@@ -2178,51 +2583,36 @@ select.status-select:focus { border-color: var(--orange); }
       }
 
       if (!paymentRef) throw new Error('Please enter your transaction / payment reference code.');
-      const paymentTimestamp = new Date().toISOString();
 
-      // Compute amount due
-      const baseVal = getBasePrice(currentUserProfile.package);
-      const galaCost = reqGala * 2500;
-      const tourCost = reqTour * 5000;
-      const repsCost = extraReps * 1500;
-      const totalCost = baseVal + galaCost + tourCost + repsCost;
-      let alreadyPaid = 0;
-      if (currentUserProfile.status === 'confirmed') {
-        const cg = currentUserProfile.gala_tickets ?? (currentUserProfile.gala_dinner ? 1 : 0);
-        const ct = currentUserProfile.tour_tickets ?? (currentUserProfile.addon_mine_tour ? 1 : 0);
-        const ce = currentUserProfile.additional_passes || 0;
-        alreadyPaid = baseVal + (cg * 2500) + (ct * 5000) + (ce * 1500);
-      }
-      const amountDue = Math.max(0, totalCost - alreadyPaid);
-
-      // Insert payment record for admin review
+      // Insert payment record — addons here record only what THIS payment is
+      // covering (the newly requested quantities), so the ledger stays accurate
+      // per-transaction instead of double-counting already-owned tickets.
       const { error: payError } = await supabaseClient.from('payments').insert({
         registration_id: currentUserProfile.id,
         user_id: currentSession.user.id,
         provider: 'manual',
         provider_reference: paymentRef,
         currency: selectedPayCurrency,
-        amount: amountDue,
+        amount: t.amountDue,
         status: 'pending',
-        addons: { galaTickets: reqGala, tourTickets: reqTour, extraReps },
+        addons: { galaTickets: t.addlGala, tourTickets: t.addlTour, extraReps: t.addlExtra },
         raw_response: {
           method: activeMethod,
           paybill: '522522',
           account: PAYBILL_ACCOUNTS[selectedPayCurrency],
-          payment_timestamp: paymentTimestamp,
           submitted_at: new Date().toISOString()
         }
       });
 
       if (payError) throw new Error('Could not save payment record: ' + payError.message);
 
-      // Also persist the addon selections on the registration
+      // Update registration with new absolute addon totals (owned + newly requested)
       await supabaseClient.from('registrations').update({
-        gala_tickets: reqGala,
-        tour_tickets: reqTour,
-        gala_dinner: reqGala > 0,
-        addon_mine_tour: reqTour > 0,
-        additional_passes: extraReps,
+        gala_tickets: t.totalGala,
+        tour_tickets: t.totalTour,
+        gala_dinner: t.totalGala > 0,
+        addon_mine_tour: t.totalTour > 0,
+        additional_passes: t.totalExtra,
         addon_allocations: window.addonAllocations || { gala: [], tour: [] }
       }).eq('user_id', currentSession.user.id);
 
@@ -2241,6 +2631,7 @@ select.status-select:focus { border-color: var(--orange); }
         if (el) el.value = '';
       });
 
+      await refreshUserProfile();
     } catch (err) {
       showToast('Submission Failed', err.message, 'error');
     } finally {
@@ -2249,31 +2640,27 @@ select.status-select:focus { border-color: var(--orange); }
     }
   });
 
-
-
-  /* --------------------------------------------------------------------------
-     Exhibitor Booth Reservation Hall Selector
-     -------------------------------------------------------------------------- */
+  /* ── Booth Selection ───────────────────────────────────── */
   async function loadAndPopulateBooths() {
     const gridEl = document.getElementById("boothSelectorGrid");
-    gridEl.innerHTML = ""; // Clear current
+    gridEl.innerHTML = "";
+
+    const userPkg = (currentUserProfile.package || "").toLowerCase();
+    const userIsStandardOnly = userPkg.includes("standard exhibitor");
 
     try {
-      // Query occupied booths by other organizations
-      const { data: bookings, error } = await supabaseClient
-        .from("registrations")
-        .select("id, booth_number, organization")
-        .not("booth_number", "is", null);
-
+      const { data: boothRows, error } = await supabaseClient.rpc('get_booth_statuses');
       if (error) throw error;
 
-      // Group occupancies
-      const occupiedMap = {};
-      bookings.forEach(b => {
-        occupiedMap[b.booth_number] = b.organization || "Co-exhibitor";
+      const boothStateMap = {};
+      (boothRows || []).forEach(row => {
+        boothStateMap[row.booth_number] = {
+          state: row.lock_state,
+          org: row.organization || 'Co-exhibitor',
+          expiresAt: row.hold_expires_at
+        };
       });
 
-      // Generate 25 booths layout: Premium (A1-A10), Standard (B1-B15)
       const premiumBooths = Array.from({length: 10}, (_, i) => `A${i+1}`);
       const standardBooths = Array.from({length: 15}, (_, i) => `B${i+1}`);
       const allBooths = [...premiumBooths, ...standardBooths];
@@ -2281,7 +2668,7 @@ select.status-select:focus { border-color: var(--orange); }
       allBooths.forEach(booth => {
         const cell = document.createElement("div");
         cell.className = "booth-cell";
-        
+
         const isPremium = booth.startsWith("A");
         if (isPremium) cell.classList.add("premium");
 
@@ -2293,7 +2680,7 @@ select.status-select:focus { border-color: var(--orange); }
         sub.textContent = isPremium ? "Premium" : "Standard";
         cell.appendChild(sub);
 
-        const isOccupied = occupiedMap[booth] !== undefined;
+        const boothState = boothStateMap[booth];
         const belongsToMe = currentUserProfile.booth_number === booth;
 
         if (belongsToMe) {
@@ -2301,17 +2688,50 @@ select.status-select:focus { border-color: var(--orange); }
           currentlySelectedBooth = booth;
           document.getElementById("boothSelectionText").textContent = `Selected Booth: ${booth} (Your Reservation)`;
           document.getElementById("confirmBoothBtn").disabled = false;
-        } else if (isOccupied) {
+        } else if (boothState?.state === "locked") {
+          cell.classList.add("locked");
+          const tooltip = document.createElement("div");
+          tooltip.className = "tooltip-org";
+          tooltip.textContent = `${boothState.org} — Confirmed`;
+          cell.appendChild(tooltip);
+          cell.addEventListener("click", () => {
+            showToast("Booth Locked", `${booth} is confirmed and permanently reserved by ${boothState.org}.`, "error");
+          });
+        } else if (boothState?.state === "under_review") {
+          cell.classList.add("under-review");
+          const tooltip = document.createElement("div");
+          tooltip.className = "tooltip-org";
+          const expiryStr = boothState.expiresAt
+            ? new Date(boothState.expiresAt).toLocaleDateString("en-KE", { day: "numeric", month: "short" })
+            : "soon";
+          tooltip.textContent = `Under Review — Hold expires ${expiryStr}`;
+          cell.appendChild(tooltip);
+          cell.addEventListener("click", () => {
+            showToast("Booth Under Review", `${booth} is on a 7-day hold while ${boothState.org}'s payment is being reviewed.`, "info");
+          });
+        } else if (boothState?.state === "occupied") {
           cell.classList.add("occupied");
           const tooltip = document.createElement("div");
           tooltip.className = "tooltip-org";
-          tooltip.textContent = occupiedMap[booth];
+          tooltip.textContent = boothState.org;
           cell.appendChild(tooltip);
         } else {
-          // Available slot
           cell.addEventListener("click", () => {
+            if (userIsStandardOnly && isPremium) {
+              showToast(
+                "Upgrade Required",
+                "Your current package only allows Standard booths (B-section). Please upgrade to access Premium booths.",
+                "error",
+                7000
+              );
+              return;
+            }
             document.querySelectorAll(".booth-cell").forEach(c => {
-              if (!c.classList.contains("occupied")) c.classList.remove("selected");
+              if (!c.classList.contains("occupied") &&
+                  !c.classList.contains("locked") &&
+                  !c.classList.contains("under-review")) {
+                c.classList.remove("selected");
+              }
             });
             cell.classList.add("selected");
             currentlySelectedBooth = booth;
@@ -2324,10 +2744,10 @@ select.status-select:focus { border-color: var(--orange); }
       });
     } catch (err) {
       console.error("Failed to load exhibition hall map:", err);
+      showToast("Error", "Could not load booth layout. Please refresh.", "error");
     }
   }
 
-  // Reservation save handler
   document.getElementById("confirmBoothBtn").addEventListener("click", async () => {
     if (!currentlySelectedBooth) return;
 
@@ -2342,25 +2762,119 @@ select.status-select:focus { border-color: var(--orange); }
         .eq("user_id", currentSession.user.id);
 
       if (error) throw error;
-      alert(`Booth ${currentlySelectedBooth} successfully reserved!`);
+      showToast("Booth Reserved", `Booth ${currentlySelectedBooth} has been successfully reserved!`, "success");
       await refreshUserProfile();
     } catch (err) {
-      alert(`Reservation failed: ${err.message || "Something went wrong."}`);
+      showToast("Reservation Failed", err.message || "Something went wrong. Please try again.", "error");
     } finally {
       btn.disabled = false;
       btn.textContent = "Confirm Booth Booking";
     }
   });
 
+  /* ── Admin: Full Exhibition Hall Map ───────────────────── */
+  // Unlike loadAndPopulateBooths (which renders the current exhibitor's own
+  // selectable view with their package restrictions applied), this renders a
+  // read-only, unrestricted view of the entire hall for admins — every booth's
+  // status plus a list of exhibitors who have not yet been assigned a booth.
+  async function loadAdminBoothMap() {
+    const gridEl = document.getElementById("adminBoothMapGrid");
+    const unassignedEl = document.getElementById("unassignedExhibitorsList");
+    if (!gridEl) return;
+    gridEl.innerHTML = "";
 
-  /* --------------------------------------------------------------------------
-     Admin Panel & Directory logic
-     -------------------------------------------------------------------------- */
+    try {
+      const { data: boothRows, error } = await supabaseClient.rpc('get_booth_statuses');
+      if (error) throw error;
+
+      const boothStateMap = {};
+      (boothRows || []).forEach(row => {
+        boothStateMap[row.booth_number] = {
+          state: row.lock_state,
+          org: row.organization || 'Co-exhibitor',
+          expiresAt: row.hold_expires_at
+        };
+      });
+
+      const premiumBooths = Array.from({length: 10}, (_, i) => `A${i+1}`);
+      const standardBooths = Array.from({length: 15}, (_, i) => `B${i+1}`);
+      const allBooths = [...premiumBooths, ...standardBooths];
+
+      allBooths.forEach(booth => {
+        const cell = document.createElement("div");
+        cell.className = "booth-cell";
+        cell.style.cursor = "default";
+
+        const isPremium = booth.startsWith("A");
+        if (isPremium) cell.classList.add("premium");
+
+        const label = document.createElement("h5");
+        label.textContent = booth;
+        cell.appendChild(label);
+
+        const sub = document.createElement("span");
+        sub.textContent = isPremium ? "Premium" : "Standard";
+        cell.appendChild(sub);
+
+        const boothState = boothStateMap[booth];
+
+        if (boothState?.state === "locked") {
+          cell.classList.add("locked");
+          const tooltip = document.createElement("div");
+          tooltip.className = "tooltip-org";
+          tooltip.textContent = `${boothState.org} — Confirmed`;
+          cell.appendChild(tooltip);
+          cell.title = `${boothState.org} — Confirmed`;
+        } else if (boothState?.state === "under_review") {
+          cell.classList.add("under-review");
+          const tooltip = document.createElement("div");
+          tooltip.className = "tooltip-org";
+          const expiryStr = boothState.expiresAt
+            ? new Date(boothState.expiresAt).toLocaleDateString("en-KE", { day: "numeric", month: "short" })
+            : "soon";
+          tooltip.textContent = `${boothState.org} — Hold expires ${expiryStr}`;
+          cell.appendChild(tooltip);
+          cell.title = `${boothState.org} — Under review`;
+        } else if (boothState?.state === "occupied") {
+          cell.classList.add("occupied");
+          const tooltip = document.createElement("div");
+          tooltip.className = "tooltip-org";
+          tooltip.textContent = boothState.org;
+          cell.appendChild(tooltip);
+          cell.title = boothState.org;
+        } else {
+          cell.title = "Available";
+        }
+
+        gridEl.appendChild(cell);
+      });
+
+      // List exhibitors with no booth assigned yet, from the already-loaded admin cache
+      const unassigned = (allRegistrationsCache || []).filter(r =>
+        r.participant_type === 'exhibitor' && !r.booth_number
+      );
+
+      if (!currentUserProfile?.is_admin) {
+        unassignedEl.parentElement.style.display = 'none';
+      } else if (unassigned.length === 0) {
+        unassignedEl.innerHTML = `<span style="font-size:0.82rem; color:var(--text-soft);">Every registered exhibitor has a booth assigned.</span>`;
+      } else {
+        unassignedEl.innerHTML = unassigned.map(r =>
+          `<span class="unassigned-chip">${r.full_name || r.organization || 'Unnamed'} ${r.organization ? `— ${r.organization}` : ''}</span>`
+        ).join('');
+      }
+    } catch (err) {
+      console.error("Failed to load admin exhibition hall map:", err);
+      gridEl.innerHTML = `<div style="grid-column: 1/-1; text-align:center; color:var(--danger); padding:20px;">Could not load the hall map. Please refresh.</div>`;
+    }
+  }
+
+  /* ── Admin Dashboard ───────────────────────────────────── */
   async function loadAdminDashboard() {
     try {
       const { data: list, error } = await supabaseClient
         .from("registrations")
-        .select(`*, payments(id, amount, currency, status, provider_reference, provider)`)
+        .select(`*, payments(id, amount, currency, status, provider_reference, provider, addons)`)
         .order("created_at", { ascending: false });
 
       if (error) throw error;
@@ -2371,15 +2885,8 @@ select.status-select:focus { border-color: var(--orange); }
       function applyAdminFilters() {
         const query = document.getElementById("adminSearchInput").value.toLowerCase().trim();
         const filtered = allRegistrationsCache.filter(r => {
-          let matchesTab = false;
-          if (currentAdminTabFilter === 'all') {
-            matchesTab = true;
-          } else if (currentAdminTabFilter === 'call_list') {
-            matchesTab = r.participant_type === 'call_list';
-          } else {
-            matchesTab = r.participant_type === currentAdminTabFilter;
-          }
-
+          let matchesTab = currentAdminTabFilter === 'all' || r.participant_type === currentAdminTabFilter;
+          
           let matchesSearch = true;
           if (query) {
             matchesSearch = 
@@ -2394,31 +2901,33 @@ select.status-select:focus { border-color: var(--orange); }
         populateAdminTable(filtered);
       }
 
-      // Bind search filter
       document.getElementById("adminSearchInput").addEventListener("input", applyAdminFilters);
 
-      // Bind tab filters
       document.querySelectorAll(".admin-filter").forEach(tab => {
         tab.addEventListener("click", () => {
           document.querySelectorAll(".admin-filter").forEach(t => t.classList.remove("active"));
           tab.classList.add("active");
           currentAdminTabFilter = tab.dataset.filter;
           
-          // Update title based on the tab
           const titleEl = document.getElementById("adminTableTitle");
-          if (currentAdminTabFilter === 'attendee') {
-            titleEl.textContent = "Registered Attendees";
-          } else if (currentAdminTabFilter === 'all') {
-            titleEl.textContent = "All Records";
-          } else {
-            titleEl.textContent = "Progress Tracker: " + tab.textContent;
-          }
+          const filterNames = {
+            'attendee': 'Registered Attendees',
+            'all': 'All Records',
+            'implementor': 'Implementors & Partners',
+            'stakeholder': 'Stakeholders',
+            'sponsor': 'Sponsors',
+            'speaker': 'Speakers & Moderators',
+            'exhibitor': 'Exhibitors',
+            'vendor': 'Vendors',
+            'volunteer': 'Volunteers',
+            'call_list': 'Call List'
+          };
+          titleEl.textContent = filterNames[currentAdminTabFilter] || 'Progress Tracker';
 
           applyAdminFilters();
         });
       });
 
-      // Initial load
       applyAdminFilters();
 
     } catch (err) {
@@ -2426,11 +2935,133 @@ select.status-select:focus { border-color: var(--orange); }
     }
   }
 
-      // Removed loadPendingPayments and approve/reject manually, now in Finance tab
+  function calculateAdminAnalytics(list) {
+    const total = list.length;
+    const confirmedCount = list.filter(r => r.status === 'confirmed').length;
+    const sponsors = list.filter(r => r.participant_type === 'sponsor').length;
 
-  /* ------------------------------------------------------------------
-     FINANCE DASHBOARD
-     ------------------------------------------------------------------ */
+    // Calculate revenue from ALL successful payments (not just confirmed registrations)
+    let revenue = 0;
+    list.forEach(r => {
+      if (r.payments) {
+        r.payments.forEach(p => {
+          if (p.status === 'success') {
+            revenue += Number(p.amount || 0);
+          }
+        });
+      }
+    });
+
+    document.getElementById("statTotal").textContent = total;
+    document.getElementById("statConfirmed").textContent = confirmedCount;
+    document.getElementById("statSponsors").textContent = sponsors;
+    document.getElementById("statRevenue").textContent = `KES ${revenue.toLocaleString()}`;
+  }
+
+  function populateAdminTable(list) {
+    const thead = document.getElementById("adminTableHead");
+    const tbody = document.getElementById("adminTableBody");
+    thead.innerHTML = "";
+    tbody.innerHTML = "";
+
+    let cols = [];
+    if (currentAdminTabFilter === 'attendee' || currentAdminTabFilter === 'all') {
+      cols = ["Attendee", "Type", "Package", "Country", "Add-ons", "Booth", "Payment Status", "Actions"];
+    } else if (currentAdminTabFilter === 'stakeholder') {
+      cols = ["Organisation", "Name", "Title", "Email", "Phone", "Industry Affiliate", "Actions"];
+    } else {
+      cols = ["Name", "Organization", "Title", "Email", "Phone", "Actions"];
+    }
+
+    const trHead = document.createElement("tr");
+    cols.forEach(col => {
+      const th = document.createElement("th");
+      th.textContent = col;
+      trHead.appendChild(th);
+    });
+    thead.appendChild(trHead);
+
+    if (list.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="${cols.length}" style="text-align:center; color: var(--text-soft);">No records found.</td></tr>`;
+      return;
+    }
+
+    list.forEach(row => {
+      const tr = document.createElement("tr");
+
+      const actionTd = document.createElement("td");
+      const editBtn = document.createElement("button");
+      editBtn.className = "btn btn-outline btn-sm";
+      editBtn.textContent = "Edit";
+      editBtn.onclick = () => openAdminCrmModal(row);
+      actionTd.appendChild(editBtn);
+
+      if (currentAdminTabFilter === 'attendee' || currentAdminTabFilter === 'all') {
+        const nameTd = document.createElement("td"); 
+        nameTd.innerHTML = `<strong>${row.full_name || '—'}</strong><br/><span style="font-size:0.75rem; color:var(--text-soft);">${row.email || '—'}</span>`;
+        const typeTd = document.createElement("td"); typeTd.textContent = row.participant_type ? row.participant_type.toUpperCase() : "—";
+        const pkgTd = document.createElement("td"); pkgTd.textContent = row.package ? row.package.split(" — ")[0] : "Standard";
+        const countryTd = document.createElement("td"); countryTd.textContent = row.country || "—";
+        
+        // Add-ons summary
+        const addonsTd = document.createElement("td");
+        const addonParts = [];
+        const gCount = row.gala_tickets || (row.gala_dinner ? 1 : 0);
+        const tCount = row.tour_tickets || (row.addon_mine_tour ? 1 : 0);
+        const eCount = row.additional_passes || 0;
+        if (gCount > 0) addonParts.push(`Gala x${gCount}`);
+        if (tCount > 0) addonParts.push(`Tour x${tCount}`);
+        if (eCount > 0) addonParts.push(`Extra x${eCount}`);
+        addonsTd.textContent = addonParts.length ? addonParts.join(', ') : '—';
+        
+        const boothTd = document.createElement("td"); boothTd.textContent = row.booth_number || "—";
+        
+        const statusTd = document.createElement("td");
+        const statusStr = (row.status || 'pending').toLowerCase();
+        
+        let badgeHtml = '';
+        if (statusStr === 'confirmed') {
+          badgeHtml = `<span style="background:#d1fae5; color:#065f46; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600;">CONFIRMED</span>`;
+        } else if (statusStr === 'cancelled') {
+          badgeHtml = `<span style="background:#fee2e2; color:#991b1b; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600;">CANCELLED</span>`;
+        } else {
+          badgeHtml = `<span style="background:#fef3c7; color:#92400e; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600;">PENDING</span>`;
+        }
+
+        // Show payment details
+        let payInfo = '';
+        if (row.payments && row.payments.length > 0) {
+          const successTotal = row.payments.filter(p => p.status === 'success').reduce((s, p) => s + Number(p.amount || 0), 0);
+          const pendingTotal = row.payments.filter(p => p.status === 'pending').reduce((s, p) => s + Number(p.amount || 0), 0);
+          const rejectedTotal = row.payments.filter(p => p.status === 'failed').reduce((s, p) => s + Number(p.amount || 0), 0);
+          
+          if (successTotal > 0) {
+            payInfo += `<div style="font-size:0.7rem; color:var(--success);">✓ KES ${successTotal.toLocaleString()} approved</div>`;
+          }
+          if (pendingTotal > 0) {
+            payInfo += `<div style="font-size:0.7rem; color:var(--warning);">⏳ KES ${pendingTotal.toLocaleString()} pending</div>`;
+          }
+          if (rejectedTotal > 0) {
+            payInfo += `<div style="font-size:0.7rem; color:var(--danger);">✗ KES ${rejectedTotal.toLocaleString()} rejected</div>`;
+          }
+        }
+        statusTd.innerHTML = badgeHtml + payInfo;
+
+        tr.append(nameTd, typeTd, pkgTd, countryTd, addonsTd, boothTd, statusTd, actionTd);
+      } else {
+        const nameTd = document.createElement("td"); nameTd.textContent = row.full_name || "—";
+        const orgTd = document.createElement("td"); orgTd.textContent = row.organization || "—";
+        const titleTd = document.createElement("td"); titleTd.textContent = row.job_title || "—";
+        const emailTd = document.createElement("td"); emailTd.textContent = row.email || "—";
+        const phoneTd = document.createElement("td"); phoneTd.textContent = row.phone || "—";
+        tr.append(nameTd, orgTd, titleTd, emailTd, phoneTd, actionTd);
+      }
+      
+      tbody.appendChild(tr);
+    });
+  }
+
+  /* ── Finance Dashboard ─────────────────────────────────── */
   let allPaymentsCache = [];
 
   async function loadFinanceDashboard() {
@@ -2439,7 +3070,6 @@ select.status-select:focus { border-color: var(--orange); }
     tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; color:var(--text-soft); padding:24px;">Loading…</td></tr>`;
 
     try {
-      // ── Fetch all payments (with registrant info joined) ──────────────
       const { data: payments, error: pErr } = await supabaseClient
         .from('payments')
         .select(`
@@ -2453,7 +3083,6 @@ select.status-select:focus { border-color: var(--orange); }
         .limit(500);
       if (pErr) throw pErr;
 
-      // ── Fetch all confirmed registrations for headcount ───────────────
       const { data: regs, error: rErr } = await supabaseClient
         .from('registrations')
         .select('status, gala_tickets, tour_tickets, additional_passes, gala_dinner, addon_mine_tour, representatives')
@@ -2462,7 +3091,7 @@ select.status-select:focus { border-color: var(--orange); }
 
       allPaymentsCache = payments || [];
 
-      // ── KPI Cards ─────────────────────────────────────────────────────
+      // KPIs
       const total = allPaymentsCache.length;
       const approved = allPaymentsCache.filter(p => p.status === 'success').length;
       const pending = allPaymentsCache.filter(p => p.status === 'pending').length;
@@ -2475,7 +3104,7 @@ select.status-select:focus { border-color: var(--orange); }
       document.getElementById('finPending').textContent = pending;
       document.getElementById('finRevenue').textContent = `KES ${revenue.toLocaleString()}`;
 
-      // ── Event Headcounts from confirmed registrations ─────────────────
+      // Headcounts
       let galaTotal = 0, tourTotal = 0, extraTotal = 0, attendeeTotal = 0;
       (regs || []).forEach(r => {
         const reps = r.representatives || 1;
@@ -2489,10 +3118,8 @@ select.status-select:focus { border-color: var(--orange); }
       document.getElementById('finExtraCount').textContent = extraTotal;
       document.getElementById('finTotalAttendees').textContent = attendeeTotal;
 
-      // ── Render table (respects status filter) ────────────────────────
       renderFinanceTable();
 
-      // ── Status filter dropdown ────────────────────────────────────────
       const filterEl = document.getElementById('finStatusFilter');
       if (filterEl && !filterEl._bound) {
         filterEl._bound = true;
@@ -2524,7 +3151,6 @@ select.status-select:focus { border-color: var(--orange); }
       const date = new Date(p.created_at).toLocaleString('en-KE', { dateStyle: 'medium', timeStyle: 'short' });
       const method = p.raw_response?.method === 'mpesa' ? 'M-Pesa' : 'Card / Bank';
 
-      // Add-ons breakdown
       const addons = p.addons || {};
       const addonParts = [];
       if (addons.galaTickets) addonParts.push(`Gala x${addons.galaTickets}`);
@@ -2541,7 +3167,7 @@ select.status-select:focus { border-color: var(--orange); }
 
       const actions = st === 'pending' ? `
         <button onclick="finApprove('${p.id}','${reg.id||''}')" style="padding:4px 9px; background:var(--success); color:white; border:none; border-radius:5px; cursor:pointer; font-size:0.78rem; margin-right:4px;">Approve</button>
-        <button onclick="finReject('${p.id}')" style="padding:4px 9px; background:#ef4444; color:white; border:none; border-radius:5px; cursor:pointer; font-size:0.78rem;">Reject</button>
+        <button onclick="finReject('${p.id}','${reg.id||''}')" style="padding:4px 9px; background:#ef4444; color:white; border:none; border-radius:5px; cursor:pointer; font-size:0.78rem;">Reject</button>
       ` : '—';
 
       return `<tr>
@@ -2558,27 +3184,54 @@ select.status-select:focus { border-color: var(--orange); }
     }).join('');
   }
 
+  // Recomputes and persists the overall registration status from ALL of that
+  // registration's payments. Called after every approve/reject so a rejected
+  // or still-pending payment can never coexist with a "Confirmed" invoice.
+  async function syncRegistrationStatus(registrationId) {
+    if (!registrationId) return;
+    const { data: regPayments, error } = await supabaseClient
+      .from('payments')
+      .select('status')
+      .eq('registration_id', registrationId);
+    if (error) { console.error(error); return; }
+
+    const newStatus = computeOverallStatus(regPayments || []);
+
+    // Never silently overwrite an admin's explicit "cancelled" designation.
+    const { data: regRow } = await supabaseClient
+      .from('registrations')
+      .select('status')
+      .eq('id', registrationId)
+      .single();
+    if (regRow && regRow.status === 'cancelled') return;
+
+    await supabaseClient.from('registrations').update({ status: newStatus }).eq('id', registrationId);
+  }
+
   async function finApprove(paymentId, registrationId) {
     const ok = await showConfirm({
       title: 'Approve Payment',
-      message: 'This will mark the payment as successful and confirm the registration.',
+      message: 'This will mark the payment as successful. Only this specific payment will be approved — other pending or rejected add-on payments remain unchanged, and the overall registration status will be recalculated from all payments.',
       type: 'success',
       okLabel: 'Approve'
     });
     if (!ok) return;
     try {
-      const { data, error: pe } = await supabaseClient.from('payments').update({ status: 'success' }).eq('id', paymentId).select();
+      // Update only this payment to success
+      const { data, error: pe } = await supabaseClient
+        .from('payments')
+        .update({ status: 'success' })
+        .eq('id', paymentId)
+        .select();
       if (pe) throw pe;
-      if (!data || data.length === 0) throw new Error("Update blocked by database. Did you run the latest update_summit.sql?");
+      if (!data || data.length === 0) throw new Error("Update blocked by database.");
       
-      if (registrationId) {
-        const { error: re } = await supabaseClient.from('registrations').update({ status: 'confirmed' }).eq('id', registrationId);
-        if (re) throw re;
-      }
-      showToast('Payment Approved', 'Registration confirmed successfully.', 'success');
+      await syncRegistrationStatus(registrationId);
+      
+      showToast('Payment Approved', 'Registration status recalculated from all payments.', 'success');
       if (typeof refreshUserProfile === 'function') await refreshUserProfile();
       loadFinanceDashboard();
-      if (typeof loadPendingPayments === 'function') loadPendingPayments();
+      if (typeof loadAdminDashboard === 'function') await loadAdminDashboard();
       updateGlobalFinanceBadge();
     } catch (err) {
       showToast('Error', err.message, 'error');
@@ -2587,7 +3240,7 @@ select.status-select:focus { border-color: var(--orange); }
 
   async function updateGlobalFinanceBadge() {
     try {
-      const { data, error, count } = await supabaseClient
+      const { count, error } = await supabaseClient
         .from('payments')
         .select('*', { count: 'exact', head: true })
         .eq('status', 'pending');
@@ -2604,158 +3257,35 @@ select.status-select:focus { border-color: var(--orange); }
     } catch (e) { console.error("Error updating finance badge", e); }
   }
 
-  async function finReject(paymentId) {
+  async function finReject(paymentId, registrationId) {
     const ok = await showConfirm({
       title: 'Reject Payment',
-      message: 'The payment will be marked as failed.',
+      message: 'The payment will be marked as failed. Other payments remain unaffected, but the overall registration status will be recalculated — so a registration can never show "Confirmed" while a payment sits rejected.',
       type: 'danger',
       okLabel: 'Reject'
     });
     if (!ok) return;
     try {
-      const { data, error } = await supabaseClient.from('payments').update({ status: 'failed' }).eq('id', paymentId).select();
+      const { data, error } = await supabaseClient
+        .from('payments')
+        .update({ status: 'failed' })
+        .eq('id', paymentId)
+        .select();
       if (error) throw error;
-      if (!data || data.length === 0) throw new Error("Update blocked by database. Did you run the latest update_summit.sql?");
-      showToast('Payment Rejected', 'Marked as failed.', 'error');
+      if (!data || data.length === 0) throw new Error("Update blocked by database.");
+
+      await syncRegistrationStatus(registrationId);
+
+      showToast('Payment Rejected', 'Marked as failed and registration status recalculated.', 'error');
       loadFinanceDashboard();
+      if (typeof loadAdminDashboard === 'function') await loadAdminDashboard();
       updateGlobalFinanceBadge();
     } catch (err) {
       showToast('Error', err.message, 'error');
     }
   }
 
-  function calculateAdminAnalytics(list) {
-    const total = list.length;
-    const confirmedCount = list.filter(r => r.status === 'confirmed').length;
-    const sponsors = list.filter(r => r.participant_type === 'sponsor').length;
-
-    let revenue = 0;
-    list.forEach(r => {
-      if (r.status === 'confirmed') {
-        const base = getBasePrice(r.package);
-        const gala = r.gala_dinner ? 2500 : 0;
-        const tour = r.addon_mine_tour ? 5000 : 0;
-        const extra = (r.additional_passes || 0) * 1500;
-        revenue += (base + gala + tour + extra);
-      }
-    });
-
-    document.getElementById("statTotal").textContent = total;
-    document.getElementById("statConfirmed").textContent = confirmedCount;
-    document.getElementById("statSponsors").textContent = sponsors;
-    document.getElementById("statRevenue").textContent = `KES ${revenue.toLocaleString()}`;
-  }
-
-  function populateAdminTable(list) {
-    const thead = document.getElementById("adminTableHead");
-    const tbody = document.getElementById("adminTableBody");
-    thead.innerHTML = "";
-    tbody.innerHTML = "";
-
-    // Build header based on tab
-    let cols = [];
-    if (currentAdminTabFilter === 'attendee' || currentAdminTabFilter === 'all') {
-      cols = ["Attendee", "Type", "Package", "Country", "Dinner", "Booth", "Payment Status", "Actions"];
-    } else if (currentAdminTabFilter === 'stakeholder') {
-      cols = ["Organisation", "Name", "Title", "Email", "Phone", "Industry Affiliate", "Actions"];
-    } else if (currentAdminTabFilter === 'implementor' || currentAdminTabFilter === 'volunteer') {
-      cols = ["Name / Organization", "Actions"];
-    } else if (currentAdminTabFilter === 'call_list') {
-      cols = ["Name / Slot", "Actions"];
-    } else {
-      cols = ["Name", "Organization", "Title", "Email", "Phone", "Actions"];
-    }
-
-    const trHead = document.createElement("tr");
-    cols.forEach(col => {
-      const th = document.createElement("th");
-      th.textContent = col;
-      trHead.appendChild(th);
-    });
-    thead.appendChild(trHead);
-
-    if (list.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="${cols.length}" style="text-align:center; color: var(--text-soft);">No records found.</td></tr>`;
-      return;
-    }
-
-    list.forEach(row => {
-      const tr = document.createElement("tr");
-
-      // Actions td is common
-      const actionTd = document.createElement("td");
-      const editBtn = document.createElement("button");
-      editBtn.className = "btn btn-outline btn-sm";
-      editBtn.textContent = "Edit";
-      editBtn.onclick = () => openAdminCrmModal(row);
-      actionTd.appendChild(editBtn);
-
-      if (currentAdminTabFilter === 'attendee' || currentAdminTabFilter === 'all') {
-        const nameTd = document.createElement("td"); 
-        nameTd.innerHTML = `<strong>${row.full_name || '—'}</strong><br/><span style="font-size:0.75rem; color:var(--text-soft);">${row.email || '—'}</span>`;
-        const typeTd = document.createElement("td"); typeTd.textContent = row.participant_type.toUpperCase();
-        const pkgTd = document.createElement("td"); pkgTd.textContent = row.package ? row.package.split(" — ")[0] : "Standard";
-        const countryTd = document.createElement("td"); countryTd.textContent = row.country || "—";
-        const galaTd = document.createElement("td"); galaTd.textContent = row.gala_dinner ? "Yes" : "No";
-        const boothTd = document.createElement("td"); boothTd.textContent = row.booth_number || "—";
-        
-        const statusTd = document.createElement("td");
-        const statusStr = (row.status || 'pending').toLowerCase();
-        
-        let badgeHtml = '';
-        if (statusStr === 'confirmed') {
-          badgeHtml = `<span style="background:#d1fae5; color:#065f46; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600; display:inline-block; margin-bottom:4px;">CONFIRMED</span>`;
-        } else if (statusStr === 'cancelled') {
-          badgeHtml = `<span style="background:#fee2e2; color:#991b1b; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600; display:inline-block; margin-bottom:4px;">CANCELLED</span>`;
-        } else {
-          badgeHtml = `<span style="background:#fef3c7; color:#92400e; padding:3px 8px; border-radius:4px; font-size:0.75rem; font-weight:600; display:inline-block; margin-bottom:4px;">PENDING</span>`;
-        }
-
-        let payInfo = '';
-        if (row.payments && row.payments.length > 0) {
-          const successPays = row.payments.filter(p => p.status === 'success');
-          if (successPays.length > 0) {
-            const p = successPays[successPays.length - 1];
-            payInfo = `<div style="font-size:0.7rem; color:var(--text-soft); line-height:1.2;">
-              ${p.currency} ${Number(p.amount||0).toLocaleString()}<br/>
-              Ref: <span style="font-family:monospace;">${p.provider_reference}</span>
-            </div>`;
-          } else {
-            const p = row.payments[row.payments.length - 1];
-            payInfo = `<div style="font-size:0.7rem; color:var(--text-soft);">Paid (${p.status})</div>`;
-          }
-        }
-        statusTd.innerHTML = badgeHtml + payInfo;
-
-        tr.append(nameTd, typeTd, pkgTd, countryTd, galaTd, boothTd, statusTd, actionTd);
-      } else if (currentAdminTabFilter === 'stakeholder') {
-        const orgTd = document.createElement("td"); orgTd.textContent = row.organization || "—";
-        const nameTd = document.createElement("td"); nameTd.textContent = row.full_name || "—";
-        const titleTd = document.createElement("td"); titleTd.textContent = row.job_title || "—";
-        const emailTd = document.createElement("td"); emailTd.textContent = row.email || "—";
-        const phoneTd = document.createElement("td"); phoneTd.textContent = row.phone || "—";
-        const indTd = document.createElement("td"); indTd.textContent = row.industry_affiliate || "—";
-        tr.append(orgTd, nameTd, titleTd, emailTd, phoneTd, indTd, actionTd);
-      } else if (currentAdminTabFilter === 'implementor' || currentAdminTabFilter === 'volunteer') {
-        const nameOrgTd = document.createElement("td"); nameOrgTd.textContent = row.full_name || row.organization || "—";
-        tr.append(nameOrgTd, actionTd);
-      } else if (currentAdminTabFilter === 'call_list') {
-        const nameTd = document.createElement("td"); nameTd.textContent = row.full_name || row.job_title || "—";
-        tr.append(nameTd, actionTd);
-      } else {
-        const nameTd = document.createElement("td"); nameTd.textContent = row.full_name || "—";
-        const orgTd = document.createElement("td"); orgTd.textContent = row.organization || "—";
-        const titleTd = document.createElement("td"); titleTd.textContent = row.job_title || "—";
-        const emailTd = document.createElement("td"); emailTd.textContent = row.email || "—";
-        const phoneTd = document.createElement("td"); phoneTd.textContent = row.phone || "—";
-        tr.append(nameTd, orgTd, titleTd, emailTd, phoneTd, actionTd);
-      }
-      
-      tbody.appendChild(tr);
-    });
-  }
-
-  // CRM Modal Logic
+  /* ── CRM Modal ─────────────────────────────────────────── */
   const adminCrmModal = document.getElementById("adminCrmModal");
   const adminCrmForm = document.getElementById("adminCrmForm");
   
@@ -2820,19 +3350,19 @@ select.status-select:focus { border-color: var(--orange); }
       }
       
       if (result.error) throw result.error;
-      alert("Record saved successfully.");
+      showToast('Saved', 'Record saved successfully.', 'success');
       adminCrmModal.classList.remove("active");
       await loadAdminDashboard();
     } catch (err) {
-      alert(`Save failed: ${err.message}`);
+      showToast('Error', `Save failed: ${err.message}`, 'error');
     }
   });
 
-  // Export CSV Helper
+  /* ── Export CSV ────────────────────────────────────────── */
   document.getElementById("exportCsvBtn").addEventListener("click", () => {
     if (allRegistrationsCache.length === 0) return;
     
-    let csv = "Full Name,Job Title,Email,Phone,Organization,Country,Participant Type,Package,Gala Dinner,Mine Tour,Booth,Status,Industry Affiliate,Invitation Status,Invitation Sent By,Attendance Status,Supplies Provided,Contact Person,Created At\n";
+    let csv = "Full Name,Job Title,Email,Phone,Organization,Country,Participant Type,Package,Gala Dinner,Mine Tour,Booth,Status,Industry Affiliate,Invitation Status,Attendance Status,Supplies Provided,Contact Person,Created At\n";
     allRegistrationsCache.forEach(r => {
       csv += `"${r.full_name}","${r.job_title || ''}","${r.email}","${r.phone || ''}","${r.organization || ''}","${r.country || ''}","${r.participant_type}","${r.package || ''}","${r.gala_dinner ? 'YES' : 'NO'}","${r.addon_mine_tour ? 'YES' : 'NO'}","${r.booth_number || ''}","${r.status}","${r.industry_affiliate || ''}","${r.invitation_status || ''}","${r.invitation_sent_by || ''}","${r.attendance_status || ''}","${r.supplies_provided || ''}","${r.contact_person || ''}","${r.created_at}"\n`;
     });
@@ -2846,11 +3376,8 @@ select.status-select:focus { border-color: var(--orange); }
     document.body.removeChild(link);
   });
 
-
-  /* --------------------------------------------------------------------------
-     Receipt & Invoice View Modal populate
-     -------------------------------------------------------------------------- */
-  document.getElementById("viewInvoiceBtn").addEventListener("click", () => {
+  /* ── Invoice Modal ─────────────────────────────────────── */
+  document.getElementById("viewInvoiceBtn").addEventListener("click", async () => {
     const profile = currentUserProfile;
     document.getElementById("invNo").textContent = profile.id.substring(0, 4).toUpperCase();
     
@@ -2862,6 +3389,10 @@ select.status-select:focus { border-color: var(--orange); }
       invStatus.textContent = 'Confirmed';
       invStatus.style.background = '#d1fae5';
       invStatus.style.color = '#065f46';
+    } else if (profile.status === 'cancelled') {
+      invStatus.textContent = 'Cancelled';
+      invStatus.style.background = '#fee2e2';
+      invStatus.style.color = '#991b1b';
     } else {
       invStatus.textContent = 'Pending Review';
       invStatus.style.background = '#fef3c7';
@@ -2875,71 +3406,150 @@ select.status-select:focus { border-color: var(--orange); }
       Country: ${profile.country || "—"}
     `;
 
+    const { data: allPayments } = await supabaseClient
+      .from('payments')
+      .select('id, amount, status, provider_reference, created_at, raw_response, addons')
+      .eq('user_id', currentSession.user.id)
+      .order('created_at', { ascending: true });
+    const pays = allPayments || [];
+
+    function payBadge(status) {
+      if (status === 'success') {
+        return `<span class="addon-status-approved">Approved</span>`;
+      } else if (status === 'pending') {
+        return `<span class="addon-status-pending">Payment Pending</span>`;
+      } else if (status === 'failed') {
+        return `<span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Rejected</span>`;
+      }
+      return `<span class="addon-status-none">Not Paid</span>`;
+    }
+
     const detailsBody = document.getElementById("invoiceDetailsBody");
     detailsBody.innerHTML = "";
 
     const baseCost = getBasePrice(profile.package);
+    const basePayment = pays.find(p => p.addons && (!p.addons.galaTickets && !p.addons.tourTickets && !p.addons.extraReps)) || pays[0];
+    const baseStatusBadge = basePayment ? payBadge(basePayment.status) : payBadge(null);
     
-    // Add Base Package Line
+    // Base Package Line
     let html = `
       <tr>
-        <td>Base Registration Pass (${profile.package || 'Standard'})</td>
+        <td>Base Registration Pass<br/><span style="font-size:0.78rem;color:var(--text-soft);">${profile.package || 'Standard'}</span></td>
         <td>1</td>
         <td style="text-align: right;">KES ${baseCost.toLocaleString()}</td>
         <td style="text-align: right;">KES ${baseCost.toLocaleString()}</td>
+        <td style="text-align: center;">${baseStatusBadge}</td>
       </tr>
     `;
 
-    // Add Gala Dinner if checked
-    let galaCost = 0;
+    // Gala Dinner — list every payment that contributed gala tickets, so a
+    // rejected top-up doesn't get silently merged into an approved one.
     const galaCount = profile.gala_tickets || (profile.gala_dinner ? 1 : 0);
     if (galaCount > 0) {
-      galaCost = galaCount * 2500;
-      html += `
-        <tr>
-          <td>Gala Networking Dinner Pass Add-on</td>
-          <td>${galaCount}</td>
-          <td style="text-align: right;">KES 2,500</td>
-          <td style="text-align: right;">KES ${galaCost.toLocaleString()}</td>
-        </tr>
-      `;
+      const galaPayments = pays.filter(p => p.addons && p.addons.galaTickets > 0);
+      if (galaPayments.length > 0) {
+        galaPayments.forEach(gp => {
+          const qty = gp.addons.galaTickets;
+          html += `
+            <tr>
+              <td>Gala Networking Dinner Pass Add-on</td>
+              <td>${qty}</td>
+              <td style="text-align: right;">KES 2,500</td>
+              <td style="text-align: right;">KES ${(qty * 2500).toLocaleString()}</td>
+              <td style="text-align: center;">${payBadge(gp.status)}</td>
+            </tr>
+          `;
+        });
+      } else {
+        html += `
+          <tr>
+            <td>Gala Networking Dinner Pass Add-on</td>
+            <td>${galaCount}</td>
+            <td style="text-align: right;">KES 2,500</td>
+            <td style="text-align: right;">KES ${(galaCount * 2500).toLocaleString()}</td>
+            <td style="text-align: center;">${payBadge(null)}</td>
+          </tr>
+        `;
+      }
     }
 
-    // Add Mine Tour if checked
-    let tourCost = 0;
+    // Mine Tour — same per-payment breakdown
     const tourCount = profile.tour_tickets || (profile.addon_mine_tour ? 1 : 0);
     if (tourCount > 0) {
-      tourCost = tourCount * 5000;
-      html += `
-        <tr>
-          <td>Artisanal Mining Field Study Tour Slot</td>
-          <td>${tourCount}</td>
-          <td style="text-align: right;">KES 5,000</td>
-          <td style="text-align: right;">KES ${tourCost.toLocaleString()}</td>
-        </tr>
-      `;
+      const tourPayments = pays.filter(p => p.addons && p.addons.tourTickets > 0);
+      if (tourPayments.length > 0) {
+        tourPayments.forEach(tp => {
+          const qty = tp.addons.tourTickets;
+          html += `
+            <tr>
+              <td>Artisanal Mining Field Study Tour Slot</td>
+              <td>${qty}</td>
+              <td style="text-align: right;">KES 5,000</td>
+              <td style="text-align: right;">KES ${(qty * 5000).toLocaleString()}</td>
+              <td style="text-align: center;">${payBadge(tp.status)}</td>
+            </tr>
+          `;
+        });
+      } else {
+        html += `
+          <tr>
+            <td>Artisanal Mining Field Study Tour Slot</td>
+            <td>${tourCount}</td>
+            <td style="text-align: right;">KES 5,000</td>
+            <td style="text-align: right;">KES ${(tourCount * 5000).toLocaleString()}</td>
+            <td style="text-align: center;">${payBadge(null)}</td>
+          </tr>
+        `;
+      }
     }
 
-    // Add Additional Representatives
-    let extraCost = 0;
+    // Extra Passes — same per-payment breakdown
     if (profile.additional_passes > 0) {
-      extraCost = profile.additional_passes * 1500;
-      html += `
-        <tr>
-          <td>Extra Delegation Representative Entry passes</td>
-          <td>${profile.additional_passes}</td>
-          <td style="text-align: right;">KES 1,500</td>
-          <td style="text-align: right;">KES ${extraCost.toLocaleString()}</td>
-        </tr>
-      `;
+      const extraPayments = pays.filter(p => p.addons && p.addons.extraReps > 0);
+      if (extraPayments.length > 0) {
+        extraPayments.forEach(ep => {
+          const qty = ep.addons.extraReps;
+          html += `
+            <tr>
+              <td>Extra Delegation Representative Entry passes</td>
+              <td>${qty}</td>
+              <td style="text-align: right;">KES 1,500</td>
+              <td style="text-align: right;">KES ${(qty * 1500).toLocaleString()}</td>
+              <td style="text-align: center;">${payBadge(ep.status)}</td>
+            </tr>
+          `;
+        });
+      } else {
+        html += `
+          <tr>
+            <td>Extra Delegation Representative Entry passes</td>
+            <td>${profile.additional_passes}</td>
+            <td style="text-align: right;">KES 1,500</td>
+            <td style="text-align: right;">KES ${(profile.additional_passes * 1500).toLocaleString()}</td>
+            <td style="text-align: center;">${payBadge(null)}</td>
+          </tr>
+        `;
+      }
     }
 
     detailsBody.innerHTML = html;
     
+    const galaCost = galaCount * 2500;
+    const tourCost = tourCount * 5000;
+    const extraCost = (profile.additional_passes || 0) * 1500;
     const grandTotal = baseCost + galaCost + tourCost + extraCost;
     document.getElementById("invTotalFee").textContent = `KES ${grandTotal.toLocaleString()}`;
 
-    // Open Modal
+    const approvedTotal = pays.filter(p => p.status === 'success').reduce((sum, p) => sum + Number(p.amount || 0), 0);
+    const pendingTotal = pays.filter(p => p.status === 'pending').reduce((sum, p) => sum + Number(p.amount || 0), 0);
+    const rejectedTotal = pays.filter(p => p.status === 'failed').reduce((sum, p) => sum + Number(p.amount || 0), 0);
+    const paidSummary = document.getElementById('invTotalPaid');
+    const paidParts = [];
+    if (approvedTotal > 0) paidParts.push(`✓ KES ${approvedTotal.toLocaleString()} confirmed`);
+    if (pendingTotal > 0) paidParts.push(`KES ${pendingTotal.toLocaleString()} pending review`);
+    if (rejectedTotal > 0) paidParts.push(`KES ${rejectedTotal.toLocaleString()} rejected`);
+    paidSummary.textContent = paidParts.length ? `(${paidParts.join(' + ')})` : '';
+
     document.getElementById("invoiceModal").classList.add("active");
   });
 
@@ -2960,10 +3570,10 @@ select.status-select:focus { border-color: var(--orange); }
   }
 </script>
 
-<!-- ── Toast Container ───────────────────────────── -->
+<!-- Toast Container -->
 <div id="toast-container"></div>
 
-<!-- ── Confirm Dialog ────────────────────────────── -->
+<!-- Confirm Dialog -->
 <div id="confirmDialog">
   <div class="confirm-card">
     <div class="confirm-icon-wrap warn" id="confirmIconWrap"><span id="confirmIconEmoji">?</span></div>
@@ -2975,5 +3585,5 @@ select.status-select:focus { border-color: var(--orange); }
     </div>
   </div>
 </div>
-</body>
-</html>
+
+</body></html>
